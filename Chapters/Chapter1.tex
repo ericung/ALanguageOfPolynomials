@@ -20,20 +20,65 @@ This paper is on the re-framing of the one way function to a matrix multiplicati
 
 %----------------------------------------------------------------------------------------
 
-\section{}
+\section{Foundations}
 
-\LaTeX{} is not a \textsc{wysiwyg} (What You See is What You Get) program, unlike word processors such as Microsoft Word or Apple's Pages. Instead, a document written for \LaTeX{} is actually a simple, plain text file that contains \emph{no formatting}. You tell \LaTeX{} how you want the formatting in the finished document by writing in simple commands amongst the text, for example, if I want to use \emph{italic text for emphasis}, I write the \verb|\emph{text}| command and put the text I want in italics in between the curly braces. This means that \LaTeX{} is a \enquote{mark-up} language, very much like HTML.
+There exists a language such that it decides each monomial in the polynomial. In other words, there exists a set of deciders for each monomial in the polynomial where it decides if y is in the monomial. A decider in this term is not of the definition found originally in textbooks but one that is redefined in the below definition.
 
-\subsection{A (not so short) Introduction to \LaTeX{}}
+Given a polynomial
+$p(x) = ax^2 + bx + c$
+$p(x) = 3x^2 + 4x + 5$
+$p(2) = 3(2)^2 + 4(2) + 5$
+$p(2) = 12 + 8 + 5$
 
-If you are new to \LaTeX{}, there is a very good eBook -- freely available online as a PDF file -- called, \enquote{The Not So Short Introduction to \LaTeX{}}. The book's title is typically shortened to just \emph{lshort}. You can download the latest version (as it is occasionally updated) from here:
-\url{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}
+Let the decider be defined as the following:
+Decider is a function $Decider(constant, x, degree) \equiv constant*x^{degree} = y$
+such that
+x1 * x2 * ... * $x\ degree\ times$ * $constant\ times$ is tested to be equivalent to y
+and x1 is the start
+and $x\ degree\ times$ is the finish
+then loop around x1 to $x\ degree\ times$ until it stops
 
-It is also available in several other languages. Find yours from the list on this page: \url{http://www.ctan.org/tex-archive/info/lshort/}
+Decider for $ax^2$ is $Decider(3,2,2) = 3(2)^2 \equiv 12$
+Decider for $bx$ is $Decider(4,2,1) = 4(2)^1 \equiv 8$
+Decider for $c$ is $Decider(1,2,1) = 5(2)^0 \equiv 5$
 
-It is recommended to take a little time out to learn how to use \LaTeX{} by creating several, small `test' documents, or having a close look at several templates on:\\ 
-\url{http://www.LaTeXTemplates.com}\\ 
-Making the effort now means you're not stuck learning the system when what you \emph{really} need to be doing is writing your thesis.
+A <b>Turing Machine</b> can be defined as the following:
+
+1. Q is the set of states
+2. Sigma is the input alphabet not containing the blank symbol u
+3. Tau is the tape alphabet where u is in tau and sigma is in tau
+4. Sigma: Q $\times$ T => Q $\times $ Tau $\times $ $left bracket$L, R$right bracket$ is the transition function
+5. q0 is in Q is the start state
+6. qaccept is in Q is the accept state
+7. qreject is in Q is the reject state where qreject != qaccept
+
+Multi-Tape Turing Machine
+Sigma: Q $\times $ T$k$ => Q $\times $T$k$k $\times $ {L,R,S}
+
+Rational Expression
+
+K[x] and K[[x]]. Let K[[x]] describe a set of monomial deciders. S is an element of K[[x]] meaning S is a monomial decider.
+
+S = Sigma $left bracket$ n>=0 $right bracket$an x$n$
+
+
+\section{Monomial of One Degree}
+
+Given the definition of a decider:
+%Decider is a function Decider(constant,x,degree)≡constant∗xdegree=y
+
+A decider of at least one degree
+
+$Decider(3,x,4) \equiv 3x^4 = y$
+Contains $Decider(3,x,3) \equiv 3x^3 = y$
+Contains $Decider(3,x,2) \equiv 3x^2 = y$
+Contains $Decider(3,x,1) \equiv 3x^1 = y$
+Contains $Decider(3,x,0) \equiv 3x^0 = y$
+
+Hence it can be generalized to:
+$Decider(constant,degree,x)$ contains the sequence set 
+$\{Decider(constant,degree,x),Decider(constant,degree-1,x),...,Decider(constant,0,x)\}$
+$\{start,...,finish\}$
 
 \subsection{A Short Math Guide for \LaTeX{}}
 
@@ -239,63 +284,6 @@ Tables are an important way of displaying your results, below is an example tabl
 
 You can reference tables with \verb|\ref{<label>}| where the label is defined within the table environment. See \file{Chapter1.tex} for an example of the label and citation (e.g. Table~\ref{tab:treatments}).
 
-\subsection{Figures}
-
-There will hopefully be many figures in your thesis (that should be placed in the \emph{Figures} folder). The way to insert figures into your thesis is to use a code template like this:
-\begin{verbatim}
-\begin{figure}
-\centering
-\includegraphics{Figures/Electron}
-\decoRule
-\caption[An Electron]{An electron (artist's impression).}
-\label{fig:Electron}
-\end{figure}
-\end{verbatim}
-Also look in the source file. Putting this code into the source file produces the picture of the electron that you can see in the figure below.
-
-\begin{figure}[th]
-\centering
-\includegraphics{Figures/Electron}
-\decoRule
-\caption[An Electron]{An electron (artist's impression).}
-\label{fig:Electron}
-\end{figure}
-
-Sometimes figures don't always appear where you write them in the source. The placement depends on how much space there is on the page for the figure. Sometimes there is not enough room to fit a figure directly where it should go (in relation to the text) and so \LaTeX{} puts it at the top of the next page. Positioning figures is the job of \LaTeX{} and so you should only worry about making them look good!
-
-Figures usually should have captions just in case you need to refer to them (such as in Figure~\ref{fig:Electron}). The \verb|\caption| command contains two parts, the first part, inside the square brackets is the title that will appear in the \emph{List of Figures}, and so should be short. The second part in the curly brackets should contain the longer and more descriptive caption text.
-
-The \verb|\decoRule| command is optional and simply puts an aesthetic horizontal line below the image. If you do this for one image, do it for all of them.
-
-\LaTeX{} is capable of using images in pdf, jpg and png format.
-
-\subsection{Typesetting mathematics}
-
-If your thesis is going to contain heavy mathematical content, be sure that \LaTeX{} will make it look beautiful, even though it won't be able to solve the equations for you.
-
-The \enquote{Not So Short Introduction to \LaTeX} (available on \href{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}{CTAN}) should tell you everything you need to know for most cases of typesetting mathematics. If you need more information, a much more thorough mathematical guide is available from the AMS called, \enquote{A Short Math Guide to \LaTeX} and can be downloaded from:
-\url{ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf}
-
-There are many different \LaTeX{} symbols to remember, luckily you can find the most common symbols in \href{http://ctan.org/pkg/comprehensive}{The Comprehensive \LaTeX~Symbol List}.
-
-You can write an equation, which is automatically given an equation number by \LaTeX{} like this:
-\begin{verbatim}
-\begin{equation}
-E = mc^{2}
-\label{eqn:Einstein}
-\end{equation}
-\end{verbatim}
-
-This will produce Einstein's famous energy-matter equivalence equation:
-\begin{equation}
-E = mc^{2}
-\label{eqn:Einstein}
-\end{equation}
-
-All equations you write (which are not in the middle of paragraph text) are automatically given equation numbers by \LaTeX{}. If you don't want a particular equation numbered, use the unnumbered form:
-\begin{verbatim}
-\[ a^{2}=4 \]
-\end{verbatim}
 
 %----------------------------------------------------------------------------------------
 
