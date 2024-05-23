@@ -25,9 +25,13 @@ This paper is on the re-framing of the one way function to a matrix multiplicati
 There exists a language such that it decides each monomial in the polynomial. In other words, there exists a set of deciders for each monomial in the polynomial where it decides if y is in the monomial. A decider in this term is not of the definition found originally in textbooks but one that is redefined in the below definition.
 
 Given a polynomial
+
 $p(x) = ax^2 + bx + c$
+
 $p(x) = 3x^2 + 4x + 5$
+
 $p(2) = 3(2)^2 + 4(2) + 5$
+
 $p(2) = 12 + 8 + 5$
 
 Let the decider be defined as the following:
@@ -228,6 +232,84 @@ Decider 1,x,6 /Decider 1,x,2 =sequence of permutations of xi,xj such that the co
 
 Theorem of Equivalence
 Decider 1,x,6 /Decider 1,x,1 /Decider 1,x,1 =Decider 1,x,6 /Decider 1,x,2 such that there is some xsuch that the monomial represented by both deciders exists where f x =y
+
+\section{Theorem of Equivalence}
+
+$
+Decider(1,x,6)/Decider(1,x,1)/Decider(1,x,1) \\
+    \equiv Decider(1,x,6)/Decider(1,x,2) \\
+        such\ that\ there\ is\ some\ x \\
+        such\ that\ the\ monomial\ represented\ by\ both\ deciders\ exists\ where\ f(x) \equiv y
+$ 
+
+\section{Reversing}
+
+$Decider(1,x,6)/Decider(1,x,1)/Decider(1,x,1) \equiv {sequence\ of\ permutations\ of\ {xi,xj,xk}\ such\ that\ the\ count\ of\ i\ is\ 4\ and\ j\ is\ 1\ and\ k\ 1}$
+
+$Decider(1,x,6)/Decider(1,x,2) \equiv {sequence\ of\ permutations\ of\ {xi,xj}\ such\ that\ the\ count\ of\ i\ is\ 4\ and\ i\ is\ 2}$
+
+Is shown that by the permutation of the order of operations that $Decider(1,x,6)/Decider(1,x,1)/Decider(1,x,1)$ is not the same set as $Decider(1,x,6)/Decider(1,x,2)$
+
+Theorem of Reversing
+
+Given two deciders x,y in a decider of m(x), x != y iff sequence of all the states are not equivalent, representation-wise, from start to finish or it doesn't represent the same order of operations of the deciders being represented
+
+\section{Corollary of Reversing}
+
+A little more on the theorem of reversing
+Given a starting point, the paths a monomial decider takes to decide if y is in f x is inherently unique to each representation. Start at the circle, S, and end at the circle, F. If the circle is white, it is 0. If it is blue, it is 1. As an example let's traverse some of the representations of x 4.
+
+Corollary
+Given a decider, d, in Decider of m x then there is path, p, that exists for d such that p = Path d = s1,s2,...,si,...,sn where i is count of the states in the decider of m x.
+
+Example:
+Choose some x such that it is in Path Decider 1,x,6/Decider1,x,2 where p = 001111
+
+\section{Godel's Theorem}
+
+We see that there exists two statements from these theorems
+
+1. x = x from a theorem of equivalence
+2. x != x from a theorem of reversal
+
+
+Example:
+Given some d1,d2,d3,...,infinity in deciders of m x
+1. d1 = d2 = d3 = ... = infinity
+2. d1 != d2 != d3 = ... != infinity
+
+The different representations of a monomial through the language of monomial deciders will give us undecidability. This means we can come up with many formal definitions of the mnomial decider and it will not be able to solve the problem of finding a specific representation of a monomial decider without having to guess or apply some sort of probability to it. Relating to the real line, given a real line a,b a $\leq$ b, there is infinite choices between a and b because we canjust make the number smaller. As long as b  a $\geq $ 0, there requires some sort of probability of choosing some specific number that is between a and b.
+
+\section{Reframing The One Way Function}
+
+A probability exists to find a certain monomial decider in the set of it's variations. A/B = Probability where A is the monomial decider we want and B is the number of all the variations.
+
+Example:
+d1,d2,...,d6 in deciders 1,x,6 ,D, such that di are all distinct
+Choose one of the deciders in D through probability
+Probability of choosing d in D is 1/6 so 0.16666667
+We'll call this picking a function and every time we call this function, the probability is mulltiplied such that it is n k. As an example, if we call the picking function twice using the example above, we have 1/6 1/6 = 1/36 = 6 2.
+
+This is formally known as the one way function.
+
+\section{Theorem of Infiniteness}
+
+Given that, if we can show for any language it abides a theorem of equivalence and a theorem of reversal and they both have infinite representations, we know that we need some sort of probability to choose a specific representation of a monomial decider. We'll call this a theorem of infiniteness because if we can show that some language is infinite, it will require some sort of guess to pick something unique out of all the things it represents, generates, or describes. In other words, you can't map infinity to infinity directly for you must map infinity to something discrete and something discrete to infinity.
+
+Theorem
+A mapping must be from infinity to discrete representation to discrete representation to infinity.
+
+Given any representation of infinity,
+Suppose a mapping infinity to infinity exists.
+Then this map is equivalent to infinity because 
+infinity contains this map.
+Here, infinity is represented as $\ast. \ast contains \ast -> \ast.$
+
+Intuition
+
+Given Decider c,x,d and d is infinity,
+Decider c,x,d contains Decider c,x,d 1
+d 1 is then infinity too.
 
 
 \subsection{References}
