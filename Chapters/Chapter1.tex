@@ -80,11 +80,60 @@ $Decider(constant,degree,x)$ contains the sequence set
 $\{Decider(constant,degree,x),Decider(constant,degree-1,x),...,Decider(constant,0,x)\}$
 $\{start,...,finish\}$
 
-\subsection{A Short Math Guide for \LaTeX{}}
+\section{Addition}
 
-If you are writing a technical or mathematical thesis, then you may want to read the document by the AMS (American Mathematical Society) called, \enquote{A Short Math Guide for \LaTeX{}}. It can be found online here:
-\url{http://www.ams.org/tex/amslatex.html}
-under the \enquote{Additional Documentation} section towards the bottom of the page.
+Given the first example:
+p(x)=3x2+4x+5
+
+p(2)=3(2)2+4(2)+5
+
+p(2)=12+8+5
+
+
+m2=Decider(3,x,2)=3x2
+
+m1=Decider(4,x,1)=4x
+
+m0=Decider(5,x,0)=5
+
+
+Generalized to mx where x is the degree
+Given polynomial functions, p1 and p2, they are commutative
+p1(x)=ma+...+m0
+
+p2(x)=nb+...+n0
+
+
+p1(x)+p2(x)=ma+m[x+1]+nb+n[y+1]+...+(mx+ny)+...+(m0+n0) where x=y
+
+Decider(cx,x,dx)+Decider(cy,x,dy)=Decider(cx+cy,x,dx)=Deciders(cx+cy,x,dy)= dx=dy
+
+\section{Product}
+
+Given two monomials in the language, a and b, the product of a and b is also in the language.
+
+Given Decider(cx,x,dx) and Decider(cy,x,dy) is in language L
+
+Show that the product Decider(cx+cy,x,dx$\times $dy) is in L
+
+
+Decider(cx,x,dx)$\times $Decider(cy,x,dy)
+
+=cx$\times $xdx$\times $cy$\times $xdy
+
+=cx$\times $xdx+dy
+
+=(cx+cy)$\times $xdx+dy is in L
+
+=Decider(cx+cy,x,dx+dy)
+
+\section{Problem with Matrices}
+
+
+Given a polynomial p of x, show that the monomial deciders represented in the language can't be contained in a finite matrix after a set number, n, such that x$n$.
+
+axa $\times $ bxb = nxn such that a $\neq $ b and a,b<n
+
 
 \subsection{Common \LaTeX{} Math Symbols}
 There are a multitude of mathematical symbols available for \LaTeX{} and it would take a great effort to learn the commands for them all. The most common ones you are likely to use are shown on this page:
