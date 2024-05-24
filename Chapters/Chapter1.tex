@@ -111,28 +111,38 @@ $\\ $
 \end{figure}
 Figure \ref{fig:0102theorem} shows how the intuition for removing the state top down.
 
-\section{Monomial of One Degree}
+\section{Monomial of One Variable}
 
 Given the definition of a decider:
-%Decider is a function Decider(constant,x,degree)≡constant∗xdegree=y
+
+Decider is a function $Decider<c x^n> \equiv c x^n = y$
+
+$\\ $
 
 A decider of at least one degree
 
-$Decider(3,x,4) \equiv 3x^4 = y$
+$Decider< 3 x^4 > \equiv 3x^4 = y$
 
-Contains $Decider(3,x,3) \equiv 3x^3 = y$
+$\\ $
 
-Contains $Decider(3,x,2) \equiv 3x^2 = y$
+Contains $Decider<3 x^3> \equiv 3x^3 = y$
 
-Contains $Decider(3,x,1) \equiv 3x^1 = y$
+Contains $Decider<3 x^2> \equiv 3x^2 = y$
 
-Contains $Decider(3,x,0) \equiv 3x^0 = y$
+Contains $Decider<3 x^1> \equiv 3x^1 = y$
+
+Contains $Decider<3 x^0> \equiv 3x^0 = y$
 
 Hence it can be generalized to:
 
-$Decider(constant,degree,x)$ contains the sequence set 
+$Decider<c x^n>$ contains the sequence set 
 
-$Decider constant,degree,x ,Decider constant,degree 1,x,...,Decider constant,0,x $
+$\\ $
+
+$Decider<c x^n>,Decider<c x^{n-1}>,...,Decider<c x^0>$ 
+which is equivalent to a rational expression by definition.
+
+$\\ $
 
 $\{start,...,finish\}$
 
