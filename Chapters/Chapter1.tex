@@ -1,6 +1,6 @@
 % Chapter 1
 
-\chapter{A Language of Polynomials} % Main chapter title
+k\chapter{A Language of Polynomials} % Main chapter title
 
 \label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
 
@@ -24,6 +24,8 @@ This paper is on the re-framing of the one way function to a matrix multiplicati
 
 There exists a language such that it decides each monomial in the polynomial. In other words, there exists a set of deciders for each monomial in the polynomial where it decides if y is in the monomial. A decider in this term is not of the definition found originally in textbooks but one that is redefined in the below definition.
 
+$\newline$
+
 Given a polynomial
 
 $p(x) = ax^2 + bx + c$
@@ -34,37 +36,61 @@ $p(2) = 3(2)^2 + 4(2) + 5$
 
 $p(2) = 12 + 8 + 5$
 
+$\newline$
+
 Let the decider be defined as the following:
-Decider is a function $Decider(constant, x, degree) \equiv constant*x^{degree} = y$
+
+$\\ $
+
+Decider is a function $Decider<c \times x^{degree}> \equiv c \times x^{degree} = y$
+
 such that
-x1 * x2 * ... * $x\ degree\ times$ * $constant\ times$ is tested to be equivalent to y
-and x1 is the start
+$x_1 \times x_2 \times ... \times x_n\ $ where n is equal to degree + constant is tested to be equivalent to y
+and $x_1$ is the start
 and $x\ degree\ times$ is the finish
-then loop around x1 to $x\ degree\ times$ until it stops
+then loop around $x_1 to x\ degree\ times$ until it stops
 
-Decider for $ax^2$ is $Decider(3,2,2) = 3(2)^2 \equiv 12$
-Decider for $bx$ is $Decider(4,2,1) = 4(2)^1 \equiv 8$
-Decider for $c$ is $Decider(1,2,1) = 5(2)^0 \equiv 5$
+For each state, $x_i$, i such that it is between 1 to n, $x_i$ contains a subgroup of size n and for each subgroup, $s_i$, there exists another subgroup and so on and so forth such that there are n layers starting from $x_i$ to 1. This is the same as saying that it is a rational expression.
 
-A <b>Turing Machine</b> can be defined as the following:
-
-1. Q is the set of states
-2. Sigma is the input alphabet not containing the blank symbol u
-3. Tau is the tape alphabet where u is in tau and sigma is in tau
-4. Sigma: Q $\times$ T => Q $\times $ Tau $\times $ $left bracket$L, R$right bracket$ is the transition function
-5. q0 is in Q is the start state
-6. qaccept is in Q is the accept state
-7. qreject is in Q is the reject state where qreject != qaccept
-
-Multi-Tape Turing Machine
-Sigma: Q $\times $ T$k$ => Q $\times $T$k$k $\times $ {L,R,S}
-
-Rational Expression
+$\\ $
 
 K[x] and K[[x]]. Let K[[x]] describe a set of monomial deciders. S is an element of K[[x]] meaning S is a monomial decider.
 
 S = Sigma $left bracket$ n>=0 $right bracket$an x$n$
 
+$\newline$
+
+Decider for $ax^2$ is $Decider(3,2,2) = 3(2)^2 \equiv 12$
+
+Decider for $bx$ is $Decider(4,2,1) = 4(2)^1 \equiv 8$
+
+Decider for $c$ is $Decider(1,2,1) = 5(2)^0 \equiv 5$
+
+$\newline$
+
+A Turing Machine can be defined as the following:
+
+1. Q is the set of states
+
+2. Sigma is the input alphabet not containing the blank symbol u
+
+3. Tau is the tape alphabet where u is in tau and sigma is in tau
+
+4. Sigma: $Q \times T \implies Q \times Tau \times \{ L, R \}$ is the transition function
+
+5. q0 is in Q is the start state
+
+6. qaccept is in Q is the accept state
+
+7. qreject is in Q is the reject state where qreject != qaccept
+
+$\newline$
+
+Multi-Tape Turing Machine
+
+Sigma: Q $\times $ T$k$ => Q $\times $T$k$k $\times $ {L,R,S}
+
+$\newline$
 
 \section{Monomial of One Degree}
 
@@ -74,19 +100,27 @@ Given the definition of a decider:
 A decider of at least one degree
 
 $Decider(3,x,4) \equiv 3x^4 = y$
+
 Contains $Decider(3,x,3) \equiv 3x^3 = y$
+
 Contains $Decider(3,x,2) \equiv 3x^2 = y$
+
 Contains $Decider(3,x,1) \equiv 3x^1 = y$
+
 Contains $Decider(3,x,0) \equiv 3x^0 = y$
 
 Hence it can be generalized to:
+
 $Decider(constant,degree,x)$ contains the sequence set 
-$\{Decider(constant,degree,x),Decider(constant,degree-1,x),...,Decider(constant,0,x)\}$
+
+$Decider constant,degree,x ,Decider constant,degree 1,x,...,Decider constant,0,x $
+
 $\{start,...,finish\}$
 
 \section{Addition}
 
 Given the first example:
+
 p(x)=3x2+4x+5
 
 p(2)=3(2)2+4(2)+5
@@ -102,15 +136,18 @@ m0=Decider(5,x,0)=5
 
 
 Generalized to mx where x is the degree
+
 Given polynomial functions, p1 and p2, they are commutative
+
 p1(x)=ma+...+m0
 
 p2(x)=nb+...+n0
 
-
 p1(x)+p2(x)=ma+m[x+1]+nb+n[y+1]+...+(mx+ny)+...+(m0+n0) where x=y
 
-Decider(cx,x,dx)+Decider(cy,x,dy)=Decider(cx+cy,x,dx)=Deciders(cx+cy,x,dy)= dx=dy
+Decider(cx,x,dx)
+
++Decider(cy,x,dy)=Decider(cx+cy,x,dx)=Deciders(cx+cy,x,dy)= dx=dy
 
 \section{Product}
 
@@ -119,7 +156,6 @@ Given two monomials in the language, a and b, the product of a and b is also in 
 Given Decider(cx,x,dx) and Decider(cy,x,dy) is in language L
 
 Show that the product Decider(cx+cy,x,dx$\times $dy) is in L
-
 
 Decider(cx,x,dx)$\times $Decider(cy,x,dy)
 
