@@ -304,7 +304,64 @@ $1 - 1 + 1 = 1$
 
 \section{Redrawing the Fibonacci Sequence}
 
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
+From our analysis, it can be seen that there are three states that are a minimum to create a fibonacci sequence. Minimization gives us a monomial generator, ${S_x,S_y,S_z}$. Set the three states to a desired configuration and it will generate the fibonacci sequence. It can shown that it requires three states minimum to generate the fibonacci sequence.
+
+$\\ $
+
+Generator
+
+$S_x = S_y + S_z$
+
+$S_y = S_z + S_x$
+
+$S_z = S_x + S_y$
+
+Using the above, dynamic programming can be modeled as a set of generator functions.
+
+\begin{lstlisting}
+int fibonacciGenerator(int n)
+{
+    int stateX = 0;
+    int stateY = 1;
+    int stateZ = 1;
+    int cycles = 0;
+
+    while (cycles <= n)
+    {
+        cycles++;
+
+        if (cycles > n)
+        {
+            return stateX;
+        }
+
+        stateX = stateY + stateZ;
+        Console.WriteLine("stateX: " + stateX + "\tstateY: " + stateY + "\tstateZ: " + stateY);
+        
+        cycles++;
+
+        if (cycles > n)
+        {
+            return stateY;
+        }
+
+        stateY = stateX + stateZ;
+        Console.WriteLine("stateX: " + stateX + "\tstateY: " + stateY + "\tstateZ: " + stateY);
+
+        cycles++;
+
+        if (cycles > n)
+        {
+            return stateZ;
+        }
+
+        stateZ = stateX + stateY;
+        Console.WriteLine("stateX: " + stateX + "\tstateY: " + stateY + "\tstateZ: " + stateY);
+    }
+
+    return stateX;
+}
+\end{lstlisting}
 
 \section{The Fibonacci Decider}
 
