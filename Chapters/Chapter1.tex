@@ -1,6 +1,6 @@
 % Chapter 1
 
-k\chapter{A Language of Polynomials} % Main chapter title
+\chapter{A Language of Polynomials} % Main chapter title
 
 \label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
 
@@ -67,7 +67,7 @@ $\\ $
 
 A rational function is defined as the following: 
 
-K[x] and K[[x]]. Let K[[x]] describe a set of monomial deciders. S is an element of K[[x]] meaning S is a monomial decider.
+K[x] and K[[x]]. Let K[[x]] describe a set of deciders. S is an element of K[[x]] meaning S is a decider.
 
 S = $\sum_{n\geq 0}{a_n x^n}$
 
@@ -75,11 +75,11 @@ $\newline$
 
 $\textbf{Examples}$
 
-Decider for $ax^2$ is $Decider(3,2,2) = 3(2)^2 \equiv 12$
+Decider for $ax^2$ is $Decider<3 (2)^2> \equiv 3(2)^2 = 12$
 
-Decider for $bx$ is $Decider(4,2,1) = 4(2)^1 \equiv 8$
+Decider for $bx$ is $Decider<4 (2)^1> \equiv 4(2)^1 = 8$
 
-Decider for $c$ is $Decider(1,2,1) = 5(2)^0 \equiv 5$
+Decider for $c$ is $Decider<5 (2)^1> \equiv 5(2)^0 = 5$
 
 $\\ $
 
@@ -144,64 +144,79 @@ which is equivalent to a rational expression by definition.
 
 $\\ $
 
+There exists a start state and a finish state for each decider.
+
 $\{start,...,finish\}$
+
+
 
 \section{Addition}
 
 Given the first example:
 
-p(x)=3x2+4x+5
+$\\ $
 
-p(2)=3(2)2+4(2)+5
+$p(x)=3 x^2+4 x+5$
 
-p(2)=12+8+5
+$p(2)=3(2)^2+4(2)+5$
 
+$p(2)=12+8+5$
 
-m2=Decider(3,x,2)=3x2
+$\\ $
 
-m1=Decider(4,x,1)=4x
+$m2=Decider<3 x^2>=3x^2$
 
-m0=Decider(5,x,0)=5
+$m1=Decider<4 x^1>=4 x$
 
+$m0=Decider<5 x^0>=5$
 
-Generalized to mx where x is the degree
+$\\ $
 
-Given polynomial functions, p1 and p2, they are commutative
+Generalized to $m_x$ where x is the degree
 
-p1(x)=ma+...+m0
+Given polynomial functions, $p_1$ and $p_2$, they are commutative
 
-p2(x)=nb+...+n0
+$p_1(x)=m_a+...+m_0$
 
-p1(x)+p2(x)=ma+m[x+1]+nb+n[y+1]+...+(mx+ny)+...+(m0+n0) where x=y
+$p_2(x)=n_b+...+n_0$
 
-Decider(cx,x,dx)
+$p_1(x)+p_2(x)=m_a+n_b+(m_{x+1}+n_{y+1})+...+(m_x+n_y)+...+(m_0+n_0)$ where $x=y$
 
-+Decider(cy,x,dy)=Decider(cx+cy,x,dx)=Deciders(cx+cy,x,dy)= dx=dy
+$Decider<c_x x d_x>+Decider<c_y x d_y>$
+
+$=Decider<c_x+c_y,x,d_x>=Deciders<c_x+c_y,x,d_y>$
+
+$\implies d_x=d_y$
 
 \section{Product}
 
 Given two monomials in the language, a and b, the product of a and b is also in the language.
 
-Given Decider(cx,x,dx) and Decider(cy,x,dy) is in language L
+$\\ $
 
-Show that the product Decider(cx+cy,x,dx$\times $dy) is in L
+Given $Decider<c_x x d_x>$ and $Decider<c_y x d_y>$ is in language L
 
-Decider(cx,x,dx)$\times $Decider(cy,x,dy)
+Show that the product $Decider<(c_x+c_y) x d_x\times d_y>$ is in L
 
-=cx$\times $xdx$\times $cy$\times $xdy
+$Decider<c_x x d_x> \times Decider<c_y x d_y>$
 
-=cx$\times $xdx+dy
+$=c_x x d_x c_y x d_y$
 
-=(cx+cy)$\times $xdx+dy is in L
+$=c_x  x d_x+d_y$
 
-=Decider(cx+cy,x,dx+dy)
+$=(c_x+c_y) x (d_x+d_y)$ is in L
+
+$=Decider<(c_x+c_y) x (d_x+d_y)>$
 
 \section{Problem with Matrices}
 
+An important problem arising from deciders is representing them as matrices. The problem can be reformulated as the following: given a polynomial p of x, show that the monomial deciders represented in the language can't be contained in a finite matrix after a set number, n, such that $x^n$.
 
-Given a polynomial p of x, show that the monomial deciders represented in the language can't be contained in a finite matrix after a set number, n, such that x$n$.
+$\\ $
 
-axa $\times $ bxb = nxn such that a $\neq $ b and a,b<n
+$\left[ a\times a \right]\left[ b\times b \right]=\left[ n\times n \right]$ such that $a \neq b$ and $a,b<n$
+
+$\\ $
 
 \section{Multivariable Polynomials}
 
