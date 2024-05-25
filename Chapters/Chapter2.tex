@@ -137,6 +137,30 @@ int[] Generator(int max)
 
 \section{Representing Monomial Deciders As Code}
 
+$f(x)\ =\ 2x^2 = \left\{ 0,2,8,18,\cdots \right\}$
+
+$\\ $
+
+x is even at 0,8,32,72
+
+x is odd at 2,18,50
+
+$\\ $
+
+There are four variables constructed:
+
+Current hits records the number of times path traveled hits a finishing state.
+
+Total number of times traveled on a finishing state needed to reach a valid decision.
+
+Diff is the current number of diff to increment total hits by.
+
+IsEven is if this resets back to even, increment Diff by two.
+
+$\\ $
+
+The following is code generated from our more formal representation of the solution.
+
 \begin{lstlisting}
 // After getting some log results, we can construct a decider
 bool MonomialDecider2xx(int y)
@@ -192,20 +216,91 @@ bool MonomialDecider2xx(int y)
 
 \section{Negative Numbers}
 
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
+Representing negative numbers can be thought of discretely. Below is a representaation of negative numbers.
+
+$\\ $
+
+Cancellation
+
+$\\ $
+
+Addition
+
+$\\ $
+
+Start and Finish: $2x$
+
+$\\ $
+
+Start and Finish: $x^2$
+
+$\\ $
+
+Ignoring the rules for commutativity and association for now.
 
 \section{Pi}
 
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
-
+Representing the constant pi, $\pi$, in the language of polynomials using the Leibniz formula $\pi/4 = 1 - 1/2 + 1/5 -1/7 + 1/9 + \cdots$
 
 \section{Fibonacci}
 
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
+Given the fibonacci sequence, ${1,1,2,3,5,8,13,21,\cdots}$, representing this sequence as a monomial generator in the language of polynomials can be shown below.
+
+$\\ $
+
+From the circles above, we see that f(1) = 1 and f(2) = 2. If we add f(1) and f(2) together we get f(3) = 3 and so on and so forth.
+
+$\\ $
+
+Notice that on odd inputs, Ex, there aren't any circles in the circles/states but in even inputs on X, there are two states. On outputs, Ey, it is odd twice then even once.
+
+\begin{lstlisting}
+int fibonacci(int n)
+{
+    if (n == 0)
+    {
+        return 0;
+    }
+
+    int y = 1;
+    int y1 = 1;
+    int y2 = 0;
+
+    for(int i = 1; i < n; i++)
+    {
+        y = y1 + y2;
+        y2 = y1;
+        y1 = y;
+    }
+
+    return y;
+}
+\end{lstlisting}
 
 \section{Analysis Of Parity In Fibonacci}
 
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
+On analyzing the parity of Ex and Ey of the fibonacci sequence, we that there are two patterns.
+
+$\\ $
+
+$\begin{array}{ccc}
+E_1 & E_2 & E_3\\
+0 & 1 & 0\\
+1 & 0 & 1\\
+0 & 1 & 1\\
+\end{array}$
+
+$\\ $
+
+$Det(E_1,E_2,E_3) = -1$ 
+
+$Det(E_2,E_1,E_3) = 1$
+
+$\\ $
+
+$-1 + 1 -1 = -1$
+
+$1 - 1 + 1 = 1$
 
 \section{Redrawing the Fibonacci Sequence}
 
