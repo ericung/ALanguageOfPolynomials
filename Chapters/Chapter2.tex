@@ -137,7 +137,58 @@ int[] Generator(int max)
 
 \section{Representing Monomial Deciders As Code}
 
-Sed ullamcorper quam eu nisl interdum at interdum enim egestas. Aliquam placerat justo sed lectus lobortis ut porta nisl porttitor. Vestibulum mi dolor, lacinia molestie gravida at, tempus vitae ligula. Donec eget quam sapien, in viverra eros. Donec pellentesque justo a massa fringilla non vestibulum metus vestibulum. Vestibulum in orci quis felis tempor lacinia. Vivamus ornare ultrices facilisis. Ut hendrerit volutpat vulputate. Morbi condimentum venenatis augue, id porta ipsum vulputate in. Curabitur luctus tempus justo. Vestibulum risus lectus, adipiscing nec condimentum quis, condimentum nec nisl. Aliquam dictum sagittis velit sed iaculis. Morbi tristique augue sit amet nulla pulvinar id facilisis ligula mollis. Nam elit libero, tincidunt ut aliquam at, molestie in quam. Aenean rhoncus vehicula hendrerit.
+\begin{lstlisting}
+// After getting some log results, we can construct a decider
+bool MonomialDecider2xx(int y)
+{
+    var total = 0;
+    var hits = 0;
+    var diff = 1;
+    var isEven = 0;
+    var s = 0;
+
+    while (s <= y)
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                for (int k = 0; k < 2; k++)
+                {
+                    if ((i == 0)&&(j == 0 || j == 1)&&(k == 0))
+                    {
+                        if (hits == total)
+                        {
+                            if (s == y)
+                            {
+                                Console.WriteLine(s + ": Hits: " + total);
+                                return true;
+                            }
+                            else if (s > y)
+                            {
+                                return false;
+                            }
+
+                            total += diff;
+                            isEven++;
+                            if (isEven % 3 == 2)
+                            {
+                                isEven = 0;
+                                diff += 2;
+                            }
+                        }
+
+                        hits++;
+                    }
+                    s++;
+                }
+            }
+        }
+    }
+
+    return false;
+}
+\end{lstlisting}
 
 \section{Negative Numbers}
 
