@@ -15,7 +15,53 @@ The concept of statistics and blackboxes has been drawn out extensively in theor
 
 \section{Applying The Fibonnaci Decider}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis purus. Integer dapibus ligula ac risus convallis pellentesque.
+Given the definition of the Fibonacci decider and a Lindenmayer system, insight can be derived from to that there exists the commutative and noncommutative properties of the operations.
+
+Fibonacci Decider
+
+$Decider for {x_1, y_1, z_1}$
+
+$-x_1 = y_1 - z_1$
+
+$y_1 = -x_1 - z_1$
+
+$-z_1 = x_1 - y_1$
+
+$Decider for {x_2, y_2, z_2}$
+
+$x_2 = y_2 - z_2$
+
+$-y_2 = x_2 - z_2$
+
+$z_2 = x_2 - y_2$
+
+$Fibonacci Decider$
+
+$x_1 = -y_1 +z_2 - x_2 + y_2 - z_1$
+
+$-y_1 = z_2 - x_2 + y_2 - z_1 + x_1$
+
+$z_2 = -x_2 + y_2 - z_1 + x_1 - y_1$
+
+$-x_2 = y_2 - z_1 + x_1 - y_1+z2$
+
+$y_2 = -z_1 + x_1 - y_1 + z_2 - x_2$
+
+$-z_1 = x_1 - y_1 +z_2-x_2+y_2$
+
+$\\ $
+
+Lindenmayer System
+
+L is the definition of the D0L System
+
+$L = (V,\omega,P)$
+
+V are the characters in the language called the alphabet
+
+$\omega$ is the starting string called the start
+
+P are the production rules in the language called the rules
 
 \section{Fibonacci DOL Decider Left Hand Side}
 
