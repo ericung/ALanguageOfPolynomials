@@ -65,11 +65,53 @@ P are the production rules in the language called the rules
 
 \section{Fibonacci DOL Decider Left Hand Side}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis purus. Integer dapibus ligula ac risus convallis pellentesque.
+Representing the left hand side of the fibonacci sequence as a D0L system alphabet requires an alphabet, rules, and a starting state.
+
+There are two deciders on the right hand side.
 
 \section{Fibonacci DOL Decider Right Hand Side}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultricies lacinia euismod. Nam tempus risus in dolor rhoncus in interdum enim tincidunt. Donec vel nunc neque. In condimentum ullamcorper quam non consequat. Fusce sagittis tempor feugiat. Fusce magna erat, molestie eu convallis ut, tempus sed arcu. Quisque molestie, ante a tincidunt ullamcorper, sapien enim dignissim lacus, in semper nibh erat lobortis purus. Integer dapibus ligula ac risus convallis pellentesque.
+Operations for the right hand side (RHS) versus the left hand side (LHS) represents different operations of the string in different scenarios
+
+$\\ $
+
+RHS Evaluation
+
+Right to Left
+
++ Remove from the back
+
+- Add to the front
+
+abaababa = - abaab + b - ab + a -aba
+
+abaababa = - abaab + b - ab -ab
+
+abaababa = - abaab + b - abab
+
+abaababa = - abaab - aba
+
+abaababa = - abaababa
+
+$\\ $
+
+LHS Evaluation
+
+Left to Right
+
++ Remove at the front
+
+- Add to the back
+
+abaababa + abaab - b + ab - a = -aba
+
+aba - b + ab - a = -aba
+
+abab + ab - a = -aba
+
+ab - a = -aba
+
+aba = -aba
 
 \section{The Law of Commutativity and Noncommutativity}
 
