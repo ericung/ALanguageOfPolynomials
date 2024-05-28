@@ -181,6 +181,12 @@ $\\ $
 
 \section{Addition}
 
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{0104Addition.jpg}
+  \caption{Addition of two deciders. The gradient of the circles remain the same after adding the two deciders together as the degree remains the same.}
+  \label{fig:0104Addition}
+\end{figure}
+
 Given the first example:
 
 $\\ $
@@ -219,6 +225,12 @@ $\implies d_x=d_y$
 
 \section{Product}
 
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{0105Product.jpg}
+  \caption{Product of two deciders. The gradient of the circles get denser after adding the two deciders together as the degree increases.}
+  \label{fig:0105Product}
+\end{figure}
+
 Given two monomials in the language, a and b, the product of a and b is also in the language.
 
 $\\ $
@@ -255,19 +267,23 @@ A monomial with more than one variable can be treated the same way as handling s
 
 $\\ $
 
-$Decider<cxyz^3n> \equiv cxyz^{3n} = Decider<cx^n> \times Decider<cy^n> \times Decider<cz^n>$ where c is some constant
+$Decider<cxyz^3n> \equiv cxyz^{3n} = Decider<cx^n> \times Decider<cy^n> \times Decider<cz^n>$ 
+
+where c is some constant
 
 $\\ $
 
-$Decider<cx^{n+m+l}> \times  Decider<cy^m> \times  Decider<cz^l> = cx^n \times  y^m \times z^l$ where c is some constant
+$Decider<cx^{n+m+l}> \times  Decider<cy^m> \times  Decider<cz^l> = cx^n \times  y^m \times z^l$ 
+
+where c is some constant
 
 $\\ $
 
-Given $f(x,y)=3xy^2$ and $g(x,y)=7x^7y^{-1}$
+Given $Decider<3xy^2>$ and $Decider<7x^7y^{-1}>$
 
 $\\ $
 
-$f(x,y) \times g(x,y) = h(x,y) = 21x^8y$
+$Decider<3xy^2> \times Decider<7x^7y^{-1}> = Decider<21x^8y>$
 
 $\\ $
 
