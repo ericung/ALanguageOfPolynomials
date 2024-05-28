@@ -54,25 +54,6 @@ For each state, $x_i$, i such that it is between 1 to n, $x_i$ contains a subgro
 
 $\newline$
 
-A rational expression is a expression that satisfies the following.
-$\\ $
-
-$A_n = A_{n-1} \cup  {\left\{  E^* | E \in \mathcal{E}_{n-1}, (E,1)=0 \right\}}$
-
-$\\ $
-
-It follows that each state $E \in s_{n-1}$ forms a subgroup.
-
-$\\ $
-
-A rational function is defined as the following: 
-
-K[x] and K[[x]]. Let K[[x]] describe a set of deciders. S is an element of K[[x]] meaning S is a decider.
-
-S = $\sum_{n\geq 0}{a_n x^n}$
-
-$\newline$
-
 $\textbf{Examples}$
 
 Decider for $ax^2$ is $Decider<3 (2)^2> \equiv 3(2)^2 = 12$
@@ -137,10 +118,6 @@ Hence it can be generalized to:
 
 $Decider<c x^n>$ contains the sequence set 
 
-$\\ $
-
-$Decider<c x^n>,Decider<c x^{n-1}>,...,Decider<c x^0>$ 
-which is equivalent to a rational expression by definition.
 
 $\\ $
 
@@ -148,6 +125,46 @@ There exists a start state and a finish state for each decider.
 
 $\{start,...,finish\}$
 
+$\\ $
+
+$Decider<c x^n>,Decider<c x^{n-1}>,...,Decider<c x^0>$ 
+which has a more formal definition called a rational expression. A rational expression on A over K is a semiring described as $\mathcal{E}_{n}$ such that $n\geq0$ where A is an alphabet (in our case a finite set of integers) and K is a commutative semiring. This means the following in terms of the decider
+
+$\\ $
+
+$Decider<c x^n>$ = $\mathcal{E}_{n}$
+
+Contains $Decider<c x^{n-1}>$ = $\mathcal{E}_{n-1}$
+
+...
+
+Contains $Decider<c x^{1}>$ = $\mathcal{E}_{1}$
+
+Contains $Decider<c x^0>$ = $\mathcal{E}_{0}$
+
+$\\ $
+
+The formal definition of a rational expression is defined below.
+
+$A_n = A_{n-1} \cup  {\left\{  E^* | E \in \mathcal{E}_{n-1}, (E,1)=0 \right\}}$
+
+$\\ $
+
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{0103RationalExpression.jpg}
+  \caption{Visual example of what $\mathcal{E}_n$ of a rational expression.}
+  \label{fig:0103RationalExpression}
+\end{figure}
+Figure \ref{fig:0103RationalExpression} Visual example of what $\mathcal{E}_n$ of a rational expression.
+
+
+$\\ $
+
+A rational function is defined as the following: 
+
+K[x] and K[[x]]. Let K[[x]] describe a set of deciders. S is an element of K[[x]] meaning S is a decider.
+
+S = $\sum_{n\geq 0}{a_n x^n}$
 
 
 \section{Addition}
