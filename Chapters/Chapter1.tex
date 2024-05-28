@@ -16,7 +16,8 @@
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
-This paper is on the re-framing of the one way function to a matrix multiplication problem - that of multiplying two $3 \times 3$ matrices to form a $6 \times 6$ matrix under a locally concatenative property.
+
+This paper is on the re-framing of the one way function to a matrix multiplication problem - that of multiplying two $3 \times 3$ matrices to form a $6 \times 6$ matrix under a locally concatenative property. The matrix multiplication is a type of law of composition that operates on different layers.
 
 %----------------------------------------------------------------------------------------
 
@@ -167,9 +168,15 @@ $\\ $
 
 A rational function is defined as the following: 
 
-K[x] and K[[x]]. Let K[[x]] describe a set of deciders. S is an element of K[[x]] meaning S is a decider.
+$\\ $
+
+K[x] and K[[x]]. Let K[[x]] describe a set of deciders as a polynomial representation. S is an element of K[[x]] meaning S is a decider.
+
+$\\ $
 
 S = $\sum_{n\geq 0}{a_n x^n}$
+
+$\\ $
 
 
 \section{Addition}
@@ -236,24 +243,33 @@ An important problem arising from deciders is representing them as matrices. The
 
 $\\ $
 
-$\left[ a\times a \right]\left[ b\times b \right]=\left[ n\times n \right]$ such that $a \neq b$ and $a,b<n$
+$\left[ n\times n \right]\left[ n\times n \right]=\left[ m\times m \right]$ such that $m \neq n$ and $m,n\geq 0$ and $m \leq n$
 
 $\\ $
+
+The focus of this article pertains to the question of whether or not there exists structures with certain properties that allow law of compositions to handle the above statement.
 
 \section{Multivariable Polynomials}
 
 A monomial with more than one variable can be treated the same way as handling single variables at different degrees.
 
-Decider(c,xyz,d) = c(xyz)d = Decider(c,x,d)$\times $Decider(c,y,d)$\times $Decider(c,z,d) where c is some constant
-Decider(c,x,d1)$\times $Decider(c,y,d2)$\times $Decider(c,z,d3) = cxd1$\times $yd2$\times $zd3 where c is some constant
+$\\ $
 
-Given f(x,y)=3xy2
+$Decider<cxyz^3n> \equiv cxyz^{3n} = Decider<cx^n> \times Decider<cy^n> \times Decider<cz^n>$ where c is some constant
 
-set x=2,y=3
+$\\ $
 
-f(2,3)=3(2)(3)2
+$Decider<cx^{n+m+l}> \times  Decider<cy^m> \times  Decider<cz^l> = cx^n \times  y^m \times z^l$ where c is some constant
 
-f(2,3)=27
+$\\ $
+
+Given $f(x,y)=3xy^2$ and $g(x,y)=7x^7y^{-1}$
+
+$\\ $
+
+$f(x,y) \times g(x,y) = h(x,y) = 21x^8y$
+
+$\\ $
 
 \section{Generalized Monomial Deciders}
 
