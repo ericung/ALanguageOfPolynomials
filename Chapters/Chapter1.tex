@@ -319,7 +319,7 @@ $Decider<3xy^2> \times Decider<7x^7y^{-1}> = Decider<21x^8y>$
 
 $\\ $
 
-Representing a multivariable monomial of different degrees is a similar. There are many representations of them, however, we'll choose the simplest and have them separate as seen in figure 1.6. Multivariable monomials are a set of individual one variable monomials running simultaneously.
+Representing a multivariable monomial of different degrees is a similar line of thought. There are many representations of them, however, this article will choose the simplest and have them separate as seen in figure 1.6. In this manner, multivariable monomials are a set of individual one variable monomials running simultaneously.
 
 \section{Generalized Monomial Deciders}
 
@@ -337,13 +337,13 @@ Given a Decider<m(x)> where m(x) is a monomial, keep the top layer $S_n$ in $\ma
 
 \section{Concentric Monomial Deciders}
 
-Given a polynomial, p x, with a monomial decider represented as ax n in p x and n in N and a = 1 such that p x = x n, there is special property for these monomial deciders that can be illustrated below.
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{0108Concentric.jpg}
+  \caption{A concentric monomial decider is a generalized monomial decider with details missing.}
+  \label{fig:0108Concentric}
+\end{figure}
 
-Decider 1,x,4 = x = xi such that i is in start,2,3,finish and xi contains xi minus 1 where i 1
- Decider 1,x,2 = x2 = xi such that i is in start,finish and xi contains xi minus 1 where i 1
- In both these examples, xi is a state in the monomial decider.
-Each state in a one constant monomial decider have a property of being concentric. This means that a state can be defined as, x2 =
- x1,x0 so going from x1 to x0 then going to the next state x3 or looping back to x1.
+Generalization results in an interesting property if monomial decider is required to get in more depth. The top layer that remains from generalization remains the same and still forms a cycle, however, each state has one state and so forth up to n-1 depth.
  
 \section{Constants}
 
