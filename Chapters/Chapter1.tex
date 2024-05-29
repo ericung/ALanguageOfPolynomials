@@ -43,13 +43,13 @@ Let the decider be defined as the following:
 
 $\\ $
 
-Decider is a function $Decider<c \times x^{degree}> \equiv c \times x^{degree} = y$
+Decider is a function $Decider<c \times x^{n}> \equiv c \times x^{n} = y$
 
 such that
 $x_1 \times x_2 \times ... \times x_n\ $ where n is equal to degree + constant is tested to be equivalent to y
 and $x_1$ is the start
 and $x\ degree\ times$ is the finish
-then loop around $x_1 to x\ degree\ times$ until it stops
+then loop around $x_1 to x\ n\ times$ until it stops
 
 For each state, $x_i$, i such that it is between 1 to n, $x_i$ contains a subgroup of size n and for each subgroup, $s_i$, there exists another subgroup and so on and so forth such that there are n layers starting from $x_i$ to 1. This is the same as saying that it is a rational expression.
 
@@ -153,7 +153,7 @@ $\textbf{Definition. }$ $A_n = A_{n-1} \cup  {\left\{  E^* | E \in \mathcal{E}_{
 
 $\\ $
 
-Here, $A_n$ is the set of monomials in the polynomial. $A_{n-1}$ are the monomials of degree n-1 and less of the polynomial and the set ${\left\{  E^* | E \in \mathcal{E}_{n-1}, (E,1)=0 \right\}}$ contains $E_n$ or equivalently the top of a single state of a decider.
+Here, $A_n$ is the set of monomials in the polynomial. $A_{n-1}$ are the monomials of degree n-1 and less of the polynomial and the set ${\left\{  E^* | E \in \mathcal{E}_{n-1}, (E,1)=0 \right\}}$ is equivalent to $Decider<cx^n>$ or equivalently the top of a single state of a decider.
 
 $\\ $
 
@@ -265,19 +265,47 @@ $\\ $
 
 $\textit{Proposition.}$ Given a proper square matrix M over $\mathcal{E}$, there exist matrices $M_1$, $M_2$ of the same size as M over $\mathcal{E}$ such that $M_1 ~1 + MM_1$ and $M_2~1+M_2M$. In particular if K is a ring, 1 - M is an invertible modulo ~.
 
-\section{Multivariable Polynomials}
+\section{Multivariable Monomials}
+
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{0106Multivariables.jpg}
+  \caption{Multivariable monomial deciders can be seen treated as parallel processes running next to each other.}
+  \label{fig:0106Multivariable}
+\end{figure}
 
 A monomial with more than one variable can be treated the same way as handling single variables at different degrees.
 
 $\\ $
 
-$Decider<cxyz^3n> \equiv cxyz^{3n} = Decider<cx^n> \times Decider<cy^n> \times Decider<cz^n>$ 
+Addition gives the following:
+
+$\\ $
+
+$Decider<x^6yz^3> + Decider<x^6yz^3> = Decider<2x^6yz^3>$
+
+$\\ $
+
+Multiplication of the decider of the same degree gives the following:
+
+$\\ $
+
+$Decider<cxyz^{3n}> \equiv cxyz^{3n}$
+
+$ = Decider<cx^n> \times Decider<cy^n> \times Decider<cz^n>$ 
 
 where c is some constant
 
 $\\ $
 
-$Decider<cx^{n+m+l}> \times  Decider<cy^m> \times  Decider<cz^l> = cx^n \times  y^m \times z^l$ 
+Multiplication of the decider of the different degrees gives the following:
+
+$\\ $
+
+$Decider<cx^{n+m+l}>$
+
+$ = Decider<cx^n> \times  Decider<cy^m> \times  Decider<cz^l>$
+
+$ = cx^n \times  y^m \times z^l$ 
 
 where c is some constant
 
@@ -291,16 +319,21 @@ $Decider<3xy^2> \times Decider<7x^7y^{-1}> = Decider<21x^8y>$
 
 $\\ $
 
+Representing a multivariable monomial of different degrees is a similar. There are many representations of them, however, we'll choose the simplest and have them separate as seen in figure 1.6. Multivariable monomials are a set of individual one variable monomials running simultaneously.
+
 \section{Generalized Monomial Deciders}
 
-A monomial decider can be represented in a more general graphic
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{0107Generalized.jpg}
+  \caption{Generalization of a monomial decider.}
+  \label{fig:0107Generalized}
+\end{figure}
 
-6x6=Decider 6,x,6 =6$\times $ xstart,x2,x3,x4,x5,xfinish 
- x6=Decider 1,x,6 =1$\times $ xstart,x2,x3,x4,x5,xfinish 
+A decider can be represented as the top layer only if short hand notation is necessary.
 
+$\\ $
 
-In both these examples, xstart is x1 and xfinish is x6.
-
+Given a Decider<m(x)> where m(x) is a monomial, keep the top layer $S_n$ in $\mathcal{E_n}$. This is called the generalized monomial decider.
 
 \section{Concentric Monomial Deciders}
 
