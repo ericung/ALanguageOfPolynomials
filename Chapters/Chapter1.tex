@@ -345,13 +345,21 @@ Generalization results in an interesting property if monomial decider is require
  
 \section{Constants}
 
-Given a constant, c, of p or better described in the example: f(x) = 5. Constants are seen as linear directed acyclic graphs.
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{010Constants.png}
+  \caption{A constant represented as monomial decider, $Decider<c x^0>$.}
+  \label{fig:0109Constants}
+\end{figure}
 
-f(x) = 5
+Given a constant, c, of a polynomial: f(x) = c, Constants are seen as linear directed acyclic graphs.
 
-$Decider(5,x,0) \equiv 5 \equiv {start,2,3,4,finish}$
+$\\ $
 
-There is no state in the decider where it loops back to the start. In other words, there is no x that represents a monomial in a constant.
+$Decider<c x^0> \equiv c = y$
+
+$\\ $
+
+There is no state in the decider where it loops back to the start. 
 
 \section{Division}
 
