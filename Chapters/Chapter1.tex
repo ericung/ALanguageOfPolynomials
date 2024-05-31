@@ -434,11 +434,17 @@ $Decider<x^5>/Decider<x^5> \equiv$
 
 \section{Multiple Divisions}
 
-Given multiple operations of division, this forms an interesting space.
-x5/x2/x=x5/x)/x2
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{0111Multiple.jpg}
+  \caption{$Decider<x^5/x>$ to $Decider<x^5/x^5>$.}
+  \label{fig:0111Multiple}
+\end{figure}
 
-Decider 1,x,5 /Decider 1,x,2 /Decider 1,x,1 =Decider 1,x,5 /Decider 1,x,1 /Decider 1,x,2
- iff ignoring order of operations
+Given multiple operations of division, this forms an interesting space.
+$x^5/x^2/x/x=x^5/x^2/x^2$.
+
+$Decider<x^5> /Decider<x^2> /Decider<x^1>/Decider<x^1> \equiv Decider<x^5> /Decider<x^2> /Decider<x^2>$
+where the order of operations is ignored
  
 \section{Equivalence}
 
