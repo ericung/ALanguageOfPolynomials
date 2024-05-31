@@ -293,9 +293,11 @@ Multiplication of the decider of the same degree gives the following:
 
 $\\ $
 
-$Decider<cxyz^{3n}> \equiv cxyz^{3n}$
+$Decider<cx^n> \times Decider<cy^n> \times Decider<cz^z>$
 
-$ = Decider<cx^n> \times Decider<cy^n> \times Decider<cz^n>$ 
+$\equiv Decider<cx^n * cy^n * cz^n>$
+
+$\equiv Decider<cxyz^{3n}>>$
 
 where c is some constant
 
@@ -305,11 +307,11 @@ Multiplication of the decider of the different degrees gives the following:
 
 $\\ $
 
-$Decider<cx^{n+m+l}>$
+$Decider<cx^n> \times Decider<cy^m> \times Decider<cz^l>$
 
-$ = Decider<cx^n> \times  Decider<cy^m> \times  Decider<cz^l>$
+$\equiv Decider<cx^n * cy^m * cz^l>$
 
-$ = cx^n \times  y^m \times z^l$ 
+$\equiv Decider<cx^{n+m+l}>$
 
 where c is some constant
 
@@ -419,28 +421,30 @@ In the following examples, $x_i \neq x_j$, meaning $x_i$ is of a different repre
 
 $\\ $
 
-$Decider<x^5>/Decider<x^1> \equiv$
+$Decider<x^5/x^1> \equiv$
  {sequence of permutations of $x_i,x_j$ such that the count of i is 4 and j is 1}
 
 $\\ $
  
-$Decider(<x^5>/Decider<x^2> \equiv$
+$Decider(<x^5/x^2> \equiv$
  {sequence of permutations of $x_i,x_j$ such that the count of i is 3 and j is 2}
  
 $\\ $
 
-$Decider<x^5>/Decider<x^3> \equiv$
+$Decider<x^5/x^3> \equiv$
  {sequence of permutations of $x_i,x_j$ such that the count of i is 2 and j is 3}
 
 $\\ $
  
-$Decider<x^5>/Decider<x^4> \equiv$ 
+$Decider<x^5/x^4> \equiv$ 
  {sequence of permutations of $x_i,x_j$ such that the count of i is 1 and j is 4}
 
 $\\ $
  
-$Decider<x^5>/Decider<x^5> \equiv$
+$Decider<x^5/x^5> \equiv$
  {sequence of permutations of $x_i,x_j$ such that the count of i is 0 and j is 5} 
+
+$\\ $
 
 \section{Multiple Divisions}
 
@@ -466,7 +470,7 @@ $Decider<x^5/x^2/x^1/x^1> \equiv Decider<x^5/x^2/x^2>$
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{0112Equivalence.jpg}
-  \caption{$Decider<x^5/x/x/x^2>$}
+  \caption{$Decider<x^6/x^2>$}
   \label{fig:0112Equivalence}
 \end{figure}
 
@@ -477,11 +481,7 @@ Determining if y is in f x is easy if we are given any monomial decider in the s
 
 $\\ $
 
-$Decider<x^6/x^1/x^1> ~ Decider<x^6/x^2>$ =sequence of permutations of $x_i$,$x_j$,$x_k$ such that the count of i is 4 and j is 1 and k 1
-
-$\\ $
-
-Decider 1,x,6 /Decider 1,x,2 =sequence of permutations of xi,xj such that the count of i is 4 and i is 2
+$Decider<x^6/x^1/x^1> \sim Decider<x^6/x^2>$ in that they decide if y is in m(x) = $x^6/Q$
 
 $\\ $
 
@@ -503,6 +503,12 @@ Is shown that by the permutation of the order of operations that $Decider<x^6/x^
 
 $\\ $
 
+$\textbf{Theorem of Reversing}$. Given two representations, a,b in $Decider<m(x)/Q>$ where m(x) is monomial and Q is the division operations such that m(x)/Q $\geq $ 1, a != b implies that they don't have the same quotients space.
+
+$\\ $
+
+$\textit{Proof}.$ Proof by construction visually to show a != b.
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{0113Reversing.jpg}
@@ -510,24 +516,25 @@ $\\ $
   \label{fig:0113Reversing}
 \end{figure}
 
-$\\ $
-
-$\textbf{Theorem of Reversing}$. Given two representations, a,b in $Decider<m(x)/Q>$ where m(x) is monomial and Q is the division operations such that m(x)/Q $\geq $ 1, a != b implies that they don't have the same quotients space.
-
-$\\ $
-
-$\textit{Proof}.$ Proof by construction visually.
+The two representations in 1.13 don't have the same quotient space and hence a != b.
 
 \section{Corollary of Reversing}
 
-A little more on the theorem of reversing
-Given a starting point, the paths a monomial decider takes to decide if y is in f x is inherently unique to each representation. Start at the circle, S, and end at the circle, F. If the circle is white, it is 0. If it is blue, it is 1. As an example let's traverse some of the representations of x 4.
+Given a starting point of decider, the path the decider takes to decide if y is in the monomial, m(x) is unique to each representation. 
 
-Corollary
-Given a decider, d, in Decider of m x then there is path, p, that exists for d such that p = Path d = s1,s2,...,si,...,sn where i is count of the states in the decider of m x.
+$\\ $
+$\textbf{Corollary}$. Given a decider, d, in $Decider<m(x)>$ then there is path, p, that exists for d such that p = Path(d) = $s_1,s_2,...,s_i,...,s_n$ where i is count of the states in the decider of m(x).
 
-Example:
-Choose some x such that it is in Path Decider 1,x,6/Decider1,x,2 where p = 001111
+$\\ $
+
+$\textit{Example}$. Choose some x such that it is in path of $Decider<x^6/x^2>$ where $p = 001111$ then the following graph is what the decider is represented as.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{0114CorollaryOfReversing.jpg}
+  \caption{Path one representation of $Decider<x^6/x^2>$.}
+  \label{fig:0114CorollaryOfReversing}
+\end{figure}
 
 \section{Godel's Theorem}
 
