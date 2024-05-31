@@ -451,48 +451,72 @@ $Decider<x^5>/Decider<x^5> \equiv$
   \label{fig:0111MultipleDivisions}
 \end{figure}
 
-Given multiple operations of division, this forms an interesting space.
+$\\ $
+
+Given multiple operations of division, this forms a topological space where the order of operations are ignored.
+
+$\\ $
+
 $x^5/x^2/x/x=x^5/x^2/x^2$.
 
 $Decider<x^5/x^2/x^1/x^1> \equiv Decider<x^5/x^2/x^2>$
-where the order of operations is ignored
  
 \section{Equivalence}
 
-Decider 1,x,6 /Decider 1,x,1 /Decider 1,x,1 ~Decider 1,x,6 /Decider 1,x,2
-  iff the order of operations is next to each other
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{0112Equivalence.jpg}
+  \caption{$Decider<x^5/x/x/x^2>$}
+  \label{fig:0112Equivalence}
+\end{figure}
 
-Determining if y is in f x is easy if we are given any monomial decider in the set of the language of polynomials and their representations has the possibility to give different representations if we consider them as representations of the function f x.
+$Decider<x^6/x^1/x^1> ~ Decider<x^6/x^2>$
 
-Decider 1,x,6 /Decider 1,x,1 /Decider 1,x,1 =sequence of permutations of xi,xj,xk such that the count of i is 4 and j is 1 and k 1
+$\\ $
+Determining if y is in f x is easy if we are given any monomial decider in the set of the language of polynomials and their representations has the possibility to give different representations if we consider them as representations of the function f of x.
 
+$\\ $
+
+$Decider<x^6/x^1/x^1> ~ Decider<x^6/x^2>$ =sequence of permutations of $x_i$,$x_j$,$x_k$ such that the count of i is 4 and j is 1 and k 1
+
+$\\ $
 
 Decider 1,x,6 /Decider 1,x,2 =sequence of permutations of xi,xj such that the count of i is 4 and i is 2
 
+$\\ $
 
-Theorem of Equivalence
-Decider 1,x,6 /Decider 1,x,1 /Decider 1,x,1 =Decider 1,x,6 /Decider 1,x,2 such that there is some xsuch that the monomial represented by both deciders exists where f x =y
-
-\section{Theorem of Equivalence}
-
-$
-Decider(1,x,6)/Decider(1,x,1)/Decider(1,x,1) \\
-    \equiv Decider(1,x,6)/Decider(1,x,2) \\
-        such\ that\ there\ is\ some\ x \\
-        such\ that\ the\ monomial\ represented\ by\ both\ deciders\ exists\ where\ f(x) \equiv y
-$ 
+$\textbf{Theorem of Equivalence}$. Something on lines of $Decider<x^6/x^1/x^1> = Decider<x^6/x^2>$ such that there is some x such that the monomial represented by both deciders exists where f of x = y.
 
 \section{Reversing}
 
-$Decider(1,x,6)/Decider(1,x,1)/Decider(1,x,1) \equiv {sequence\ of\ permutations\ of\ {xi,xj,xk}\ such\ that\ the\ count\ of\ i\ is\ 4\ and\ j\ is\ 1\ and\ k\ 1}$
+$\\ $
 
-$Decider(1,x,6)/Decider(1,x,2) \equiv {sequence\ of\ permutations\ of\ {xi,xj}\ such\ that\ the\ count\ of\ i\ is\ 4\ and\ i\ is\ 2}$
+$Decider<x^6/x^1/x^1> \equiv $sequence of permutations such that it is equal to $\sum_{i}^{n-1}{i}$
 
-Is shown that by the permutation of the order of operations that $Decider(1,x,6)/Decider(1,x,1)/Decider(1,x,1)$ is not the same set as $Decider(1,x,6)/Decider(1,x,2)$
+$\\ $
 
-Theorem of Reversing
+$Decider<x^6/x^2> \equiv $ sequence of permutations of $x_i$, $x_j$ such that it equals n-1.
 
-Given two deciders x,y in a decider of m(x), x != y iff sequence of all the states are not equivalent, representation-wise, from start to finish or it doesn't represent the same order of operations of the deciders being represented
+$\\ $
+
+Is shown that by the permutation of the order of operations that $Decider<x^6/x^1/x^1>$ does not have the same number of permutations as $Decider<x^6/x^2>$
+
+$\\ $
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{0113Reversing.jpg}
+  \caption{Two possible representations of $Decider<x^6/x/x>$.}
+  \label{fig:0113Reversing}
+\end{figure}
+
+$\\ $
+
+$\textbf{Theorem of Reversing}$. Given two representations, a,b in $Decider<m(x)/Q>$ where m(x) is monomial and Q is the division operations such that m(x)/Q $\geq $ 1, a != b implies that they don't have the same quotients space.
+
+$\\ $
+
+$\textit{Proof}.$ Proof by construction visually.
 
 \section{Corollary of Reversing}
 
