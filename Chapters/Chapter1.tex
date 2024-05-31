@@ -346,7 +346,7 @@ Generalization results in an interesting property if monomial decider is require
 \section{Constants}
 
 \begin{figure}[h]
-  \includegraphics[width=\linewidth]{010Constants.png}
+  \includegraphics[width=\linewidth]{0109Constants.png}
   \caption{A constant represented as monomial decider, $Decider<c x^0>$.}
   \label{fig:0109Constants}
 \end{figure}
@@ -359,32 +359,78 @@ $Decider<c x^0> \equiv c = y$
 
 $\\ $
 
+Addition gives the following:
+
+$Decider<c_1 x^0> + Decider<c_2 x^0> \equiv Decider<(c_1+c_2) x^0> \equiv Decider<c_1 + c_2>$
+
+$\\ $
+
+Multiplication gives the following: 
+
+$Decider<c_1 x^0> \times Decider<c_2 x^0> \equiv Decider<c_1 c_2 x^0> \equiv Decider<c_1 c_2>$
+
+$\\ $
+
 There is no state in the decider where it loops back to the start. 
 
 \section{Division}
 
 Division of monomial deciders
 
+$\\ $
 
-$x^5 / x = x^4 \equiv Decider(1,x,5)/Decider(1,x,1) ~ Decider(1,x,4)$
-$x^5 / x^2 = x^3 \equiv Decider(1,x,5)/Decider(1,x,2) ~ Decider(1,x,3)$
-$x^5 / x^3 = x^2 \equiv Decider(1,x,5)/Decider(1,x,3) ~ Decider(1,x,2)$
-$x^5 / x^4 = x^1 \equiv Decider(1,x,5)/Decider(1,x,4) ~ Decider(1,x,1)$
-$x^5 / x^5 = 1 \equiv Decider(1,x,5)/Decider(1,x,5) ~ Decider(1,x,0)$
+\begin{figure}[h]
+  \includegraphics[width=\linewidth]{0110x5.jpg}
+  \caption{$Decider<x^5/x>$ to $Decider<x^5/x^5>$.}
+  \label{fig:0110x5overx}
+\end{figure}
 
-~ here is represented as a special kind of equivalence that we will get to later.
+$Decider<x^5 / x> \equiv Decider<x^5>/Decider<x^1>$
 
-$Decider(1,x,5)/Decider(1,x,1) \equiv
- {sequence of permutations of {xi,xj} such that the count of i is 4 and j is 1}$
-$Decider(1,x,5)/Decider(1,x,2) \equiv
- {sequence of permutations of {xi,xj} such that the count of i is 3 and j is 2}$
-$Decider(1,x,5)/Decider(1,x,3) \equiv
- {sequence of permutations of {xi,xj} such that the count of i is 2 and j is 3}$
-$Decider(1,x,5)/Decider(1,x,4) \equiv
- {sequence of permutations of {xi,xj} such that the count of i is 1 and j is 4}$
-$Decider(1,x,5)/Decider(1,x,5) \equiv
- {sequence of permutations of {xi,xj} such that the count of i is 0 and j is 5} Here, xi \neq
- xj, meaning xi is of a different representation than xj$
+$\\ $
+
+$Decider<x^5 / x^2> \equiv Decider<x^5>/Decider<x^2>$
+
+$\\ $
+
+$Decider<x^5 / x^3> \equiv Decider<x^5>/Decider<x^3>$
+
+$\\ $
+
+$Decider<x^5 / x^4> \equiv Decider<x^5>/Decider<x^4>$
+
+$\\ $
+
+$Decider<x^5 / x^5> \equiv Decider<x^5>/Decider<x^5>$
+
+$\\ $
+
+In the following examples, $x_i \neq x_j$, meaning $x_i$ is of a different representation than $x_j$
+
+$\\ $
+
+$Decider<x^5>/Decider<x^1> \equiv$
+ {sequence of permutations of $x_i,x_j$ such that the count of i is 4 and j is 1}
+
+$\\ $
+ 
+$Decider(<x^5>/Decider<x^2> \equiv$
+ {sequence of permutations of $x_i,x_j$ such that the count of i is 3 and j is 2}
+ 
+$\\ $
+
+$Decider<x^5>/Decider<x^3> \equiv$
+ {sequence of permutations of $x_i,x_j$ such that the count of i is 2 and j is 3}
+
+$\\ $
+ 
+$Decider<x^5>/Decider<x^4> \equiv$ 
+ {sequence of permutations of $x_i,x_j$ such that the count of i is 1 and j is 4}
+
+$\\ $
+ 
+$Decider<x^5>/Decider<x^5> \equiv$
+ {sequence of permutations of $x_i,x_j$ such that the count of i is 0 and j is 5} 
 
 \section{Multiple Divisions}
 
