@@ -65,7 +65,8 @@ Decider for $c$ is $Decider<5 (2)^1> \equiv 5(2)^0 = 5$
 
 $\\ $
 
-\begin{figure}[h]
+\begin{figure}[H]
+  \centering
   \includegraphics[width=\linewidth]{0101DeciderX3.png}
   \caption{Decider that represents the monomial, $x^3$.}
   \label{fig:0101DeciderX3}
@@ -85,7 +86,8 @@ Remove the top state down from the $S_{n-1}$ for each layer $S_{n-1}$ to $S_(n-n
 
 $\\ $
 
-\begin{figure}[h]
+\begin{figure}[H]
+  \centering
   \includegraphics[width=\linewidth]{0102theorem.jpg}
   \caption{Top down removal for equivalence of decider and cyclic automata.}
   \label{fig:0102theorem}
@@ -155,7 +157,8 @@ Here, $A_n$ is the set of monomials in the polynomial. $A_{n-1}$ are the monomia
 
 $\\ $
 
-\begin{figure}[h]
+\begin{figure}[H]
+  \centering
   \includegraphics[width=\linewidth]{0103RationalExpression.jpg}
   \caption{Visual example of what $\mathcal{E}_n$ of a rational expression.}
   \label{fig:0103RationalExpression}
@@ -179,7 +182,8 @@ $\\ $
 
 \section{Addition}
 
-\begin{figure}[h]
+\begin{figure}[H]
+  \centering
   \includegraphics[width=\linewidth]{0104Addition.jpg}
   \caption{Addition of two deciders. The gradient of the circles remain the same after adding the two deciders together as the degree remains the same.}
   \label{fig:0104Addition}
@@ -223,7 +227,8 @@ $\implies d_x=d_y$
 
 \section{Product}
 
-\begin{figure}[h]
+\begin{figure}[H]
+  \centering
   \includegraphics[width=\linewidth]{0105Product.jpg}
   \caption{Product of two deciders. The gradient of the circles get denser after adding the two deciders together as the degree increases.}
   \label{fig:0105Product}
@@ -265,7 +270,8 @@ $\textit{Proposition.}$ Given a proper square matrix M over $\mathcal{E}$, there
 
 \section{Multivariable Monomials}
 
-\begin{figure}[h]
+\begin{figure}[H]
+  \centering
   \includegraphics[width=\linewidth]{0106Multivariables.jpg}
   \caption{Multivariable monomial deciders can be seen treated as parallel processes running next to each other.}
   \label{fig:0106Multivariable}
@@ -321,7 +327,8 @@ Representing a multivariable monomial of different degrees is a similar line of 
 
 \section{Generalized Monomial Deciders}
 
-\begin{figure}[h]
+\begin{figure}[H]
+  \centering
   \includegraphics[width=\linewidth]{0107Generalized.jpg}
   \caption{Generalization of a monomial decider.}
   \label{fig:0107Generalized}
@@ -335,7 +342,8 @@ Given a Decider<m(x)> where m(x) is a monomial, keep the top layer $S_n$ in $\ma
 
 \section{Concentric Monomial Deciders}
 
-\begin{figure}[h]
+\begin{figure}[H]
+  \centering
   \includegraphics[width=\linewidth]{0108Concentric.jpg}
   \caption{A concentric monomial decider is a generalized monomial decider with details missing.}
   \label{fig:0108Concentric}
@@ -345,7 +353,8 @@ Generalization results in an interesting property if monomial decider is require
  
 \section{Constants}
 
-\begin{figure}[h]
+\begin{figure}[H]
+  \centering
   \includegraphics[width=\linewidth]{0109Constants.png}
   \caption{A constant represented as monomial decider, $Decider<c x^0>$.}
   \label{fig:0109Constants}
@@ -379,7 +388,8 @@ Division of monomial deciders
 
 $\\ $
 
-\begin{figure}[h]
+\begin{figure}[H]
+  \centering
   \includegraphics[width=\linewidth]{0110x5.jpg}
   \caption{$Decider<x^5/x>$ to $Decider<x^5/x^5>$.}
   \label{fig:0110x5overx}
@@ -434,7 +444,8 @@ $Decider<x^5>/Decider<x^5> \equiv$
 
 \section{Multiple Divisions}
 
-\begin{figure}[h]
+\begin{figure}[H]
+  \centering
   \includegraphics[width=\linewidth]{0111MultipleDivisions.jpg}
   \caption{$Decider<x^5/x/x/x^2>$}
   \label{fig:0111MultipleDivisions}
@@ -443,7 +454,7 @@ $Decider<x^5>/Decider<x^5> \equiv$
 Given multiple operations of division, this forms an interesting space.
 $x^5/x^2/x/x=x^5/x^2/x^2$.
 
-$Decider<x^5> /Decider<x^2> /Decider<x^1>/Decider<x^1> \equiv Decider<x^5> /Decider<x^2> /Decider<x^2>$
+$Decider<x^5/x^2/x^1/x^1> \equiv Decider<x^5/x^2/x^2>$
 where the order of operations is ignored
  
 \section{Equivalence}
