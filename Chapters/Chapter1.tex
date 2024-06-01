@@ -532,7 +532,7 @@ $\textit{Example}$. Choose some x such that it is in path of $Decider<x^6/x^2>$ 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{0114CorollaryOfReversing.jpg}
-  \caption{Path one representation of $Decider<x^6/x^2>$.}
+  \caption{Path of one representation of $Decider<x^6/x^2>$.}
   \label{fig:0114CorollaryOfReversing}
 \end{figure}
 
@@ -540,26 +540,39 @@ $\textit{Example}$. Choose some x such that it is in path of $Decider<x^6/x^2>$ 
 
 We see that there exists two statements from these theorems
 
-1. x = x from a theorem of equivalence
-2. x != x from a theorem of reversal
+$\\ $
 
+1. $x = x$ from a theorem of equivalence
 
-Example:
-Given some d1,d2,d3,...,infinity in deciders of m x
-1. d1 = d2 = d3 = ... = infinity
-2. d1 != d2 != d3 = ... != infinity
+2. $x != x$ from a theorem of reversal
 
-The different representations of a monomial through the language of monomial deciders will give us undecidability. This means we can come up with many formal definitions of the mnomial decider and it will not be able to solve the problem of finding a specific representation of a monomial decider without having to guess or apply some sort of probability to it. Relating to the real line, given a real line a,b a $\leq$ b, there is infinite choices between a and b because we canjust make the number smaller. As long as b  a $\geq $ 0, there requires some sort of probability of choosing some specific number that is between a and b.
+$\\ $
+
+$\textbf{Example}$: Given some $d_1$,$d_2$,$d_3$,...,infinity in decision functions in $Decider<m(x)>$
+
+$\\ $
+
+1. $d_1 = d_2 = d_3 = ... = infinity$
+
+2. $d_1 != d_2 != d_3 = ... != infinity$
+
+$\\ $
+
+The different representations of a monomial through the language of monomial deciders will give the problem of undecidability. This means that despite many formal definitions of the monomial decider, there is no way to solve the problem of finding a specific representation of a monomial decider without having to guess or apply some sort of probability to it. Relating to the real line, given a real line a,b a $\leq$ b, there is infinite choices between a and b. As long as b and a $\geq $ 0, there requires some sort of probability of choosing some specific number that is between a and b.
 
 \section{Reframing The One Way Function}
 
 A probability exists to find a certain monomial decider in the set of it's variations. A/B = Probability where A is the monomial decider we want and B is the number of all the variations.
+
+$\\ $
 
 Example:
 d1,d2,...,d6 in deciders 1,x,6 ,D, such that di are all distinct
 Choose one of the deciders in D through probability
 Probability of choosing d in D is 1/6 so 0.16666667
 We'll call this picking a function and every time we call this function, the probability is mulltiplied such that it is n k. As an example, if we call the picking function twice using the example above, we have 1/6 1/6 = 1/36 = 6 2.
+
+$\\ $
 
 This is formally known as the one way function.
 
