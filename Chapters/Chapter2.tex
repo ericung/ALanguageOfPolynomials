@@ -105,66 +105,50 @@ Here, it can be seen that there is repeating pattern of even and odd values of t
 $\\ $
 
 $\left[ {\begin{array}{cc}
-    0 & 1 \\
     1 & 1 \\
+    0 & 1 \\
   \end{array} } \right]$
 
 $\\ $
 
+From this array, two finishing states are described. When the input and output are both even and one where the input is odd and the output is even. Every time the head of the tape passes a finishing state, the count of the variable, $\textbf{visit }$is increased by one. Counting the number of visits two the finishing states, it can be seen that for every pair, (start,end), there is a difference of three for $Decider<2x^2>$. The following is a table of the results:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{0203Visits.jpg}
+  \caption{Analysis of visits to finishing states in, $2Decider<2x^2>$.}
+  \label{fig:0203Visits}
+\end{figure}
+
+From analysis, the number of times the tape head visits a finishing state is the difference of the previous input plus two. This result allows us to write a program to decide if y is in $2x^2$.
+
 % convert to pseudocode 
 
-\begin{lstlisting}
-// Generates negatives from a general monomial decider 
-// represented as an algorithm so
-// that we can collect data about the negatives
-int[] Generator(int max)
-{
-    int[] result = new int[max + 1];
-    int x = 0;
-    int negatives = 0;
-    int i = 0;
-    while (x < max + 1)
-    {
-        int num = 2 * (Convert.ToInt32(Math.Pow(x, 2)));
-        if (generalizedMD(i))
-        {
-            // A simple verifier
-            if (num == i)
-            {
-                Console.WriteLine(negatives);
-                Console.WriteLine("f(" + x + ") = " + i);
-                result[x] = i;
-
-                x++;
-                negatives = 0;
-            }
-            else
-            {
-                negatives++;
-            }
-        }
-        i++;
-    }
-
-    return result;
-}
-\end{lstlisting}
-
 \section{Representing Monomial Deciders As Code}
+
+With the data above, the requirements on constructing a decider is as follows.
+
+Given the function:
+
+$\\ $
 
 $f(x)\ =\ 2x^2 = \left\{ 0,2,8,18,\cdots \right\}$
 
 $\\ $
 
+The output of f(x) is of the following.
+
 x is even at 0,8,32,72
 
 x is odd at 2,18,50
+
+
 
 $\\ $
 
 There are four variables constructed:
 
-Current hits records the number of times path traveled hits a finishing state.
+Current passes records the number of times path traveled hits a finishing state.
 
 Total number of times traveled on a finishing state needed to reach a valid decision.
 
@@ -178,11 +162,8 @@ The following is code generated from our more formal representation of the solut
 
 \begin{lstlisting}
 // After getting some log results, we can construct a decider
-bool MonomialDecider2xx(int y)
+bool MonomialDecider(int y)
 {
-    var total = 0;
-    var hits = 0;
-    var diff = 1;
     var isEven = 0;
     var s = 0;
 
