@@ -44,16 +44,16 @@ $\left\{ x = x^2/x = x^3/x^2 = x^4/x^3 = x^5/x^4 = \cdots = x^n/x^{n-1} \right\}
 
 $e = 1 + 1 + 1/(1+1) + 1/(3+3) + 1/(4+(4*3+4*2)+4) + ...$
 
-\section{Sketching Into Code}
+\section{Example of a Decider}
 
-There is a technique to develop code from a diagram of a decider. Take into account the degree of the states and that should account for the halting required to break from the loop.
+The following is an example of code that roughly sketches a generalized monomial decider, Decider<$2x^2$>.
 
 $\\ $
 
-% Turn into pseudocode
+% Turn into pseudocode eventually.
 
 \begin{lstlisting}
-bool generalizedMD(int y)
+bool generalizedDecider(int y)
 {
     if (y == 0)
     {
@@ -84,34 +84,38 @@ bool generalizedMD(int y)
 
 \section{Gather Some Data}
 
-Using the generalizedMD function where we make some sketch of the initial algorithm, we can collect some data Generate: 
+Using the generalizedDecider function above for the Decider<$2x^2$> where a sketch of the initial algorithm is created, collecting data to find insight to make an ideal generate function: 
 
-f(x) = y on the first line
-
-Negatives on the second
 
 $\\ $
 
-We notice that we need two finishing states and that all the ven y's end in one state and all the odd y's end on the other.
-
-E: Is it even?
-
-$\\ $
-
-We create a for loop of $n^3$ that with constant 2 and count how many times it passes through the finishing state.
-
-T: Total amount of times it passes the finishing state.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{0202Generate.jpg}
+  \caption{Generate function, $2x^2$.}
+  \label{fig:0202Generate}
+\end{figure}
 
 $\\ $
 
-Insight is gained by noticing that the difference only increases every other time and that it increases by a difference of 2 every it passes a finishing state.
+$\textbf{Generate}$ is f(x) = $2x^2$ = y on the first line and the number of negatives is on the second. There are two finishing and all the even parity outputs end in one state and all the odd parity outputs end on the other. $\textbf{Even Input}$ is the boolean parity of the input being even. $\textbf{Even Output}$ is the boolean parity of the output being odd. 
 
-D: Difference of the number of hits to the finishing state between the alst time it is called and the first.
+Here, it can be seen that there is repeating pattern of even and odd values of the following:
 
 $\\ $
+
+$\left[ {\begin{array}{cc}
+    0 & 1 \\
+    1 & 1 \\
+  \end{array} } \right]$
+
+$\\ $
+
+% convert to pseudocode 
 
 \begin{lstlisting}
-// Generates negatives from a general monomial decider represented as an algorithm so
+// Generates negatives from a general monomial decider 
+// represented as an algorithm so
 // that we can collect data about the negatives
 int[] Generator(int max)
 {
