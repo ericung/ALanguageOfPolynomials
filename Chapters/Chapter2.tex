@@ -46,7 +46,7 @@ $e = 1 + 1 + 1/(1+1) + 1/(3+3) + 1/(4+(4*3+4*2)+4) + ...$
 
 \section{Example of a Decider}
 
-The following is an example of code that roughly sketches a generalized monomial decider, Decider<$2x^2$>.
+The following is an example of code that roughly sketches a generalized monomial decider, Decider<$2x^2$>. It tests to see if y is in the monomial m(x) = $2x^2$. Although approximation and binary search algorithms work, using this method allows for simplicity of technique in representing a decider visually and gives the reader hands-on potential if they want to experiment on the subject further.
 
 $\\ $
 
@@ -82,7 +82,7 @@ bool generalizedDecider(int y)
 }
 \end{lstlisting}
 
-\section{Gather Some Data}
+\section{Analysis of the Decider $2x^2$}
 
 Using the generalizedDecider function above for the Decider<$2x^2$> where a sketch of the initial algorithm is created, collecting data to find insight to make an ideal generate function: 
 
@@ -120,9 +120,63 @@ From this array, two finishing states are described. When the input and output a
   \label{fig:0203Visits}
 \end{figure}
 
-From analysis, the number of times the tape head visits a finishing state is the difference of the previous input plus two. This result allows us to write a program to decide if y is in $2x^2$.
+From analysis, the number of times the tape head visits a finishing state is the difference of the previous input plus two. The difference increases by two every time it passes a finishing state. It doesn't pass when the number of visits is even, so it can be deduced that the difference is increased by two every time it passes the odd finishing state. This result allows us to write a program to decide if y is in $2x^2$.
 
+$\\ $
 % convert to pseudocode 
+
+\begin{lstlisting}
+bool MonomialDecider2xx(int y)
+{
+    var totalVisits = 0;
+    var currentVisits = 0;
+    var diff = 1;
+    var s = 0;
+
+    while (s <= y)
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            for (int j = 0; j < 2; j++)
+            {
+                for (int k = 0; k < 2; k++)
+                {
+                    if ((i == 0) && (j == 0 || j == 1) && (k == 0))
+                    {
+                        if (currentVisits == totalVisits)
+                        {
+                            if (s == y)
+                            {
+                                Console.WriteLine(new String("Deciding on: " + s + " - totalVisits: " + totalVisits));
+                                return true;
+                            }
+                            else if (s > y)
+                            {
+                                return false;
+                            }
+
+                            totalVisits += diff;
+
+                            // If the tape head is on the odd finishing 
+                            // state increase the diff variable by 2
+                            // Do this to represent x^2 in 2x^2
+                            if (i == 0 && j == 1 && k == 0)
+                            {
+                                diff += 2;
+                            }
+                        }
+
+                        currentVisits++;
+                    }
+                    s++;
+                }
+            }
+        }
+    }
+
+    return false;
+}
+\end{lstlisting}
 
 \section{Representing Monomial Deciders As Code}
 
@@ -142,13 +196,11 @@ x is even at 0,8,32,72
 
 x is odd at 2,18,50
 
-
-
 $\\ $
 
 There are four variables constructed:
 
-Current passes records the number of times path traveled hits a finishing state.
+Current passes records the number of times path traveled passes a finishing state.
 
 Total number of times traveled on a finishing state needed to reach a valid decision.
 
