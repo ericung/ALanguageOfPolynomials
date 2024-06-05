@@ -67,7 +67,7 @@ $\\ $
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{0101DeciderX3.png}
+  \includegraphics[scale=1]{0101DeciderX3.png}
   \caption{Decider that represents the monomial, $x^3$.}
   \label{fig:0101DeciderX3}
 \end{figure}
@@ -272,7 +272,7 @@ $\textit{Proposition.}$ Given a proper square matrix M over $\mathcal{E}$, there
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{0106Multivariables.jpg}
+  \includegraphics[scale=1]{0106Multivariables.jpg}
   \caption{Multivariable monomial deciders can be seen treated as parallel processes running next to each other.}
   \label{fig:0106Multivariable}
 \end{figure}
@@ -331,7 +331,7 @@ Representing a multivariable monomial of different degrees is a similar line of 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{0107Generalized.jpg}
+  \includegraphics[scale=1]{0107Generalized.jpg}
   \caption{Generalization of a monomial decider.}
   \label{fig:0107Generalized}
 \end{figure}
@@ -346,7 +346,7 @@ Given a Decider<m(x)> where m(x) is a monomial, keep the top layer $S_n$ in $\ma
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{0108Concentric.jpg}
+  \includegraphics[scale=1]{0108Concentric.jpg}
   \caption{A concentric monomial decider is a generalized monomial decider with details missing.}
   \label{fig:0108Concentric}
 \end{figure}
@@ -357,7 +357,7 @@ Generalization results in an interesting property if monomial decider is require
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{0109Constants.png}
+  \includegraphics[scale=1]{0109Constants.png}
   \caption{A constant represented as monomial decider, $Decider<c x^0>$.}
   \label{fig:0109Constants}
 \end{figure}
@@ -386,63 +386,28 @@ There is no state in the decider where it loops back to the start.
 
 \section{Division}
 
-Division of monomial deciders
+There are a finite amount of permutations, called decision functions, in a decider.
 
 $\\ $
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{0110x5.jpg}
-  \caption{$Decider<x^5/x>$ to $Decider<x^5/x^5>$.}
+  \caption{One decision function of $Decider<x^5/x>$ to one decision function of $Decider<x^5/x^5>$.}
   \label{fig:0110x5overx}
 \end{figure}
 
-$Decider<x^5 / x> \equiv Decider<x^5>/Decider<x^1>$
+$\textit{Example}$. The following are deciders related to $x^5/x^i$ such that $0 \leq i \leq 5$.
 
-$\\ $
+$Decider<x^5 / x> \equiv Decider<x^5>/Decider<x^1>$
 
 $Decider<x^5 / x^2> \equiv Decider<x^5>/Decider<x^2>$
 
-$\\ $
-
 $Decider<x^5 / x^3> \equiv Decider<x^5>/Decider<x^3>$
-
-$\\ $
 
 $Decider<x^5 / x^4> \equiv Decider<x^5>/Decider<x^4>$
 
-$\\ $
-
 $Decider<x^5 / x^5> \equiv Decider<x^5>/Decider<x^5>$
-
-$\\ $
-
-In the following examples, $x_i \neq x_j$, meaning $x_i$ is of a different representation than $x_j$
-
-$\\ $
-
-$Decider<x^5/x^1> \equiv$
- {sequence of permutations of $x_i,x_j$ such that the count of i is 4 and j is 1}
-
-$\\ $
- 
-$Decider(<x^5/x^2> \equiv$
- {sequence of permutations of $x_i,x_j$ such that the count of i is 3 and j is 2}
- 
-$\\ $
-
-$Decider<x^5/x^3> \equiv$
- {sequence of permutations of $x_i,x_j$ such that the count of i is 2 and j is 3}
-
-$\\ $
- 
-$Decider<x^5/x^4> \equiv$ 
- {sequence of permutations of $x_i,x_j$ such that the count of i is 1 and j is 4}
-
-$\\ $
- 
-$Decider<x^5/x^5> \equiv$
- {sequence of permutations of $x_i,x_j$ such that the count of i is 0 and j is 5} 
 
 $\\ $
 
@@ -461,9 +426,13 @@ Given multiple operations of division, this forms a topological space where the 
 
 $\\ $
 
-$x^5/x^2/x/x=x^5/x^2/x^2$.
+$Decider<x^5/x^2/x/x> ~ Decider<x^5/x^2/x^2>$.
 
-$Decider<x^5/x^2/x^1/x^1> \equiv Decider<x^5/x^2/x^2>$
+$Decider<x^5/x^2/x^1/x^1> ~ Decider<x^5/x^2/x^2>$
+
+$\\ $
+
+TODO: Define a topological space of a decider with multiple divisions.
  
 \section{Equivalence}
 
@@ -511,7 +480,7 @@ $\textit{Proof}.$ Proof by construction visually to show a != b.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{0113Reversing.jpg}
+  \includegraphics[scale=1]{0113Reversing.jpg}
   \caption{Two possible representations of $Decider<x^6/x/x>$.}
   \label{fig:0113Reversing}
 \end{figure}
@@ -531,7 +500,7 @@ $\textit{Example}$. Choose some x such that it is in path of $Decider<x^6/x^2>$ 
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{0114CorollaryOfReversing.jpg}
+  \includegraphics[scale=1]{0114CorollaryOfReversing.jpg}
   \caption{Path of one representation of $Decider<x^6/x^2>$.}
   \label{fig:0114CorollaryOfReversing}
 \end{figure}
