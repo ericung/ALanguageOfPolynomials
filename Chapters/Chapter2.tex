@@ -230,27 +230,31 @@ $\\ $
 The following is code generated from our more formal representation of the solution.
 
 \begin{lstlisting}
-// After getting some log results, we can construct a decider
-bool MonomialDecider(int y)
+bool MonomialDecider2xx(int y)
 {
-    var isEven = 0;
+    var totalVisits = 0;
+    var currentVisits = 0;
+    var diff = 1;
     var s = 0;
 
     while (s <= y)
     {
+        // the constant 2
         for (int i = 0; i < 2; i++)
         {
+            // the first pass of x in 2x^2
             for (int j = 0; j < 2; j++)
             {
+                // the second pass of x in 2x^2
                 for (int k = 0; k < 2; k++)
                 {
-                    if ((i == 0)&&(j == 0 || j == 1)&&(k == 0))
+                    if ((i == 0) && (j == 0 || j == 1) && (k == 0))
                     {
-                        if (hits == total)
+                        if (currentVisits == totalVisits)
                         {
                             if (s == y)
                             {
-                                Console.WriteLine(s + ": Hits: " + total);
+                                Console.WriteLine(new String("Deciding on: " + s + " - totalVisits: " + totalVisits));
                                 return true;
                             }
                             else if (s > y)
@@ -258,16 +262,18 @@ bool MonomialDecider(int y)
                                 return false;
                             }
 
-                            total += diff;
-                            isEven++;
-                            if (isEven % 3 == 2)
+                            totalVisits += diff;
+
+                            // If the tape head is on the odd finishing
+                            // state increase the diff variable by 2
+                            // Do this to represent x^2 in 2x^2
+                            if (i == 0 && j == 1 && k == 0)
                             {
-                                isEven = 0;
                                 diff += 2;
                             }
                         }
 
-                        hits++;
+                        currentVisits++;
                     }
                     s++;
                 }
@@ -279,29 +285,92 @@ bool MonomialDecider(int y)
 }
 \end{lstlisting}
 
-\section{Negative Numbers}
+$\\ $
 
-Representing negative numbers can be thought of discretely. Below is a representaation of negative numbers.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{0205IdealAlgorithm.jpg}
+  \caption{The algorithm described visually, $2Decider<2x^2>$.}
+  \label{fig:0205IdealAlgorithm}
+\end{figure}
+
+\section{Negative Monomials}
+
+Representing negative numbers can be thought of discretely. Below is a representation of negative numbers.
 
 $\\ $
 
-Cancellation
+Addition of two negative deciders gives a negative decider.
+
+$Decider<-x> + Decider<-x>$
+
+$ = Decider<-x-x>$
+
+$ = Decider<-2x>$
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1]{0207Addition.jpg}
+  \caption{Addition.}
+  \label{fig:0207Addition}
+\end{figure}
 
 $\\ $
 
-Addition
+Cancellation of a positive and negative decider of such that it is the additive inverse, or 0.
 
 $\\ $
 
-Start and Finish: $2x$
+$Decider<x> + Decider<-x>$
+
+$ = Decider<x-x>$
+
+$ = Decider<0>$
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1]{0206Cancellation.jpg}
+  \caption{Cancellation law.}
+  \label{fig:0206Cancellation}
+\end{figure}
 
 $\\ $
 
-Start and Finish: $x^2$
+Multiplication of two negative deciders gives a positive decider.
 
 $\\ $
 
-Ignoring the rules for commutativity and association for now.
+$Decider<-x> * Decider<-x>$
+
+$ = Decider<-x*-x>$
+
+$ = Decider<x^2>$
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1]{0208Multiplication.jpg}
+  \caption{Multiplication.}
+  \label{fig:0208Multiplication}
+\end{figure}
+
+$\\ $
+
+Multiplication of a negative decider with its multiplicative inverse gives a its identity, or 1.
+
+$\\ $
+
+$Decider<x^{-1}> * Decider<x>$
+
+$ = Decider<x^{-1}*x>$
+
+$ = Decider<1>$
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1]{0209MultiplicativeInverse.jpg}
+  \caption{Multiplicative Inverse.}
+  \label{fig:0209MultiplicativeInverse}
+\end{figure}
 
 \section{Pi}
 
