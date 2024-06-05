@@ -385,17 +385,19 @@ $\\ $
   \label{fig:0210Pi}
 \end{figure}
 
-\section{Fibonacci}
+\section{Analysis of Fibonacci}
 
-Given the Fibonacci sequence, ${1,1,2,3,5,8,13,21,\cdots}$, representing this sequence as a monomial generator in the language of polynomials can be shown below.
-
-$\\ $
-
-From the circles above, we see that f(1) = 1 and f(2) = 2. If we add f(1) and f(2) together we get f(3) = 3 and so on and so forth.
+A Fibonacci sequence is a sequence of typically seen as the following, ${1,1,2,3,5,8,13,21,\cdots}$. The general formula for this sequence is:
 
 $\\ $
 
-Notice that on odd inputs, Ex, there aren't any circles in the circles/states but in even inputs on X, there are two states. On outputs, Ey, it is odd twice then even once.
+$a_n = a_{n-1} + a_{n-2}$ given $a_0$ and $a_1$
+
+$\\ $
+
+From the example above, we see that f(1) = 1 and f(2) = 2. If we add f(1) and f(2) together we get f(3) = 3 and so on and so forth. The algorithm below will be used to collect data to be analyzed to find a general pattern:
+
+$\\ $
 
 \begin{lstlisting}
 int fibonacci(int n)
@@ -420,7 +422,40 @@ int fibonacci(int n)
 }
 \end{lstlisting}
 
-\section{Analysis Of Parity In Fibonacci}
+$\\ $
+
+The data collected is organized into input, its parity, output, and its parity. First, the input and its parity value is analyzed in the following:
+
+$\\ $
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1]{0211Fibonacci.jpg}
+  \caption{The input and the parity of the input of Fibonacci.}
+  \label{fig:0211Fibonacci}
+\end{figure}
+
+The parity alternates between 0 and 1 which doesn't mean much on its own. Collecting data from the output of the sequence function gives the following:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1]{0212Fibonacci.jpg}
+  \caption{The output and the parity of the output of Fibonacci.}
+  \label{fig:0212Fibonacci}
+\end{figure}
+
+On analysis, it can be seen that there are two patterns mapped out - one from input values 1, 2, and 3 (called {123}) and one from input values 4, 5, and 6 (called {456}). Laying these findings flat on a $3 \times 3$ matrix gives the following:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1]{0213Fibonacci.jpg}
+  \caption{The output Y is the output parity.}
+  \label{fig:0213Fibonacci}
+\end{figure}
+
+There are two matrices that form from analysis of the parity of the input and output. It can be concluded that there are three states for each matrix giving a total of six different states.
+
+\section{Assembling Deciders of Fibonacci}
 
 On analyzing the parity of Ex and Ey of the fibonacci sequence, we that there are two patterns.
 
