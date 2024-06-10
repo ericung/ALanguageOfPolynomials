@@ -604,7 +604,7 @@ $\\ $
 
 \section{Redrawing the Fibonacci Sequence}
 
-From our analysis, it can be seen that there are three states that are a minimum to create a fibonacci sequence. Minimization gives us a monomial generator, ${S_x,S_y,S_z}$. Set the three states to a desired configuration and it will generate the fibonacci sequence. It can shown that it requires three states minimum to generate the fibonacci sequence.
+From our analysis, it can be seen that there are three states that are a minimum to create a Fibonacci sequence. Minimization gives us a monomial generator, ${S_x,S_y,S_z}$. Set the three states to a desired configuration (i.e. $S_y = 0$ and $S_z = 1$ and it will generate the Fibonacci sequence. It can shown that it requires three states minimum to generate the Fibonacci sequence.
 
 $\\ $
 
@@ -616,7 +616,20 @@ $S_y = S_z + S_x$
 
 $S_z = S_x + S_y$
 
-Using the above, dynamic programming can be modeled as a set of generator functions.
+$\\ $
+
+Using the above, dynamic programming can be modeled as a set of generator functions. A visual diagram explains how a set of generator functions form a generator.
+
+$\\ $
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1]{0218Generator.jpg}
+  \caption{The generator for the Fibonacci sequence.}
+  \label{fig:0218Generator}
+\end{figure}
+
+$\\ $
 
 \begin{lstlisting}
 int fibonacciGenerator(int n)
@@ -669,7 +682,7 @@ Given the two monomial deciders we found using the determinant, we know that we 
 
 \section{The Fibonacci Picking Function}
 
-Now, let's apply the picking function, pf, to the fibonacci decider and show the probability, $P_r$, of finding a sequence. $pf({xyz}_1 + {xyz}_2) = Pr({xyz}_1)*Pr({xyz}_2) \leq 1/n^{k}$
+Now, let's apply the picking function, pf, to the Fibonacci decider and show the probability, $P_r$, of finding a sequence. $pf({xyz}_1 + {xyz}_2) = Pr({xyz}_1)*Pr({xyz}_2) \leq 1/n^{k}$
 
 Each decider has 3 representations giving $3^2 = 9$ total for each set. We pick one decider in each set to get the probability.
 
