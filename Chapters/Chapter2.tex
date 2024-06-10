@@ -680,36 +680,82 @@ $\\ $
 
 \section{The Fibonacci Decider}
 
-Given the two deciders we found using the determinant and the sum of the path by the mapping of the determinants, it is shown that six decision functions and a minimum of six input values are required to decide if a sequence is a type of Fibonacci sequence. In order to create this decider, a composition operator is used on $M_1$ and $N_1$ to merge them together because the sum of the determinant cancels each other. All decision functions must evaluate to true in order for the sequence to be a valid Fibonacci sequence. The following is one possible set of permutations available to form a group with the deciders.
+Given the two deciders we found using the determinant and the sum of the path by the mapping of the determinants, it is shown that six decision functions and a minimum of six input values are required to decide if a sequence is a type of Fibonacci sequence. In order to create this decider, a composition operator is used on $M_1$ and $N_1$ to merge them together because the sum of the determinant cancels each other. All decision functions must evaluate to true in order for the sequence to be a valid Fibonacci sequence. The following is one possible set of permutations available to form a group of decision functions with the deciders.
 
 $\\ $
 
-Decider with Decision Functions for $\{123\}$
+$text{Example 2.11.1}$. Decider with Decision Functions for $\{123\}$
 
-x = -y + z
+$x_1 = -y_1 + z_1$
 
--x = y + z
+$-x_1 = y_1 + z_1$
 
-x = y - z
+$x_1 = y_1 - z_1$
+
+$\\ $
+
+$text{Example 2.11.2}$. Decider with Decision Functions for $\{456\}$
+
+$-x_2 = y_2 + -z_2$
+
+$x_2 = -y_2 -z_2$
+
+$-x_2 = -y_2 + z_2$
 
 $\\ $
 
-Decider with Decision Functions for $\{456\}$
-
--x = y + -z
-
-x = -y -z
-
--x = -y + z
+Join the finish state of $\{123\}$ to the start state of $\{456\}$ and the start state of $\{456\}$ to the finish state of $\{123\}$ to form the Fibonacci decider $\{123456\}$
 
 $\\ $
+
+$text{Example 2.11.3}$. Fibonacci decider $\{123456\}$
+
+$x_1 = -y_1 + z_2 - x_2 +y_2 - z_1$
+
+$-y_1 = z_2 - x_2 +y_2 - z_1 + x_1$
+
+$z_2 = x_2 +y_2 - z_1 + x_1 - y_1$
+
+$x_2 = y_2 - z_1 + x_1 - y_1 + z_2$
+
+$y_2 = z_1 + x_1 - y_1 + z_2 - x_2$
+
+$z_1 = x_1 - y_1 + z_2 - x_2+y_2$
+
 
 \section{The Fibonacci Picking Function}
 
-Now, let's apply the picking function, pf, to the Fibonacci decider and show the probability, $P_r$, of finding a sequence. $pf({xyz}_1 + {xyz}_2) = Pr({xyz}_1)*Pr({xyz}_2) \leq 1/n^{k}$
 
-Each decider has 3 representations giving $3^2 = 9$ total for each set. We pick one decider in each set to get the probability.
+On analysis, one decision function in $\{123\}$ has three possible permutations. An example is of the following.
 
-There are 6 deciders with 6 permutations giving $6^2 = 36$ permutations.
+$\\ $
+
+Given $x_1 = -y_1 + z_1$, it has $x_1 + y_1 = z_1$ and $x_1 - z_1= -y_1$.
+
+$\\ $
+
+This means that every decision function in $\{123\}$ has three possible permutations, or $3^2$ possibilities, however, if the configuration is desired to be $M_1$ and $N_1$, then there is only one configuration possible out of $3^2$ by $3^2$ possibilities.
+
+After, it can be shown that by applying the picking function, $p_f$, to the Fibonacci decider, the probability is equivalent to $1/n^{k}$.
+
+Each decider has three representations giving $3^2 = 9$ total for each set. There is only one configuration of $M_1$ and $N_1$ given to imply that the probability is $1/9$. Multiply the probability of picking $M_1$ by the probability of picking $N_1$ to get $1/9^{2}$.
+
+There are 6 deciders with 6 permutations each and giving $6^2 = 36$ permutations. 
+
+The probability is then:
+
+$\\ $
+
+$1/3^2 * 1/3^2 \leq 1/6^2$
+
+$\\ $
+
+$\equiv p_f(\{123\})*p_f(\{456\}) \leq 1/n^{k}$ where k = 2
+
+$\\ $
+
+By definition this is called the one way function.
+
+This shows that the relation between $M_1\ of\ \{123\}$ and $N_1\ of\ \{456\}$ and the formation of $\{123456\}$.
 
 This shows a concrete example of the picking function which is a type of one way function.
