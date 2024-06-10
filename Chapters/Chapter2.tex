@@ -453,11 +453,11 @@ On analysis, it can be seen that there are two patterns mapped out - one from in
   \label{fig:0213Fibonacci}
 \end{figure}
 
-There are two matrices that form from analysis of the parity of the input and output. It can be concluded that there are three states for each matrix giving a total of six different states.
+There are two matrices that form from analysis of the parity of the input and output. Using the technique to develop an algorithm for the $Decider<2x^2>$ it can be concluded that there are three finishing states for each matrix giving a total of six different finishing states.
 
-\section{Assembling Deciders of Fibonacci}
+\section{Modeling Deciders of Fibonacci}
 
-On analyzing the parity of Ex and Ey of the fibonacci sequence, we that there are two patterns.
+There exists a mapping between the determinants of the Fibonacci sequence to each state of the Fibonacci sequence. On analyzing the parity of the input of {123}, {456} and the output of the fibonacci sequence, two matrices emerge. Label the input {123} as $E_1$, the input of {456} as $E_2$, and the output of the Fibonacci sequence as $E_3$.
 
 $\\ $
 
@@ -470,15 +470,137 @@ E_1 & E_2 & E_3\\
 
 $\\ $
 
-$Det(E_1,E_2,E_3) = -1$ 
-
-$Det(E_2,E_1,E_3) = 1$
+There are six permutations pivoting by the row of the matrices. Three of them have a determinant of -1 and the other three have a determinant 1. The three matrices that have the determinant of -1 are as follows.
 
 $\\ $
 
-$-1 + 1 -1 = -1$
+$M_1 = \begin{array}{ccc}
+E_1 & E_2 & E_3\\
+0 & 1 & 0\\
+1 & 0 & 1\\
+0 & 1 & 1\\
+\end{array}$
 
-$1 - 1 + 1 = 1$
+$\\ $
+
+$M_2 = \begin{array}{ccc}
+E_1 & E_2 & E_3\\
+1 & 0 & 1\\
+0 & 1 & 1\\
+0 & 1 & 0\\
+\end{array}$
+
+$\\ $
+
+$M_3 = \begin{array}{ccc}
+E_1 & E_2 & E_3\\
+0 & 1 & 1\\
+0 & 1 & 0\\
+1 & 0 & 1\\
+\end{array}$
+
+$\\ $
+
+The next three matrices that have a determinant of 1 is as follows.
+
+$\\ $
+
+$M_4 = \begin{array}{ccc}
+E_1 & E_2 & E_3\\
+0 & 1 & 0\\
+0 & 1 & 1\\
+1 & 0 & 1\\
+\end{array}$
+
+$\\ $
+
+$M_5 = \begin{array}{ccc}
+E_1 & E_2 & E_3\\
+1 & 0 & 1\\
+0 & 1 & 0\\
+0 & 1 & 1\\
+\end{array}$
+
+$\\ $
+
+$M_6 = \begin{array}{ccc}
+E_1 & E_2 & E_3\\
+0 & 1 & 1\\
+1 & 0 & 1\\
+0 & 1 & 0\\
+\end{array}$
+
+$\\ $
+
+Let's take $M_1$ and model the Fibonacci sequence and swap the rows $E_1$ and $E_2$ to get us $N_1$. The determinant of $N_1$ is 1 and the rows still have integrity. The matrices can be turned into a sort of adjacency matrix and mapping the the entries of $E_1$ of $M_1$ and $E_2$ of $N_1$ to the value of the states can be seen as a graph in the following:
+
+$\\ $
+
+$E_1 \equiv -x = y - z$
+
+Determinant of $M_1$ = -1
+
+$\\ $
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1]{0214E1.jpg}
+  \caption{The determinant of input parity $E_1$ of $M_1$ modeled as a graph visually.}
+  \label{fig:0214E1}
+\end{figure}
+
+
+$\\ $
+
+$E_2 \equiv x = -y + z$
+
+Determinant of $N_1$ = 1
+
+$\\ $
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1]{0215E2.jpg}
+  \caption{The determinant of input parity $E_2$ of $N_1$ modeled as a graph visually.}
+  \label{fig:0215E2}
+\end{figure}
+
+$\\ $ 
+
+Taking the sum of the path of the graph and mapping the state's that represent 0 to -1, the following can be seen.
+
+$\\ $
+
+$E_1 \equiv -x = y - z$
+
+Path of $M_1$ = -1 + 1 - 1 = -1
+
+$\\ $
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1]{0216E1.jpg}
+  \caption{The sum of input parity $E_1$ of $M_1$ modeled as a graph visually.}
+  \label{fig:0216E1}
+\end{figure}
+
+
+$\\ $
+
+$E_2 \equiv x = -y + z$
+
+Path of $N_1$ = 1 - 1 + 1 = 1
+
+$\\ $
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1]{0217E2.jpg}
+  \caption{The sum of input parity $E_2$ of $N_1$ modeled as a graph visually.}
+  \label{fig:0217E2}
+\end{figure}
+
+$\\ $ 
 
 \section{Redrawing the Fibonacci Sequence}
 
