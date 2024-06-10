@@ -676,9 +676,33 @@ int fibonacciGenerator(int n)
 }
 \end{lstlisting}
 
+$\\ $
+
 \section{The Fibonacci Decider}
 
-Given the two monomial deciders we found using the determinant, we know that we must have six numbers in the sequence to decide if they form a Fibonacci sequence. In order to create this decider, we use an addition operator to merge them together because they cancel each other out. All deciders in each set must be true in order for the sequence to be a valid Fibonacci sequence.
+Given the two deciders we found using the determinant and the sum of the path by the mapping of the determinants, it is shown that six decision functions and a minimum of six input values are required to decide if a sequence is a type of Fibonacci sequence. In order to create this decider, a composition operator is used on $M_1$ and $N_1$ to merge them together because the sum of the determinant cancels each other. All decision functions must evaluate to true in order for the sequence to be a valid Fibonacci sequence. The following is one possible set of permutations available to form a group with the deciders.
+
+$\\ $
+
+Decider with Decision Functions for $\{123\}$
+
+x = -y + z
+
+-x = y + z
+
+x = y - z
+
+$\\ $
+
+Decider with Decision Functions for $\{456\}$
+
+-x = y + -z
+
+x = -y -z
+
+-x = -y + z
+
+$\\ $
 
 \section{The Fibonacci Picking Function}
 
