@@ -17,9 +17,9 @@ The concept of statistics and blackboxes has been drawn out extensively in theor
 
 Given the definition of the Fibonacci decider and a Lindenmayer system, insight can be derived from to that there exists the commutative and noncommutative properties of the operations.
 
-Fibonacci Decider
+$\\ $
 
-$Decider for {x_1, y_1, z_1}$
+$\textbf{Decider}$ for $x_1, y_1, z_1$
 
 $-x_1 = y_1 - z_1$
 
@@ -27,7 +27,9 @@ $y_1 = -x_1 - z_1$
 
 $-z_1 = x_1 - y_1$
 
-$Decider for {x_2, y_2, z_2}$
+$\\ $
+
+$\textbf{Decider}$ for $x_2, y_2, z_2$
 
 $x_2 = y_2 - z_2$
 
@@ -35,7 +37,9 @@ $-y_2 = x_2 - z_2$
 
 $z_2 = x_2 - y_2$
 
-$Fibonacci Decider$
+$\\ $
+
+$\textbf{Fibonacci Decider}$
 
 $x_1 = -y_1 +z_2 - x_2 + y_2 - z_1$
 
@@ -43,15 +47,15 @@ $-y_1 = z_2 - x_2 + y_2 - z_1 + x_1$
 
 $z_2 = -x_2 + y_2 - z_1 + x_1 - y_1$
 
-$-x_2 = y_2 - z_1 + x_1 - y_1+z2$
+$-x_2 = y_2 - z_1 + x_1 - y_1 + z2$
 
 $y_2 = -z_1 + x_1 - y_1 + z_2 - x_2$
 
-$-z_1 = x_1 - y_1 +z_2-x_2+y_2$
+$-z_1 = x_1 - y_1 + z_2 - x_2 + y_2$
 
 $\\ $
 
-Lindenmayer System
+$\textbf{Lindenmayer System}$
 
 L is the definition of the D0L System
 
@@ -65,9 +69,161 @@ P are the production rules in the language called the rules
 
 \section{Fibonacci DOL Decider Left Hand Side}
 
-Representing the left hand side of the fibonacci sequence as a D0L system alphabet requires an alphabet, rules, and a starting state.
+Representing the left hand side of the Fibonacci sequence as a D0L system alphabet requires an alphabet, rules, and a starting state.
 
-There are two deciders on the right hand side.
+$\\ $
+
+$\textit{alphabet}$. $= \{a,b\}$
+
+$\textit{rules}$. $= \{a \Rightarrow ab, b \Rightarrow a\}$
+
+$\textit{start}$. $= b$
+
+$\\ $
+
+The first six sequences in the 
+
+$\\ $
+
+$b\ a\ ab\ aba\ abaab\ abaababa\ abaababaabaab\ abaababaabaababaabaab$
+
+$\\ $
+
+The length are as follows.
+
+$\\ $
+
+$1\ 1\ 2\ 3\ 5\ 8\ 13\ 21$
+
+$\\ $
+
+Set them as variables in the decider as follows.
+
+$\\ $
+
+$\textbf{Decider}$ for $x_1, y_1, z_1$
+
+$-x_1 = y_1 - z_1$
+
+$y_1 = -x_1 - z_1$
+
+$-z_1 = x_1 - y_1$
+
+$\\ $
+
+$\textbf{Decider}$ for $x_2, y_2, z_2$
+
+$x_2 = y_2 - z_2$
+
+$-y_2 = x_2 - z_2$
+
+$z_2 = x_2 - y_2$
+
+$\\ $
+
+$z_2 = b$
+
+$y_2 = a$
+
+$x_2 = ab$
+
+$z_1 = aba$
+
+$y_1 = abaab$
+
+$x_1 = abaababa$
+
+$\\ $
+
+$\textbf{Decider}$ for $x_1, y_1, z_1$
+
+$\\ $
+
+$\textit{\textbf{-x\textsubscript{1} = y\textsubscript{1} - z\textsubscript{1}}}$
+
+$\textit{\textbf{- abaababa = abaab - aba}}$
+
+$-abaababa + aba = abaab$
+
+$-abaababa - abaab = -aba$
+
+$\\ $
+
+$\textbf{y\textsubscript{1} = -x\textsubscript{1} - z\textsubscript{1}}$
+
+$\textbf{abaab = - abaababa - aba}$
+
+abaab + abaababa = - aba
+
+abaab + aba = - abaababa
+
+$\\ $
+
+$\textbf{-z\textsubscript{1} = x\textsubscript{1} - y\textsubscript{1}}$
+
+$\textbf{- aba = abaababa - abaab}$
+
+- aba + abaab = abaababa 
+
+- aba - abaababa = - abaab
+
+$\\ $
+
+$\textbf{Decider}$ for $x_2, y_2, z_2$
+
+$\textbf{x\textsubscript{2} = y\textsubscript{2} - z\textsubscript{2}}$
+
+$ab - b = a$
+
+$ab - a = b$
+
+$\\ $
+
+$\textbf{-y\textsubscript{2} = x\textsubscript{2} - z\textsubscript{2}}$
+
+-a + b = ab
+
+-a - ab = -b
+
+$\\ $
+
+$\textbf{z\textsubscript{2} = x\textsubscript{2} - y\textsubscript{2}}$
+
+b - ab = -a
+
+b + a = ab
+
+$\\ $
+
+Generalized equations for $x_1, y_1, z_1$
+
+$\\ $
+
+$\textit{\textbf{-a = b - c}}$
+
+$-a + c = b$
+
+$-a - b = - c$
+
+$\\ $
+
+$\textbf{b = -a - c}$
+
+b + a = -c
+
+b + c = a
+
+$\\ $
+
+$\textbf{-c = a - b}$
+
+-c + b = a
+
+-c - a = -b
+
+$\\ $
+
+Generalized equations for $x_2, y_2, z_2$
 
 \section{Fibonacci DOL Decider Right Hand Side}
 
