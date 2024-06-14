@@ -257,6 +257,100 @@ $\\ $
 
 \section{Fibonacci DOL Decider Right Hand Side}
 
+$\textbf{Fibonacci Decider}$
+
+$x_1 = -y_1 +z_2 - x_2 + y_2 - z_1$
+
+$-y_1 = z_2 - x_2 + y_2 - z_1 + x_1$
+
+$z_2 = -x_2 + y_2 - z_1 + x_1 - y_1$
+
+$-x_2 = y_2 - z_1 + x_1 - y_1 + z2$
+
+$y_2 = -z_1 + x_1 - y_1 + z_2 - x_2$
+
+$-z_1 = x_1 - y_1 + z_2 - x_2 + y_2$
+
+$\\ $
+
+$
+\begin{matrix}
+ \textbf{abaababa = -abaab + b - ab + a -aba}\\
+abaababa - b + ab - a + aba = -abaab \\
+abaababa + abaab + ab - a + aba = b \\
+abaababa + abaab - b - a + aba = -ab \\
+abaababa + abaab - b + ab + aba = a \\
+abaababa + abaab - b + ab - a = -aba \\
+\end{matrix}
+$
+
+$\\ $
+
+$
+\begin{matrix}
+ \textbf{-abaab = b - ab + a -aba + abaababa}\\
+-abaab + ab - a + aba - abaababa = b \\
+-abaab - b - a + aba - abaababa = -ab \\
+-abaab - b + ab + aba - abaababa = a\\
+-abaab - b + ab - a - abaababa = -aba\\
+-abaab - b + ab - a + aba = abaababa \\
+\end{matrix}
+$
+
+$\\ $
+
+$
+\begin{matrix}
+ \textbf{b = -ab + a - aba + abaababa - abaab}\\
+b - a + aba - abaababa + abaab = -ab \\
+b + ab + aba - abaababa + abaab = a \\
+b + ab + aba - abaababa + abaab = -aba\\
+b - ab + a -aba + abaab = abaababa\\
+b - ab - a + aba - abaababa = -abaab \\
+\end{matrix}
+$
+
+$\\ $
+
+$
+\begin{matrix}
+ \textbf{-ab = a - aba + abaababa - abaab + b}\\
+- ab + aba - abaababa + abaab - b = a \\
+- ab - a - abaababa + abaab -b = - aba \\
+- ab - a + aba + abaab - b = abaababa\\
+- ab -a + aba - abaababa - b = -abaab\\
+-ab - a + aba -  abaababa + abaab = b\\
+\end{matrix}
+$
+
+$\\ $
+
+$
+\begin{matrix}
+ \textbf{a = aba + abaababa - abaab + b - ab}\\
+a + abaababa - abaab + b - ab = aba \\
+a - aba - abaab + b - ab = -abaababa \\
+a - aba + abaababa + b - ab = abaab\\
+a - aba + abaababa - abaab - ab = -b\\
+a - aba + abaababa - abaab + b = ab\\
+\end{matrix}
+$
+
+$\\ $
+
+$
+\begin{matrix}
+ \textbf{-aba = abaababa - abaab + b - ab + a}\\
+- aba + abaab - b + ab - a = abaababa \\
+-aba - abaababa - b + ab + a = -abaab \\
+-aba - abaababa + abaab + ab - a = b\\
+-aba - abaababa + abaab - b - a = -ab\\
+-aba - abaababa + abaab - b + ab = a\\
+\end{matrix}
+$
+
+\section{The Law of Commutativity and Noncommutativity}
+
 The law of commutativity and the law of noncommutativity combined gives the law of commutativity and noncommutativity
 
 $\\ $
@@ -283,7 +377,17 @@ From this example, it can be implied that for every variable, n, in an equation 
 
 The first equation is bold and italicized in the set to make a decider.
 
-\section{The Law of Commutativity and Noncommutativity}
+
+
+$
+\begin{matrix}
+ \textbf{a = b + c} & \textbf{b = a - c} & \textbf{-c = a - b}\\
+ b = a - c & b - a = -c & -c + b = a\\
+ -c = a - b & b + c = a & -c - a = -b
+\end{matrix}
+$
+
+\section{Operations}
 
 Operations for the right hand side (RHS) versus the left hand side (LHS) represents different operations of the string in different scenarios.
 
