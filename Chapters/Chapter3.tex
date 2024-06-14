@@ -471,7 +471,7 @@ Q-rational-deciders are the possible monomial deciders of Q-rational-string. Use
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=1]{0219Rationals.jpg}
+  \includegraphics[width=\linewidth]{0219Rationals.jpg}
   \caption{Q rational image of the q rational string, $x^3/3$, $x^3/3$, and $X^6/x$.}
   \label{fig:0219Rationals}
 \end{figure}
@@ -558,9 +558,24 @@ $
 
 \section{Commutativity Of Multiplication}
 
-Commutativity of Multiplication
+$
+\begin{matrix}
+a * b = b * -a & b * -a = a * b\\
+b * a = -a * b & - a * b = b * a\\
+\\
+a * b \neq b * -a & -a * b \neq b * a\\
+b * a \neq -a * b & b * -a \neq a * b
+\end{matrix}
+$
 
 \section{Additive Identity}
+
+$
+\begin{matrix}
+a = -a\ for\ any\ a\ is\ equal\ to\ -a & -a\ =\ a\ where\ a\ and\ -a\ is\ 1\\
+a \neq -a\ where\ a\ is\ 1\ and\ -a\ is\ 0 & -a \neq a\ where\ a\ is\ 1\ and\ -a\ is\ 0
+\end{matrix}
+$
 
 The LHS and RHS are equations that test whether or not they are true or false, or in terms of computational complexity theory, it is satisfiable.
 10 = 10 evaluates to true or 1.
@@ -568,19 +583,71 @@ The LHS and RHS are equations that test whether or not they are true or false, o
 
 \section{Multiplicative Identity}
 
-The Identity of Itself on Multiplication
+$
+\begin{matrix}
+a = -a\ where\ a\ and\ -a\ are\ 1 \equiv\ a\ represented\ as\ monomial\ decider\ loops\ once\\
+a \neq -a\ where\ a\ is\ 1\ and\ -a\ is\ 0 \equiv a\ represented\ as\ a\ monomial\ decider\ loops\ once
+\end{matrix}
+$
 
 \section{Additive Inverse}
 
 The Additive Inverse
 
+$\\ $
+
 General Equivalence
+
+$
+\begin{matrix}
+a + l = -a + r \equiv 10 = 10 & -a + r = a + l \equiv 10 = 10\\
+l + a = r - a \equiv 10 = 10 & r - a = l + a \equiv 10 = 10\\
+\end{matrix}
+$
+
+$\\ $
 
 Commutativity under Equivalence
 
+$
+\begin{matrix}
+a + l = r - a \equiv 10 = 10 & -a + r = l + a \equiv 10 = 10\\
+l + a = -a + r \equiv 10 = 10 & r - a = a + l \equiv 10 = 10\\
+\end{matrix}
+$
+
+
+$\\ $
+
 General Reversal
 
+$
+\begin{matrix}
+a + l \neq -a + r \equiv 10 = 01 & -a + r \neq a +l \equiv 01 = 10\\
+l + a \neq r - a \equiv 10 = 01 & r - a \neq l + a \equiv 01 = 10\\
+\end{matrix}
+$
+
+$\\ $
+
 Commutativity under reversal
+
+$
+\begin{matrix}
+a + l \neq r - a \equiv 10 = 01 & -a + r \neq l + a \equiv 01 = 10\\
+l + a \neq - a + r \equiv 10 = 01 & r - a \neq a + l \equiv 01 = 10\\
+\end{matrix}
+$
+
+$\\ $
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{0220AdditiveInverse.jpg}
+  \caption{Additive inverse direction.}
+  \label{fig:0220AdditiveInverse}
+\end{figure}
+
 
 \section{Multiplicative Inverse}
 
