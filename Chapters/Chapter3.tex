@@ -492,19 +492,69 @@ $\\ $
 
 Decider in Q-rational-deciders such that decider is unique $\equiv$ Determinant of a configuration of a decider != 0
 
-$\\ $
-
-The decider chosen has an equation that is bold and italicized and there is a set of equations that are distinctly bold and italic that complete this equation to form the decider.
-
 \section{Law Of Strings}
 
-Although the law of commutativity and noncommutativity is a theorem, it's helpful to get a big picture view. Let's condense the law of commutativity and noncommutativity down even further to find some laws.
+$
+\begin{matrix}
+ \textit{\textbf{a = b + c}} & \textbf{b = a - c} & \textbf{-c = a - b}\\
+ b = a - c & b - a = -c & -c + b = a\\
+ -c = a - b & b + c = a & -c - a = -b
+\end{matrix}
+$
+
+$\\ $
+
+$
+\begin{matrix}
+ (\textit{\textbf{LHS}} = RHS) \neq (\textit{\textbf{RHS}} & \textbf{LHS})\\
+ (\textit{\textbf{LHS}} = \textbf{RHS}) = (\textit{\textbf{RHS}} & \textit{LHS})\\
+\end{matrix}
+$
+
+$\\ $
+
+Condense the above to get a generalization.
+
+$\\ $
+
+$
+\begin{matrix}
+a = -a & -a = a\\
+a \neq -a & -a \neq a
+\end{matrix}
+$
+
+$\\ $
 
 This is operating on variables, strings, and representations of it.
 
 \section{Commutativity Of Addition}
 
+$
+\begin{matrix}
+a + b = b - a & b - a = a + b\\
+b + a = -a + b & - a + b = b + a\\
+\\
+a + b \neq b - a & -a + b \neq b + a\\
+b + a \neq -a + b & b - a \neq a + b
+\end{matrix}
+$
+
+$\\ $
+
 Take the length function, length(s) $\equiv$ l(s), and apply to the '=' addition operations and see it's equivalence. Set b to a and reversal is accomplished.
+
+$\\ $
+
+$
+\begin{matrix}
+len(a) + len(b) = len(b)+ len(-a) \equiv 11 = 11 & len(b) + len(-a) = len(a) + len(b) \equiv 11 = 11\\
+len(b) + len(a) = len(-a) + len(b) \equiv 11 = 11 & len(-a) + len(b) = len(b) + len(a) \equiv 11 = 11\\
+\\
+a + b \neq b - a \equiv 11 \neq 10 & -a + b \neq b + a \equiv 01 \neq 11\\
+b + a \neq -a + b \equiv 11 \neq 01 & b - a \neq a + b \equiv 10 \neq 11
+\end{matrix}
+$
 
 \section{Commutativity Of Multiplication}
 
