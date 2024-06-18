@@ -432,7 +432,38 @@ $Decider<x^5/x^2/x^1/x^1> ~ Decider<x^5/x^2/x^2>$
 
 $\\ $
 
-TODO: Define a topological space of a decider with multiple divisions.
+The topology of the operations on the cyclic structure of a decider forms its own area of study. A topology of a decider used in this paper is constructed below.
+
+$\\ $
+
+$\textbf{Definition}$. A topology on a set X is a collection $\tau$ of subsets of $X$ having the following properties:
+
+1. $\emptyset$ and $X$ are in $\tau$
+
+2. The union of elements of any sub-collection of $\tau$ is in $\tau$
+
+3. The intersection of the elements of any finite sub-collection of $\tau$ is in $\tau$
+
+$\\ $
+A set X for which a topology $\tau$ has been specified is called a $\textbf{topological space}$. These three properties are used as template to construct a decider.
+
+$\\ $
+
+A decider of a monomial can have no decision functions or a set of decision functions so $\emptyset \in \tau$ or $D \subseteq \tau$
+
+$\\ $
+
+The union of sets of decision functions, $D$, of $\tau$ is in $\tau$.
+
+$\\ $
+
+$d_1, d_2 \in D \subseteq \tau$ such that $d_1 \cup d_2 \subseteq D \subseteq \tau$ implies $d_1, d_2 \in \tau$.
+
+$\\ $
+
+The intersection of sets of decision functions, $D$, of $\tau$ is in $\tau$. 
+
+Given $d_1 \in D_1$ and $d_1 \in D_2$, then $d_1 \in D_1 \cap D_2 \subseteq \tau$
  
 \section{Equivalence}
 
