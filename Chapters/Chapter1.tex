@@ -260,7 +260,7 @@ An important problem arising from deciders is representing them as matrices. The
 
 $\\ $
 
-$\left[ n\times n \right]\left[ n\times n \right]=\left[ m\times m \right]$ such that $m \neq n$ and $m,n\geq 0$ and $m \leq n$
+$\left[ n\times n \right]\left[ n\times n \right]=\left[ m\times m \right]$ such that $m \neq n$ and $m,n\geq 0$ and $m \geq n$
 
 $\\ $
 
@@ -507,6 +507,26 @@ $\\ $
 
 $\textbf{Theorem of Equivalence}$. Something on lines of $Decider<x^6/x^1/x^1> = Decider<x^6/x^2>$ such that there is some x such that the monomial represented by both deciders exists where f of x = y.
 
+$\\ $
+
+$\textit{Proof}$. Given $Decider<a(x,y)> = Decider<x^m> Decider<y^n>$ and the definition $Decider<b(x,y)> = Decider<y^n> Decider<x^m>$, show $Decider<a(x,y)> = Decider<b(x,y)>$.
+
+$\\ $
+
+Start with $Decider<a(x,y)> = Decider<x^m> Decider<y^n>$
+
+Commute the variables because each decider decides there own monomial giving, $Decider<y^n> Decider<x^m>$.
+
+This is equivalent to $Decider<b(x,y)>$
+
+$\\ $
+
+Start with $Decider<b(x,y)> = Decider<y^m> Decider<x^n>$
+
+Commute the variables because each decider decides there own monomial giving, $Decider<x^n> Decider<y^m>$.
+
+This is equivalent to $Decider<a(x,y)>$
+
 \section{Reversing}
 
 $\\ $
@@ -527,7 +547,27 @@ $\textbf{Theorem of Reversing}$. Given two representations, a,b in $Decider<m(x)
 
 $\\ $
 
-$\textit{Proof}.$ Proof by construction visually to show a != b.
+$\textit{Proof}.$ Given $Decider<a(x,y)> = Decider<x^m> Decider<y^n>$ and the definition $Decider<b(x,y)> = Decider<y^n> Decider<x^m>$, show $Decider<a(x,y)> \neq Decider<b(x,y)>$.
+
+$\\ $
+
+Start with $Decider<a(x,y)> = Decider<x^m> Decider<y^n>$. 
+
+Then take $Decider<x^m y^n>$. 
+
+Commute to get $Decider<y^n x^m>$.
+
+This is not equivalent to $Decider<y^n> Decider<x^m> = Decider<b(x,y)>$.
+
+$\\ $
+
+Start with $Decider<b(x,y)> = Decider<y^n> Decider<x^m>$.
+
+Then take $Decider<y^n x^m>$
+
+Commute to get $Decider<x^m y^n>$
+
+This is not equivalent to $Decider<x^m> Decider<y^n> = Decider<a(x,y)>$
 
 \begin{figure}[H]
   \centering
