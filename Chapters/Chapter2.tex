@@ -58,6 +58,32 @@ $\\ $
 
 % Turn into pseudocode eventually.
 
+$\\ $
+
+\begin{algorithmic}[1]
+\Procedure{GeneralizedDecider}{$y$}
+\If {$y = 0$}
+     \Return true
+\EndIf
+\State ($s\gets y$)
+\While {$s\geq 0$}
+	\For {$i = 0$ to $1$}
+		\For {$j = 0$ to $3$}
+			\If {$s=0$ and $(j = 0$ or $j = 2)$ and $i = 0$}
+				\Return true
+			\ElsIf{$s < 0$}
+				\Return false				
+			\EndIf
+			\State $s\gets s - 1$
+		\EndFor	
+	\EndFor
+\EndWhile
+\Return true
+\EndProcedure
+\end{algorithmic}
+
+$\\ $
+
 \begin{lstlisting}
 bool generalizedDecider(int y)
 {
@@ -569,7 +595,7 @@ $\\ $
 
 $\\ $
 
-After higher level illustrations and, in addition to the matrices, there are representations of the sequences and, more generally, words that can be formed if a more detailed view of how it operates in linear algebra. A definition below can be traced.
+After higher level illustrations and, in addition to the matrices, there are representations of the sequences and, more generally, words that can be formed if a more detailed view of how it operates is needed in linear algebra. A definition below can be traced.
 
 $\\ $
 
