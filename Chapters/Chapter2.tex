@@ -84,35 +84,15 @@ $\\ $
 
 $\\ $
 
-\begin{lstlisting}
-bool generalizedDecider(int y)
-{
-    if (y == 0)
-    {
-        return true;
-    }
-    var s = y;
-    while (s >= 0)
-    {
-        for (int i = 0; i < 2; i++)
-        {
-            for (int j = 0; j < 4; j++)
-            {
-                if (s == 0 && (j == 0 || j == 2) && i == 0)
-                {
-                    return true;
-                }
-                else if (s < 0)
-                {
-                    return false;
-                }
-                s -= 1;
-            }
-        }
-    }
-    return true;
-}
-\end{lstlisting}
+$\textbf{Proof of Correctness}$.
+
+$\\ $
+
+$\textbf{Proof of Time Complexity}$.
+
+$\\ $
+
+$\textbf{Proof of Space Complexity}$.
 
 $\\ $
 
@@ -169,57 +149,54 @@ $\\ $
 % convert to pseudocode 
 
 \begin{lstlisting}
-bool MonomialDecider2xx(int y)
+// Generates negatives from a general monomial decider represented as an algorithm so
+// that we can collect data about the negatives
+int[] Generator(int max)
 {
-    var totalVisits = 0;
-    var currentVisits = 0;
-    var diff = 1;
-    var s = 0;
-
-    while (s <= y)
+    int[] result = new int[max + 1];
+    int x = 0;
+    int negatives = 0;
+    int i = 0;
+    while (x < max + 1)
     {
-        for (int i = 0; i < 2; i++)
+        int num = 2 * (Convert.ToInt32(Math.Pow(x, 2)));
+        if (generalizedMD(i))
         {
-            for (int j = 0; j < 2; j++)
+            // A simple verifier
+            if (num == i)
             {
-                for (int k = 0; k < 2; k++)
-                {
-                    if ((i == 0) && (j == 0 || j == 1) && (k == 0))
-                    {
-                        if (currentVisits == totalVisits)
-                        {
-                            if (s == y)
-                            {
-                                Console.WriteLine(new String("Deciding on: " + s + " - totalVisits: " + totalVisits));
-                                return true;
-                            }
-                            else if (s > y)
-                            {
-                                return false;
-                            }
+                Console.WriteLine(negatives);
+                Console.WriteLine("f(" + x + ") = " + i);
+                result[x] = i;
 
-                            totalVisits += diff;
-
-                            // If the tape head is on the odd finishing 
-                            // state increase the diff variable by 2
-                            // Do this to represent x^2 in 2x^2
-                            if (i == 0 && j == 1 && k == 0)
-                            {
-                                diff += 2;
-                            }
-                        }
-
-                        currentVisits++;
-                    }
-                    s++;
-                }
+                x++;
+                negatives = 0;
+            }
+            else
+            {
+                negatives++;
             }
         }
+        i++;
     }
 
-    return false;
+    return result;
 }
 \end{lstlisting}
+
+$\\ $
+
+$\textbf{Proof of Correctness}$.
+
+$\\ $
+
+$\textbf{Proof of Time Complexity}$.
+
+$\\ $
+
+$\textbf{Proof of Space Complexity}$.
+
+$\\ $
 
 \section{Representing Monomial Deciders As Code}
 
@@ -310,6 +287,18 @@ bool MonomialDecider2xx(int y)
     return false;
 }
 \end{lstlisting}
+
+$\\ $
+
+$\textbf{Proof of Correctness}$.
+
+$\\ $
+
+$\textbf{Proof of Time Complexity}$.
+
+$\\ $
+
+$\textbf{Proof of Space Complexity}$.
 
 $\\ $
 
