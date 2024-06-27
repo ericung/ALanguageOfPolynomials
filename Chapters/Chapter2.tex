@@ -154,7 +154,6 @@ From this array, two finishing states are described. When the input and output a
 From analysis, the number of times the tape head visits a finishing state is the difference of the previous input plus two. The difference increases by two every time it passes a finishing state. It doesn't pass when the number of visits is even, so it can be deduced that the difference is increased by two every time it passes the odd finishing state. This result allows us to write a program to decide if y is in $2x^2$.
 
 $\\ $
-% convert to pseudocode 
 
 \begin{algorithmic}[1]
 \Procedure{Generator}{$max$}
@@ -239,61 +238,41 @@ $\\ $
 
 The following is code generated from our more formal representation of the solution.
 
-\begin{lstlisting}
-bool MonomialDecider2xx(int y)
-{
-    var totalVisits = 0;
-    var currentVisits = 0;
-    var diff = 1;
-    var s = 0;
+$\\ $
 
-    while (s <= y)
-    {
-        // the constant 2
-        for (int i = 0; i < 2; i++)
-        {
-            // the first pass of x in 2x^2
-            for (int j = 0; j < 2; j++)
-            {
-                // the second pass of x in 2x^2
-                for (int k = 0; k < 2; k++)
-                {
-                    if ((i == 0) && (j == 0 || j == 1) && (k == 0))
-                    {
-                        if (currentVisits == totalVisits)
-                        {
-                            if (s == y)
-                            {
-                                Console.WriteLine(new String("Deciding on: " + s + " - totalVisits: " + totalVisits));
-                                return true;
-                            }
-                            else if (s > y)
-                            {
-                                return false;
-                            }
+\begin{algorithmic}[1]
+\Procedure{Decider}{$y$}
+\State $totalVisits\gets 0$
+\State $currentVisits\gets 0$
+\State $difference\gets 1$
+\State $s\gets 0$
+\While {$s\leq y$}
+	\For {$i = 0$ to $1$}
+		\For {$j = 0$ to $1$}
+			\For {$k = 0$ to $1$}
+				\If {$i = 0$ and $(j = 0$ or $j = 1)$ and $k = 0$}
+					\If {$currentVisits = totalVisits$}
+						\If {$s = y$}
+							\Return true
+						\ElsIf {$s > y$}
+							\Return false
+						\EndIf
+						\State $totalVisits\gets totalVists + difference$
+						\If {$i=0$ and $j = 1$ and $k = 0$}
+							\State $difference\gets difference + 2$
+						\EndIf
+						\State $currentVisits\gets currentVisits + 1$
+					\EndIf
+					\State $s\gets s + 1$
+				\EndIf
+			\EndFor
+		\EndFor
+	\EndFor
+\EndWhile
 
-                            totalVisits += diff;
-
-                            // If the tape head is on the odd finishing
-                            // state increase the diff variable by 2
-                            // Do this to represent x^2 in 2x^2
-                            if (i == 0 && j == 1 && k == 0)
-                            {
-                                diff += 2;
-                            }
-                        }
-
-                        currentVisits++;
-                    }
-                    s++;
-                }
-            }
-        }
-    }
-
-    return false;
-}
-\end{lstlisting}
+\Return false
+\EndProcedure
+\end{algorithmic}
 
 $\\ $
 
@@ -301,7 +280,20 @@ $\textbf{Proof of Correctness}$.
 
 $\\ $
 
-$\textbf{Proof of Time Complexity}$.
+$\textit{Initialization}$. The variables totalVisits, currentVisits, difference, and s are all initialized with values. The iterator variable $i\gets 0$ is set to 0 so that it is ready for the loop invariant to to be used.
+
+$\\ $
+
+$\textit{Maintenance}$. The loop is invariant has the condition $s\leq y$ which holds true because $s$ is initialized with a value of 0. The for loops between lines 7 to 8 are iterated through. The condition on line 10 is true if the head visits a travels on an accept state. On line 15, $totalVisits$ is increased by the difference and difference is increased by two if it hits the accepting state that accepts odd traversals. $currentVisits$ is increased by one which means that it holds up to the condition $currentVisits = totalVisits$. Finally, line 21 updates the variable, $s$, so that it moves the loop invariant forward. 
+
+$\\ $
+
+$\textit{Termination}$. Start with $s$ set to 0. Line 21 implies that s is always incremented despite the conditional on line 11. It increments when the head visits line 10. When the loop invariant condition is false or when $s > y$, it means that the algorithm terminates. The algorithm also terminates if $s = y$ on line 12 and on line 13 when $s > y$ is true.
+
+$\\ $
+
+$\textbf{Proof of Time Complexity}$. The condition on line 6, $s\leq y$, shows that 
+$s$ goes through values 0 to y. Between lines 7 to 9, $i$, $j$, and $k$ loop $2^3 = 8$ times which might appear constant, however, the condition, $currentVisits = totalVisits$ means that there is a total amount of $totalVisits$ visits to the for loop invariant. This means there are $O(totalVisits*totalVisits) < O(n^2)$ time complexity.
 
 $\\ $
 
