@@ -158,10 +158,10 @@ $\\ $
 
 \begin{algorithmic}[1]
 \Procedure{Generator}{$max$}
-\State $result\gets [ ]$
+\State $result\gets [\ ]$
 \State $x\gets 0$
 \State $difference\gets 0$
-\State $i\gets i$
+\State $i\gets 0$
 \While {$x < max + 1$}
 	\State $num\gets 2x^2$
 	\If {$GeneralizedDecider(i)$}
@@ -173,6 +173,7 @@ $\\ $
 			\State $difference\gets difference - 1$
 		\EndIf
 	\EndIf
+	\State $i\gets i + 1$
 \EndWhile\\
 \Return result
 \EndProcedure
@@ -184,23 +185,23 @@ $\textbf{Proof of Correctness}$.
 
 $\\ $
 
-$\textit{Initialization}$. 
+$\textit{Initialization}$. The variables result, x, difference, and i get initiated.
 
 $\\ $
 
-$\textit{Maintenance}$. 
+$\textit{Maintenance}$. The loop is invariant with the case $x < max + 1$ which holds true. The $num$ variable is set to $2x^2$. $GeneralizedDecider(i)$ is used to decide if $i$ is in the decider, but it isn't always in $2x^2$. If $num$ is $i$, the variable $x$ is updated to keep the condition of the loop invariant true which is $x < max + 1$. On line 17, the variable $i$ is updated so that on line 8, the condition is always met.
 
 $\\ $
 
-$\textit{Termination}$. 
+$\textit{Termination}$. Start of with the while loop such that $x < max + 1$. $i$ is incremented every loop so that the condition $GeneralizedDecider(i)$ is always met on line 8. This means that when it visits line 9, the condition is passed and the variable, $x$, is increased moving the while loop on line 6 forward. This allows the algorithm to terminate successfully.
 
 $\\ $
 
-$\textbf{Proof of Time Complexity}$.
+$\textbf{Proof of Time Complexity}$. The time complexity of the algorithm starts with line 6 of the while loop. $x < max + 1$ is the condition that meets to be met in order for it to terminate and the variable, $x$, is set to zero on line 3. On line 8, the call to $GeneralizedDecider$ is made every time it loops - this has a time complexity of $i$. Coming back to line 6, this loop has a time complexity of $O(n)$ where n is equal to max. Concluding this analysis, the summary of the overall time complexity is $O(i*n) < O(n^2)$ where $i$ is 0 to n.
 
 $\\ $
 
-$\textbf{Proof of Space Complexity}$.
+$\textbf{Proof of Space Complexity}$. The space complexity of the algorithm has three constant variables - $x$, $difference$, and $i$. The array $result$ has a size of n where n is max. Hence, the space complexity is $O(n+1+1+1) = O(n)$
 
 $\\ $
 
