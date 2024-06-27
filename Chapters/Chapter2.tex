@@ -56,10 +56,6 @@ The following is an example of code that roughly sketches a generalized monomial
 
 $\\ $
 
-% Turn into pseudocode eventually.
-
-$\\ $
-
 \begin{algorithmic}[1]
 \Procedure{GeneralizedDecider}{$y$}
 \If {$y = 0$}
@@ -88,23 +84,23 @@ $\textbf{Proof of Correctness}$.
 
 $\\ $
 
-$\textbf{Initialization}$. On lines 2 to 3, if y is 0 then it is true. Otherwise, take s to be y.
+$\textit{Initialization}$. On lines 2 to 3, if y is 0 then it is true. Otherwise, take s to be y.
 
 $\\ $
 
-$\textbf{Maintenance}$. The loop invariant starts at line 5 as $s\geq 0$ with value of s being y. While this is true it goes through a for loop on lines 6 to 13 with a starting value of i at 0. At line 7, the last for loop starts with j being a value of 0. On line 8, a condition is checked to see if s is 0, i is 0, and j is either 0 or 2 and returns true if it is. It then passes the for loop with j as the iterating variable until it hits 3 and then the for loop with i as the iterating variable until it hits 1. It continues another pass of the while loop.
+$\textit{Maintenance}$. The loop invariant starts at line 5 as $s\geq 0$ with value of s being y. While this is true it goes through a for loop on lines 6 to 13 with a starting value of i at 0. At line 7, the last for loop starts with j being a value of 0. On line 8, a condition is checked to see if s is 0, i is 0, and j is either 0 or 2 and returns true if it is. It then passes the for loop with j as the iterating variable until it hits 3 and then the for loop with i as the iterating variable until it hits 1. It continues another pass of the while loop.
 
 $\\ $
 
-$\textbf{Termination}$. The while loop on lines 5 to 14 terminate if the for loop on lines 6 to 13 terminate. This for loop terminates if the for loop inside it on lines 7 to 12 terminate. s decreases by 1 on line 11 while once it passes the condition checks and it goes through it at most 2 * 4 times representing the passes in the nested for loop. This algorithm always either returns true or false.
+$\textit{Termination}$. The while loop on lines 5 to 14 terminate if the for loop on lines 6 to 13 terminate. This for loop terminates if the for loop inside it on lines 7 to 12 terminate. s decreases by 1 on line 11 while once it passes the condition checks and it goes through it at most 2 * 4 times representing the passes in the nested for loop. This algorithm always either returns true or false.
 
 $\\ $
 
-$\textbf{Proof of Time Complexity}$.
+$\textbf{Proof of Time Complexity}$. Starting from the inner most for loop on lines 7 to 12 iterate 3 times. Outside is the for loop on lines 6 to 13 that iterates 2 times. This gives a time complexity of exactly 6 constant. The while loop on lines 5 to 14 has $s\geq 0$ initially s = y which gives a time complexity of $O(y)$. Overall, this gives a time complexity of $O(y+6) = O(y)$. 
 
 $\\ $
 
-$\textbf{Proof of Space Complexity}$.
+$\textbf{Proof of Space Complexity}$. There is only one variable used to keep track of the iteration and that is the variable, s. There are the iteration variables i and j. Hence, the algorithm has a space complexity of a constant, $O(3) = O(1)$.
 
 $\\ $
 
@@ -160,45 +156,43 @@ From analysis, the number of times the tape head visits a finishing state is the
 $\\ $
 % convert to pseudocode 
 
-\begin{lstlisting}
-// Generates negatives from a general monomial decider represented as an algorithm so
-// that we can collect data about the negatives
-int[] Generator(int max)
-{
-    int[] result = new int[max + 1];
-    int x = 0;
-    int negatives = 0;
-    int i = 0;
-    while (x < max + 1)
-    {
-        int num = 2 * (Convert.ToInt32(Math.Pow(x, 2)));
-        if (generalizedMD(i))
-        {
-            // A simple verifier
-            if (num == i)
-            {
-                Console.WriteLine(negatives);
-                Console.WriteLine("f(" + x + ") = " + i);
-                result[x] = i;
-
-                x++;
-                negatives = 0;
-            }
-            else
-            {
-                negatives++;
-            }
-        }
-        i++;
-    }
-
-    return result;
-}
-\end{lstlisting}
+\begin{algorithmic}[1]
+\Procedure{Generator}{$max$}
+\State $result\gets [ ]$
+\State $x\gets 0$
+\State $difference\gets 0$
+\State $i\gets i$
+\While {$x < max + 1$}
+	\State $num\gets 2x^2$
+	\If {$GeneralizedDecider(i)$}
+		\If {$num = i$}
+			\State $result[x] = i$
+			\State $x\gets x + 1$
+			\State $difference\gets 0$
+		\Else
+			\State $difference\gets difference - 1$
+		\EndIf
+	\EndIf
+\EndWhile\\
+\Return result
+\EndProcedure
+\end{algorithmic}
 
 $\\ $
 
 $\textbf{Proof of Correctness}$.
+
+$\\ $
+
+$\textit{Initialization}$. 
+
+$\\ $
+
+$\textit{Maintenance}$. 
+
+$\\ $
+
+$\textit{Termination}$. 
 
 $\\ $
 
