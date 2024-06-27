@@ -413,28 +413,23 @@ From the example above, we see that f(1) = 1 and f(2) = 2. If we add f(1) and f(
 
 $\\ $
 
-\begin{lstlisting}
-int fibonacci(int n)
-{
-    if (n == 0)
-    {
-        return 0;
-    }
+\begin{algorithmic}[1]
+\Procedure{Fibonacci}{$n$}
+\If {$n = 1$}
+	\Return 0
+\EndIf
+\State $y\gets 1$
+\State $y_1\gets 1$
+\State $y_2\gets 2$
+\For $i = 1 to n-1$
+	\State $y\gets y_1 + y_2$
+	\State $y_1\gets y_1$
+	\State $y_2\gets y$
+\EndFor
 
-    int y = 1;
-    int y1 = 1;
-    int y2 = 0;
-
-    for(int i = 1; i < n; i++)
-    {
-        y = y1 + y2;
-        y2 = y1;
-        y1 = y;
-    }
-
-    return y;
-}
-\end{lstlisting}
+\Return y
+\EndProcedure
+\end{algorithmic}
 
 $\\ $
 
