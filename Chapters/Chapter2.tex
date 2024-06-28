@@ -421,7 +421,7 @@ $\\ $
 \State $y\gets 1$
 \State $y_1\gets 1$
 \State $y_2\gets 2$
-\For $i = 1 to n-1$
+\For $i = 1\ to\ n-1$
 	\State $y\gets y_1 + y_2$
 	\State $y_1\gets y_1$
 	\State $y_2\gets y$
@@ -718,50 +718,33 @@ $\\ $
 
 $\\ $
 
-\begin{lstlisting}
-int fibonacciGenerator(int n)
-{
-    int stateX = 0;
-    int stateY = 1;
-    int stateZ = 1;
-    int cycles = 0;
+\begin{algorithmic}[1]
+\Procedure{FibonacciGenerator}{$n$}
+\State $stateX\gets 0$
+\State $stateY\gets 1$
+\State $stateZ\gets 1$
+\State $cycles\gets 0$
+\While {$cycles\leq n+$}
+	\State $cycles\gets cycles + 1$
+	\If {$cycles > n$}
+		\Return $stateX$
+	\EndIf
+	\State $stateX = stateY + stateZ$
+	\State $cycles\gets cycles + 1$
+	\If {$cycles > n$}
+		\Return $stateY$
+	\EndIf
+	\State $stateY = stateZ + stateX$
+	\State $cycles\gets cycles + 1$
+	\If {$cycles > n$}
+		\Return $stateZ$
+	\EndIf
+	\State $stateZ = stateX + stateY$
+\EndWhile
 
-    while (cycles <= n)
-    {
-        cycles++;
-
-        if (cycles > n)
-        {
-            return stateX;
-        }
-
-        stateX = stateY + stateZ;
-        Console.WriteLine("stateX: " + stateX + "\tstateY: " + stateY + "\tstateZ: " + stateY);
-        
-        cycles++;
-
-        if (cycles > n)
-        {
-            return stateY;
-        }
-
-        stateY = stateX + stateZ;
-        Console.WriteLine("stateX: " + stateX + "\tstateY: " + stateY + "\tstateZ: " + stateY);
-
-        cycles++;
-
-        if (cycles > n)
-        {
-            return stateZ;
-        }
-
-        stateZ = stateX + stateY;
-        Console.WriteLine("stateX: " + stateX + "\tstateY: " + stateY + "\tstateZ: " + stateY);
-    }
-
-    return stateX;
-}
-\end{lstlisting}
+\Return $stateX$
+\EndProcedure
+\end{algorithmic}
 
 $\\ $
 
