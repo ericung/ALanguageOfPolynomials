@@ -76,42 +76,6 @@ $\\ $
 
 $\\ $
 
-Unraveling a monomial decider can be reduced down to a cycle of 1 degree depth.
-
-$\\ $
-
-$\textbf{Theorem}$. A monomial decider can be mapped into a cycle of 1 degree depth in either direction.
-
-$\\ $
-
-$\textbf{Corollary}$. A cyclic automata is in a monomial decider.
-
-$\\ $
-
-$\textit{Proof}$. Given a deterministic automata that represents a cycle, a cyclic automata is a rational language and hence a decider can recognize the cyclic automata.
-
-$\\ $
-
-$\textit{Proof}$. Remove the lowest level state, $S_1$ from the bottom then continue removing $S_i$ from i = 2 to n-1 until you get only the states that are at $X_n$. This is a cyclic automata.
-
-$\\ $
-
-Remove the top state down from the $S_{n-1}$ for each layer $S_{n-1}$ to $S_(n-n-1)$. This preserves the start and finish state for the layer $x_{n}$. This is also a cyclic automaton.
-
-$\\ $
-
-The next theorem states that a monomial decider has a certain form called a p-adic number. 
-
-$\\ $
-
-$\textbf{Theorem}$. A monomial with simple p-adic form is in a decider.
-
-$\\ $
-
-$\textit{Proof}$. Start with the definition of p-adic number. Show its form in general. Show that it has the same description as a monomial decider. Is this another paper?
-
-$\\ $
-
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{0102theorem.jpg}
@@ -205,6 +169,37 @@ S = $\sum_{n\geq 0}{a_n x^n}$
 
 $\\ $
 
+Unraveling a monomial decider can be reduced down to the layer $\mathcal{E}_0$. In the following proof of the theorem below, it can be noted that $q_finish$ isn't the same as $q\in q_accept$.
+
+$\\ $
+
+$\textbf{Theorem}$. A monomial decider can be, $A_n$, can be mapped into a set consisting of the base layer, $E_0$.
+
+$\\ $
+
+$\textbf{Corollary}$. A cyclic automata is in a monomial decider.
+
+$\\ $
+
+$\textit{Proof}$. For every $E_k$ in $E_n$, $E_k$ is a state that connects to $E_{k-1}$ where $1<k<n$.
+
+For every $E_k$ to $E_{k-1}$, every semigroup of $q_{finish} \in E_k$ connects to the $q_{start}$ at each layer $E_{k-1}$.
+
+Given $q_{finish}$ of $E_0$ in one group connecting to another group on $q_{start}\in E_k$, remove the connection and connect it to $q_start\in E_{k-1}$ where $1\leq k\leq n$ and n is a degree of the monomial.
+
+This gives a union of $E_0$ hence it is a cyclic automata consisting of semigroups of $E_0$ that decides y on the monomial m(x).
+
+$\\ $
+
+The next theorem states that a monomial decider has a certain form called a p-adic number. 
+
+$\\ $
+
+$\textbf{Theorem}$. A monomial with simple p-adic form is in a decider.
+
+$\\ $
+
+$\textit{Proof}$. Start with the definition of p-adic number. Show its form in general. Show that it has the same description as a monomial decider. Is this another paper?
 
 \section{Addition}
 
