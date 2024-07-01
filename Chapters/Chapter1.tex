@@ -74,14 +74,6 @@ $\\ $
   \label{fig:0101DeciderX3}
 \end{figure}
 
-$\\ $
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=\linewidth]{0102theorem.jpg}
-  \caption{Top down removal for equivalence of decider and cyclic automata.}
-  \label{fig:0102theorem}
-\end{figure}
 
 \section{Monomial of One Variable}
 
@@ -183,7 +175,7 @@ $\\ $
 
 $\textit{Proof}$. For every $E_k$ in $E_n$, $E_k$ is a state that connects to $E_{k-1}$ where $1<k<n$.
 
-For every $E_k$ to $E_{k-1}$, every semigroup of $q_{finish} \in E_k$ connects to the $q_{start}$ at each layer $E_{k-1}$.
+For every $E_k$ to $E_{k-1}$, every semigroup of $q_{finish} \in E_k$ connects to the $q_{start}\in E_{k-1}$.
 
 Given $q_{finish}\in E_0$ in one group connecting to another group on $q_{start}\in E_k$, remove the connection and connect it to $q_{start}\in E_{k-1}$ where $1\leq k\leq n$ and n is a degree of the monomial.
 
@@ -192,6 +184,15 @@ This implies that $\cup E_0$ hence it is a cyclic automata consisting of semigro
 $\\ $
 
 The next theorem states that a monomial decider has a certain form called a p-adic number. 
+
+$\\ $
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{0102theorem.jpg}
+  \caption{Top down removal for equivalence of decider and cyclic automata.}
+  \label{fig:0102theorem}
+\end{figure}
 
 $\\ $
 
