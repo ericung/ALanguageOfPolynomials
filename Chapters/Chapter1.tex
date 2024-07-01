@@ -165,7 +165,7 @@ Unraveling a monomial decider can be reduced down to the layer $\mathcal{E}_0$. 
 
 $\\ $
 
-$\textbf{Theorem}$. A monomial decider represented as, $A_n$, can be mapped into a set consisting of the base layer, $E_0$.
+$\textbf{Theorem}$. A monomial decider represented as, $A_n$, can be mapped into a set consisting of the union of the base layer or $A_0 = \bigcup E_0$.
 
 $\\ $
 
@@ -173,13 +173,13 @@ $\textbf{Corollary}$. A cyclic automata is in a monomial decider.
 
 $\\ $
 
-$\textit{Proof}$. For every $E_k$ in $E_n$, $E_k$ is a state that connects to $E_{k-1}$ where $1<k<n$.
+$\textit{Proof}$. For every $E_k$ in $A_n$, $E_k$ is a state that connects to $E_{k-1}$ where $1<k<n$.
 
-For every $E_k$ to $E_{k-1}$, every semigroup of $q_{finish} \in E_k$ connects to the $q_{start}\in E_{k-1}$.
+For every $E_k$ to $E_{k-1}$, every semigroup of $q_{finish} \in E_0 \subset E_k$ connects to every other $q_{start}\in E_{k}$ forming a chain of cyclic semigroups.
 
-Given $q_{finish}\in E_0$ in one group connecting to another group on $q_{start}\in E_k$, remove the connection and connect it to $q_{start}\in E_{k-1}$ where $1\leq k\leq n$ and n is a degree of the monomial.
+Given $q_{finish}\in E_0$ in one semigroup connecting to another semigroup on $q_{start}\in E_k$, remove the connection and connect it to $q_{start}\in E_{k-1}$ where $1\leq k\leq n$ and n is a degree of the monomial.
 
-This implies that $\cup E_0$ hence it is a cyclic automata consisting of semigroups of $A_0$ that decides y on the monomial m(x).
+This implies that $A_0 = \bigcup E_0$ hence it is a cyclic automata consisting of semigroups of $A_0$ that decides y on the monomial m(x).
 
 $\\ $
 
