@@ -83,23 +83,29 @@ Decider is a function $Decider<c x^n> \equiv c x^n = y$
 
 $\\ $
 
-A decider of at least one degree
+A decider of at least one degree can be denoted as the following.
 
 $Decider< 3 x^4 > \equiv 3x^4 = y$
 
 $\\ $
 
-Contains $Decider<3 x^3> \equiv 3x^3 = y$
+Each state in the decider has monomials the same property of being able to describe the lesser monomial which it contains and the following example is how it is denoted.
 
-Contains $Decider<3 x^2> \equiv 3x^2 = y$
+$\\ $
 
-Contains $Decider<3 x^1> \equiv 3x^1 = y$
+Contains $Decider<3 x_{3}^3> \equiv 3x^3 = y$
 
-Contains $Decider<3 x^0> \equiv 3x^0 = y$
+Contains $Decider<3 x_{2}^3>\cup \cdots\cup Decider<3 x_{2}^3> \equiv 3x^2 = y$
+
+Contains $Decider<3 x_{1}^3>\cup \cdots\cup Decider<3 x_{1}^3> \equiv 3x^1 = y$
+
+Contains $Decider<3 x_0^0>\cup \cdots\cup Decider<3 x_0^0> \equiv 3x^0 = y$
+
+$\\ $
 
 Hence it can be generalized to:
 
-$Decider<c x^n>$ contains the sequence set 
+$Decider<c x^{n}>$ contains the set of deciders
 
 
 $\\ $
@@ -111,19 +117,19 @@ $\{start,...,finish\}$
 $\\ $
 
 $Decider<c x^n>,Decider<c x^{n-1}>,...,Decider<c x^0>$ 
-which has a more formal definition called a rational expression. A rational expression on A over K is a semiring described as $\mathcal{E}_{n}$ such that $n\geq0$ where A is an alphabet (in our case a finite set of integers) and K is a commutative semiring. This means the following in terms of the decider
+which has a more formal definition called a rational expression. A rational expression on A over K is a semiring described as $\mathcal{E}_{n}$ such that $n\geq0$ where A is an alphabet (in our case a finite set of integers) and K is a commutative semiring. This means the following in terms of the decider:
 
 $\\ $
 
 $Decider<c x^n>$ = $\mathcal{E}_{n}$
 
-Contains $Decider<c x^{n-1}>$ = $\mathcal{E}_{n-1}$
+Contains $Decider<c x_{n-1}^n>\cup \cdots\cup Decider<c x_{n-1}^n>$ = $\mathcal{E}_{n-1}$
 
-...
+$\cdots$
 
-Contains $Decider<c x^{1}>$ = $\mathcal{E}_{1}$
+Contains $Decider<c x_{1}^{n}>\cup \cdots\cup Decider<c x_{1}^{1}>$ = $\mathcal{E}_{1}$
 
-Contains $Decider<c x^0>$ = $\mathcal{E}_{0}$
+Contains $Decider<c>\cup \cdots\cup Decider<c>$ = $\mathcal{E}_{0}$
 
 $\\ $
 
@@ -165,7 +171,7 @@ Unraveling a monomial decider can be reduced down to the layer $\mathcal{E}_0$. 
 
 $\\ $
 
-$\textbf{Theorem}$. A monomial decider represented as, $A_n$, can be mapped into a set consisting of the union of the base layer or $A_0 = \bigcup E_0$.
+$\textbf{Theorem}$. A monomial decider represented as, $A_n$, can be mapped into a set consisting of the union of the base layer or $A_1 = \bigcup E_1$.
 
 $\\ $
 
@@ -173,17 +179,13 @@ $\textbf{Corollary}$. A cyclic automata is in a monomial decider.
 
 $\\ $
 
-$\textit{Proof}$. For every $E_k$ in $A_n$, $E_k$ is a state that connects to $E_{k-1}$ where $1<k<n$.
+$\textit{Proof}$. For every $E_k$ in $A_n$, $E_k$ is a state that connects to $E_{k-1}$ where $2<k<n$.
 
-For every $E_k$ to $E_{k-1}$, every semigroup of $q_{finish} \in E_0 \subset E_k$ connects to every other $q_{start}\in E_{k}$ forming a chain of cyclic semigroups.
+For every $E_k$ to $E_{k-1}$, every semigroup of $q_{finish} \in E_1 \subset E_k$ connects to every other $q_{start}\in E_{k}$ forming a chain of cyclic semigroups.
 
 Given $q_{finish}\in E_0$ in one semigroup connecting to another semigroup on $q_{start}\in E_k$, remove the connection and connect it to $q_{start}\in E_{k-1}$ where $1\leq k\leq n$ and n is a degree of the monomial.
 
-This implies that $A_0 = \bigcup E_0$ hence it is a cyclic automata consisting of semigroups of $A_0$ that decides y on the monomial m(x).
-
-$\\ $
-
-The next theorem states that a monomial decider has a certain form called a p-adic number. 
+This implies that $A_1 = \bigcup E_1$ hence it is a cyclic automata consisting of semigroups of $A_1$ that decides y on the monomial m(x).
 
 $\\ $
 
@@ -196,11 +198,15 @@ $\\ $
 
 $\\ $
 
-$\textbf{Theorem}$. A monomial with simple p-adic form is in a decider.
+The next theorem states that a monomial decider has a certain property where the states have the same layout as the state it is in. 
 
 $\\ $
 
-$\textit{Proof}$. Start with the definition of p-adic number. Show its form in general. Show that it has the same description as a monomial decider. Is this another paper?
+$\textbf{Theorem}$. A monomial decider has the property of being compact.
+
+$\\ $
+
+$\textit{Proof}$. 
 
 \section{Addition}
 
