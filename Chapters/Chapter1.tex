@@ -45,25 +45,17 @@ Let the decider be defined as the following:
 
 $\\ $
 
-Decider is a function $Decider<c x^{n}> \equiv c x^{n} = y$
-
-such that
-$x_1 \times x_2 \times ... \times x_n\ $ where n is equal to degree + constant is tested to be equivalent to y
-and $x_1$ is the start
-and $x\ degree\ times$ is the finish
-then loop around $x_1 to x\ n\ times$ until it stops
-
-For each state, $x_i$, i such that it is between 1 to n, $x_i$ contains a subgroup of size n and for each subgroup, $s_i$, there exists another subgroup and so on and so forth such that there are n layers starting from $x_i$ to 1. This is the same as saying that it is a rational expression.
+A monomial decider is a special kind of machine that decides if y is in a monomial. $Decider<c x^{n}> \equiv c x^{n} = y$ such that $x_1 \times x_2 \times ... \times x_n\ $ where $n$ is equal to $degree + constant$ of the monomial where $m(x) = cx^n$ and is tested to be equivalent to y. For each state, $q_i$, $i$ such that it is between 1 to n, $q_i$ contains a subgroup of size n and for each subgroup, $s_i$, there exists another subgroup and so on and so forth such that there are n layers. For each $s_i$, there is a start state, $q_{start}$ and a finish state, $q_{finish}$. This is the same as saying that it is a rational expression.
 
 $\newline$
 
 $\textbf{Examples}$
 
-Decider for $ax^2$ is $Decider<3 (2)^2> \equiv 3(2)^2 = 12$
+Decider for $ax^2$ is $Decider<3(2)^2> \equiv 3(2)^2 = 12$
 
-Decider for $bx$ is $Decider<4 (2)^1> \equiv 4(2)^1 = 8$
+Decider for $bx$ is $Decider<4(2)^1> \equiv 4(2)^1 = 8$
 
-Decider for $c$ is $Decider<5 (2)^1> \equiv 5(2)^0 = 5$
+Decider for $c$ is $Decider<5(2)^1> \equiv 5(2)^0 = 5$
 
 $\\ $
 
@@ -74,12 +66,11 @@ $\\ $
   \label{fig:0101DeciderX3}
 \end{figure}
 
-
 \section{Monomial of One Variable}
 
 Given the definition of a decider:
 
-Decider is a function $Decider<c x^n> \equiv c x^n = y$
+Decider is a function $Decider<cx^n> \equiv c x^n = y$
 
 $\\ $
 
@@ -89,35 +80,37 @@ $Decider< 3 x^4 > \equiv 3x^4 = y$
 
 $\\ $
 
-Each state in the decider has monomials the same property of being able to describe the lesser monomial which it contains and the following example is how it is denoted.
+Each state in the decider has monomials with the same property of being able to describe the lesser monomial which it contains and the following example is how it is denoted.
 
 $\\ $
 
-Contains $Decider<3 x_{3}^3> \equiv 3x^3 = y$
+Contains $Decider<3 x^3> \equiv 3x^3 = y$
 
-Contains $Decider<3 x_{2}^3>\cup \cdots\cup Decider<3 x_{2}^3> \equiv 3x^2 = y$
+Contains $Decider<3 x_{0,j,2}^3>\cup \cdots\cup Decider<3 x_{2,j,2}^3>$
 
-Contains $Decider<3 x_{1}^3>\cup \cdots\cup Decider<3 x_{1}^3> \equiv 3x^1 = y$
+Contains $Decider<3 x_{0,j,1}^3>\cup \cdots\cup Decider<3 x_{2,j,1}^3>$
 
-Contains $Decider<3 x_0^0>\cup \cdots\cup Decider<3 x_0^0> \equiv 3x^0 = y$
-
-$\\ $
-
-Hence it can be generalized to:
-
-$Decider<c x^{n}>$ contains the set of deciders
-
+Contains $Decider<3 x_{0,j,0}^0>\cup \cdots\cup Decider<3 x_{2,j,0}^0>$
 
 $\\ $
 
-There exists a start state and a finish state for each decider.
+It can be generalized to:
 
-$\{start,...,finish\}$
+$\\ $
+
+$Decider<x_{0,j,0}^n>\subset Decider<x_{i,j,k}^n>\subset Decider<c x^{n}>$
+
+such that i and j are the indices of the monomial representation and k is the layer the monomial representation is in.
+
+
+$\\ $
+
+Furthermore, it can be noted that there exists a start state,$q_{start}$ and a finish state, $q_{finish}$, for each semigroup in the decider.
 
 $\\ $
 
 $Decider<c x^n>,Decider<c x^{n-1}>,...,Decider<c x^0>$ 
-which has a more formal definition called a rational expression. A rational expression on A over K is a semiring described as $\mathcal{E}_{n}$ such that $n\geq0$ where A is an alphabet (in our case a finite set of integers) and K is a commutative semiring. This means the following in terms of the decider:
+which has a more formal definition called a rational expression. A rational expression on A over K is a semiring described as $\mathcal{E}_{n}$ such that $n\geq0$ where A is an alphabet, in our case a finite set of integers, and K is a commutative semiring. This means the following in terms of the decider:
 
 $\\ $
 
@@ -151,7 +144,6 @@ $\\ $
   \caption{Visual example of what $\mathcal{E}_n$ of a rational expression.}
   \label{fig:0103RationalExpression}
 \end{figure}
-Figure \ref{fig:0103RationalExpression} Visual example of $\mathcal{E}_n$ of a rational expression.
 
 $\\ $
 
@@ -159,7 +151,7 @@ A rational function is defined as the following:
 
 $\\ $
 
-K[x] and K[[x]]. Let K[[x]] describe a set of deciders as a polynomial representation. S is an element of K[[x]] meaning S is a decider.
+$\textbf{Defintion}$. K[[x]], or $K\ll A \gg$ is the set of functions that map a finite sequence, $A*$, to a semiring K of the alphabet, $A$, on the finite sequence, $A*$. Let K[[x]] describes a set of deciders as a polynomial representation. S is an element of K[[x]] meaning S is a polynomial decider.
 
 $\\ $
 
@@ -167,7 +159,7 @@ S = $\sum_{n\geq 0}{a_n x^n}$
 
 $\\ $
 
-Unraveling a monomial decider can be reduced down to the layer $\mathcal{E}_0$. In the following proof of the theorem below, it can be noted that $q_{finish}$ isn't the same as $q\in q_{accept}$.
+Unraveling a monomial decider can be reduced down to the layer $\mathcal{E}_1$ and $\mathcal{E}_0$. In the following proof of the theorem below, it can be noted that $q_{finish}$ isn't the same as $q\in q_{accept}$.
 
 $\\ $
 
@@ -179,7 +171,7 @@ $\textbf{Corollary}$. A cyclic automata is in a monomial decider.
 
 $\\ $
 
-$\textit{Proof}$. For every $E_k$ in $A_n$, $E_k$ is a state that connects to $E_{k-1}$ where $2<k<n$.
+$\textit{Proof}$. For every $E_k$ in $A_n$, $E_k$ is a state that connects to $E_{k-1}$ where $1<k\leq n$.
 
 For every $E_k$ to $E_{k-1}$, every semigroup of $q_{finish} \in E_1 \subset E_k$ connects to every other $q_{start}\in E_{k}$ forming a chain of cyclic semigroups.
 
@@ -192,7 +184,7 @@ $\\ $
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{0102theorem.jpg}
-  \caption{Top down removal for equivalence of decider and cyclic automata.}
+  \caption{The unraveling theorem of a decider into a variant of cyclic automata.}
   \label{fig:0102theorem}
 \end{figure}
 
@@ -243,41 +235,71 @@ $\\ $
   \label{fig:0104Addition}
 \end{figure}
 
-Given the first example:
+Each monomial in the polynomial can be tested in the decider and can be operated on by addition. 
 
 $\\ $
 
-$p(x)=3 x^2+4 x+5$
+$\textit{Example}$.
 
-$p(2)=3(2)^2+4(2)+5$
+$m_1=Decider<2 x^2> = 2 x^2$
 
-$p(2)=12+8+5$
-
-$\\ $
-
-$m_2=Decider<3 x^2>=3x^2$
-
-$m_1=Decider<4 x^1>=4 x$
-
-$m_0=Decider<5 x^0>=5$
+$m_2=Decider<4 x^4> = 4 x^2$
 
 $\\ $
 
-Generalized to $m_x$ where x is the degree
+The following corollary of addition will be used to show a general theorem of addition.
 
-Given polynomial functions, $p_1$ and $p_2$, they are commutative
+$\\ $
 
-$p_1(x)=m_a+...+m_0$
+$\textbf{Corollary}$. Given two monomials of the same degree, $m_1$ and $m_2$, the addition operation can be performed on them to form a decider of the aggregate, $m_3$, such that $m_3 = m_1 + m_2$.
 
-$p_2(x)=n_b+...+n_0$
+$\\ $
 
-$p_1(x)+p_2(x)=m_a+n_b+(m_{x+1}+n_{y+1})+...+(m_x+n_y)+...+(m_0+n_0)$ where $x=y$
+$\textit{Proof}$. Using the unraveling theorem get to $E_1$ for the deciders on $m_1$ and $m_2$. Remove the connection on $q_{finish}$ to $q_start$ for both deciders. Connect $q_finish$ for the decider on $m_1$ on the layer $E_1$ to $q_start$ on the decider on $m_2$ on the layer $E_1$. Connect $q_{finish}$ on the decider on $m_2$ of $E_1$ to $q_{start}$ on the decider on $m_1$ of $E_1$. $q_{start}$ of the decider on $m_1$ is the new start start and $q_{finish}$ of the decider on $m_2$ is the new finish state of this new aggregate decider on $m_3$. Hence, this is the decider on $m_3$ which is the sum of $m_1$ and $m_2$.
 
-$Decider<c_x x d_x>+Decider<c_y x d_y>$
+$\\ $
 
-$=Decider<c_x+c_y,x,d_x>=Deciders<c_x+c_y,x,d_y>$
+The opposite is true which is splitting up the decider on $m_3$ to form $m_1$ and $m_2$.
 
-$\implies d_x=d_y$
+$\\ $
+
+$\textbf{Corollary}$. Given a monomial of some degree, $m_3$, it can be split up into two $m_1$ and $m_2$ such that $m_3 = m_1 + m_2$.
+
+$\\ $
+
+$\textit{Proof}$. Given a monomial, $m_3 = c x^n$, take $c = c_i + c_{i+1}$. Use the unraveling theorem to get the base layer, $\mathcal{E}_1$, on the decider on $m_3$. Group the states between $q_{start} to q_i$ of the decider on $m_3$ and set $q_i$ as the finish state of the new decider on $c_i x^n$. Then take the states between $q_{i+1}$ to $q_{finish}$ and set the start state of this new decider on $c_{i+1} x^n$ to $q_{i+1}$. Hence, these two constructions on the deciders of $c_i x^n$ and $c_{i+1} x^n$ form summation of the decider on $c x^n$.
+
+$\\ $
+
+These two corollaries can be generalized into algebra to form a theorem of addition.
+
+$\\ $
+
+$\textbf{Theorem}$. $Decider<c_1 x^n> + Decider<c_2 x^n> \equiv Decider<c x^n>$ such that $c = c_1 + c_2$.
+
+$\textit{Proof}$. Given $m_1 = c_1 x^n$ and $m_2 = c_2 x^n$,
+
+There exists deciders on $m_1$ and $m_2$ denoted $Decider<c_1 x^n>$ and $Decider<c_2 x^n>$.
+
+Use the corollary of addition to form a decider on the aggregate of $m_1$ and $m_2$ called $m_3$ such that 
+
+$m_3 = m_1 + m_2$
+
+$=c_1 x^n + c_2 x^n$
+
+$=(c_1 + c_2) x^n$
+
+$=c x^n$
+
+By definition, this is equivalent to $Decider<c x^n>$.
+
+For the reverse, take $c x^n$.
+
+Use the splitting corollary to get deciders on $c_i x^n$ and $c_{i+1} x^n$.
+
+Hence $Decider<c x^n>\implies Decider<c_i x^n> + Decider<c_{i+1} x^n>$
+
+$\implies Decider<m_1> + Decider<m_2$
 
 \section{Product}
 
