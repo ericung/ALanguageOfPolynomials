@@ -17,7 +17,7 @@
 
 \section{Introduction}
 
-This paper is on the construction of the one way function to a matrix multiplication problem - that of multiplying two $3 \times 3$ matrices to form a $6 \times 6$ matrix under a locally concatenative property. The matrix multiplication is a type of law of composition that operates on different layers. There may be some higher level mathematics mixed throughout the paper, however, thorough explanation will be attempted, otherwise can be ignored. The reason why it is included is to provide a bridge of multiple directions for the reader to take.
+This thesis is on the construction of the one way function to a matrix multiplication problem - that of multiplying two $3 \times 3$ matrices to form a $6 \times 6$ matrix under a locally concatenative property. The matrix multiplication is a type of law of composition that operates on different layers and although there are techniques to construct the multiplication of two $6 \times 6$ matrices, this paper examines the irreducible component of them. There may be some higher level mathematics mixed throughout the paper, however, thorough explanation will be attempted, otherwise can be ignored. The reason why it is included is to provide a bridge of multiple directions for the reader to take.
 
 This paper aims to get the reader up to speed on the foundations of current computational complexity theory as it builds up a framework from scratch. At the end it provides a field for the reader to use in order to understand modern complexity theory in more depth. The intention is to provide as much insight as possible as to explore the science of computation.
 
@@ -348,13 +348,13 @@ $\\ $
 
 Now, given $Decider<c_x x^m>$ and $Decider<c_y x^n>$, show that the product is $Decider<(c_x c_y) x^{m+n}>$. It can be seen that there are $m$ and $n$ layers for the deciders on $c_x x^m$ and $c_y x^n$, respectively. When multiplied together, this results in $m+n$ layers. Construct a new decider from the the two deciders given to get $Decider<(c_x + c_y) x^{m+n}>$ by operating at the highest level, $\mathcal{E}_{n}$ and using the corollary above. Hence, $Decider<c_x x^m>$ multiplied by $Decider<c_y x^n>$ gives us the product, $Decider<(c_x+c_y) x^{m+n}>$.
 
-\section{Problem with Matrices}
+\section{A Conjecture with Matrices}
 
-An important problem arising from deciders is representing them as matrices. The problem can be reformulated as the following: given a polynomial p of x, show that the monomial deciders represented in the language can't be contained in a finite matrix after a set number, n, such that $x^n$.
+An important problem arising from deciders is representing them as matrices. The problem can be reformulated as the following: given a polynomial, show that the monomials represented in the language can't be contained in a finite matrix after a set number, n, such that $x^n$. Equivalently, multiplying two matrices together gives the product of a matrix whose dimensions are greater than the dimensions multiplied by. The conjecture can be stated below.
 
 $\\ $
 
-$\left[ n\times n \right]\left[ n\times n \right]=\left[ m\times m \right]$ such that $m \neq n$ and $m,n\geq 0$ and $m \geq n$
+$\left[ n\times n \right]\left[ n\times n \right]=\left[ m\times m \right]$ such that $0< n< m$
 
 $\\ $
 
@@ -363,6 +363,10 @@ The focus of this article pertains to the question of whether or not there exist
 $\\ $
 
 $\textit{Proposition.}$ Given a proper square matrix M over $\mathcal{E}$, there exist matrices $M_1$, $M_2$ of the same size as M over $\mathcal{E}$ such that $M_1 ~1 + MM_1$ and $M_2~1+M_2M$. In particular if K is a ring, 1 - M is an invertible modulo ~.
+
+$\\ $
+
+If this is true, there is are techniques that exist to reduce $M_1$ and $M_2$ into irreducible elements and have them mapped into visually format in order to understand the operation at a higher level.
 
 \section{Multivariable Monomials}
 
