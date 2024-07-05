@@ -309,11 +309,7 @@ $\\ $
 
 $\textbf{Theorem}$. $Decider<c_1 x^n> + Decider<c_2 x^n> \equiv Decider<c x^n>$ such that $c = c_1 + c_2$.
 
-$\textit{Proof}$. Given $m_1 = c_1 x^n$ and $m_2 = c_2 x^n$,
-
-There exists deciders on $m_1$ and $m_2$ denoted $Decider<c_1 x^n>$ and $Decider<c_2 x^n>$.
-
-Use the corollary of addition to form a decider on the aggregate of $m_1$ and $m_2$ called $m_3$ such that 
+$\textit{Proof}$. Given $m_1 = c_1 x^n$ and $m_2 = c_2 x^n$, there exists deciders on $m_1$ and $m_2$ denoted $Decider<c_1 x^n>$ and $Decider<c_2 x^n>$. Use the corollary of addition to form a decider on the aggregate of $m_1$ and $m_2$ called $m_3$ such that 
 
 $m_3 = m_1 + m_2$
 
@@ -323,15 +319,7 @@ $=(c_1 + c_2) x^n$
 
 $=c x^n$
 
-By definition, this is equivalent to $Decider<c x^n>$.
-
-For the reverse, take $c x^n$.
-
-Use the splitting corollary to get deciders on $c_i x^n$ and $c_{i+1} x^n$.
-
-Hence $Decider<c x^n>\implies Decider<c_i x^n> + Decider<c_{i+1} x^n>$
-
-$\implies Decider<m_1> + Decider<m_2>$
+By definition, this is equivalent to $Decider<c x^n>$. For the reverse, take $c x^n$. Use the splitting corollary to get deciders on $c_i x^n$ and $c_{i+1} x^n$. Hence $Decider<c x^n>$ implies that it is equivalent to $Decider<c_i x^n> + Decider<c_{i+1} x^n>$.
 
 \section{Product}
 
@@ -342,23 +330,23 @@ $\implies Decider<m_1> + Decider<m_2>$
   \label{fig:0105Product}
 \end{figure}
 
-Given two monomials in the language, a and b, the product of a and b is also in the language.
+$\textbf{Theorem 1.5.1}$. $Decider<a x^m>$ * $Decider<b x^n>$ implies $Decider<c x^{m+n}>$ where $c = ab$.
 
 $\\ $
 
-Given $Decider<c_x x d_x>$ and $Decider<c_y x d_y>$ is in language L
+$\textbf{Corollary 1.5.2}$. There is a decider on $x^n$ such that for every $\mathcal{E}_k$ where $1\leq k\leq n$, for every semigroup in $\mathcal{E}_k$, there is n semigroups in $\mathcal{E}_k$ is equivalent to the topology of the decider on $x^n$ being a locally compact Hausdorff space.
 
-Show that the product $Decider<(c_x+c_y) x d_x\times d_y>$ is in L
+$\\ $
 
-$Decider<c_x x d_x> \times Decider<c_y x d_y>$
+$\textit{Proof}$. Suppose $A_n$ is the decider on $x^n$ then there are n semigroups in $\mathcal{E}_k$ for all k in the closed set $[1,n]$. These semigroups form a subspace of the topology of the decider on $x^n$ by definition implying that the union of these n subspaces form a topology that it is a locally compact Hausdorff space. 
 
-$=c_x x d_x c_y x d_y$
+$\\ $
 
-$=c_x  x d_x+d_y$
+Suppose the reverse is true, that the topology on the decider on $x^n$ is a locally compact Hausdorff space. There are n subspaces whose union form the topology of the decider on $x^n$ at $\mathcal{E}_k$. These subspaces are equivalent to a semi-group because they can be added together by the corollary of addition at any layer, $\mathcal{E}_k$, and they have the identity of itself. Since every subspace on $\mathcal{E}_k$ is a locally compact Hausdorff space this implies that every semi-group contains n semi-groups for every $\mathcal{E}_k$.
 
-$=(c_x+c_y) x (d_x+d_y)$ is in L
+$\\ $
 
-$=Decider<(c_x+c_y) x (d_x+d_y)>$
+Now, given $Decider<c_x x^m>$ and $Decider<c_y x^n>$, show that the product is $Decider<(c_x c_y) x^{m+n}>$. It can be seen that there are $m$ and $n$ layers for the deciders on $c_x x^m$ and $c_y x^n$, respectively. When multiplied together, this results in $m+n$ layers. Construct a new decider from the the two deciders given to get $Decider<(c_x + c_y) x^{m+n}>$ by operating at the highest level, $\mathcal{E}_{n}$ and using the corollary above. Hence, $Decider<c_x x^m>$ multiplied by $Decider<c_y x^n>$ gives us the product, $Decider<(c_x+c_y) x^{m+n}>$.
 
 \section{Problem with Matrices}
 
