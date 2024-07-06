@@ -417,17 +417,49 @@ $\\ $
   \label{fig:0110x5overx}
 \end{figure}
 
-$\textit{Example}$. The following are deciders related to $x^5/x^i$ such that $0 \leq i \leq 5$.
+In order to show the number of decision functions in a decider, start with the a formula to calculate the amount of permutations given some integer, $n$, and the number of spaces, or partitions, being permuted. $\textbf{Theorem 1.9.1}$ and $\textbf{corollary 1.9.2}$ is found in Rosen (407). 
 
-$Decider<x^5 / x> \equiv Decider<x^5>/Decider<x^1>$
+$\\ $
 
-$Decider<x^5 / x^2> \equiv Decider<x^5>/Decider<x^2>$
+$\textbf{Theorem 1.9.1}$. If $n$ is a positive integer and $r$ is an integer with $1\leq r \leq n$, then there are
 
-$Decider<x^5 / x^3> \equiv Decider<x^5>/Decider<x^3>$
+$P(n,r) = n(n-1)(n-2)\cdots (n-r+1)$
 
-$Decider<x^5 / x^4> \equiv Decider<x^5>/Decider<x^4>$
+r-permutations of a set with $n$ distinct elements.
 
-$Decider<x^5 / x^5> \equiv Decider<x^5>/Decider<x^5>$
+$\\ $
+
+The following corollary is derived from the theorem.
+
+$\\ $
+
+$\textbf{Corollary 1.9.2}$. If $n$ and $r$ are integers with $0\leq r\leq n$, then $P(n,r)$ = $\frac{n!}{(n-r)!}$.
+
+$\\ $
+
+Now, on a single division operation, two spaces are split into two, the original and the space divided. This implies the following corollary.
+
+$\\ $
+
+$\textbf{Corollary 1.9.2}$. On a single operation, there are two distinct spaces formed on a decider on $x^n$ giving $n(n-1)$ decision functions on the space of the decider.
+
+$\\ $
+
+$\textit{Proof}$. There are two spaces being permuted showing that r is 2. By $\textit{theorem 1.9.1}$, this gives $\frac{n!}{(n-2)!}$ = $n(n-1)$ permutations on the space of the decider on $x^n$.
+
+$\\ $
+
+$\textit{Example}$. The following denotations are deciders related to $x^5/x^i$ such that $1 \leq i \leq 5$.
+
+$m_1 = Decider<x^5>/Decider<x^1>$
+
+$m_2 = Decider<x^5>/Decider<x^2>$
+
+$m_3 = Decider<x^5>/Decider<x^3>$
+
+$m_4 = Decider<x^5>/Decider<x^4>$
+
+$m_5 = Decider<x^5>/Decider<x^5>$
 
 $\\ $
 
@@ -442,7 +474,19 @@ $\\ $
 
 $\\ $
 
-A decider of a monomial can have no decision functions or a set of decision functions so $\emptyset \in \tau$ or $D \subseteq \tau$
+Generalizing to multiple operations on the decider on $x^n$, a corollary can be derived.
+
+$\\ $
+
+$\textit{Corollary 1.11.1}$. On multiple operations of division, the number of permutations of the space on $x^n/Q$ where $q_i\in Q$ such that $1\leq i\leq n$ is equal to $\frac{n}{(n-r)!}$ by $\textbf{corollary 1.9.2}$.
+
+$\\ $
+
+The topology of the decider on $x^n$ can be formed.
+
+$\\ $
+
+A decider of a monomial forms a space having no decision functions or the set of all decision functions so $\emptyset \in \tau$ or $D \subseteq \tau$. These aren't included in the calculations of the permutations a decision function can have as there is no division operations being performed.
 
 $\\ $
 
@@ -460,28 +504,24 @@ Given $d_1 \in D_1$ and $d_1 \in D_2$, then $d_1 \in D_1 \cap D_2 \subseteq \tau
 
 $\\ $
 
-Using the construction above, a general categorization of the states of a decider can be illustrated to find basic patterns using a term in topology called the basis.
+Using the construction above, another layer of topology of a decider is formed to find in order to find general patterns latter in this paper.
 
 $\\ $
 
-The next theorem states that a monomial decider has a certain property where the states have the same layout as the state it is in. 
+The topology of the operations on the cyclic structure of a decider forms its own area of study. A topology of a decider used in this paper is constructed below. A basis that can be formed is one that describes the operations on $x^{n+k}/Q$ where Q is the divisions (e.g. $x^6/q_1/q_2$ where $q_1,q_2\in Q$). There are $6(6-1)(6-2)$ = $120$ permutations possible in the example given. The basis elements that form $B_{q_1 q_2}$ and $B_{q_2 q_1}$ can be described. As a programmer, this statement means that even though there are many ways to write a function, there a finite amount of different combinations to write them in terms of having be as re-factored well.
 
 $\\ $
 
-$\\ $
+$\textit{Example}$. The following are examples on $x^n/Q$
 
-Given multiple operations of division, this forms a topological space where the order of operations are ignored.
+$Decider<x^5/x^2/x/x>$.
 
-$\\ $
+$Decider<x^5/x^2/x^2>$.
 
-$Decider<x^5/x^2/x/x> ~ Decider<x^5/x^2/x^2>$.
+$Decider<x^5/x^2/x^1/x^1>$.
 
-$Decider<x^5/x^2/x^1/x^1> ~ Decider<x^5/x^2/x^2>$
+$Decider<x^5/x^2/x^2>$.
 
-$\\ $
-
-The topology of the operations on the cyclic structure of a decider forms its own area of study. A topology of a decider used in this paper is constructed below. A basis that can be formed is one that describes the operations on $x^{n+k}/Q(x^k)$ where Q is the divisions (e.g. $x^6/x^3/x^2$ where $Q(x^k)=x^3/x^2$). There are $6*2+6*1=18$ permutations possible in the example given. The basis elements that form $B_{6*2}$ and $B_{6*1}$ can be described. As a programmer, this statement means that even though there are many ways to write a function, there a finite amount of different combinations to write them in terms of having be as re-factored well.
- 
 \section{Multivariable Monomials}
 
 \begin{figure}[H]
