@@ -70,13 +70,13 @@ $\\ $
 
 Given the definition of a decider:
 
-Decider is a function $Decider<cx^n> \equiv c x^n = y$
+Decider is a function $Decider<cx^n>$ that tests if y is in $cx^n$.
 
 $\\ $
 
 A decider of at least one degree can be denoted as the following.
 
-$Decider< 3 x^4 > \equiv 3x^4 = y$
+$Decider< 3 x^4 >$ that tests if y is in $3 x^4$.
 
 $\\ $
 
@@ -124,7 +124,7 @@ The formal definition of a rational expression is defined below.
 
 $\\ $
 
-$\textbf{Definition. }$ $A_n = A_{n-1} \cup  {\left\{  E^* | E \in \mathcal{E}_{n-1}, (E,1)=0 \right\}}$
+$\textbf{Definition 1.3.1. }$ $A_n = A_{n-1} \cup  {\left\{  E^* | E \in \mathcal{E}_{n-1}, (E,1)=0 \right\}}$
 
 $\\ $
 
@@ -145,7 +145,7 @@ A rational function is defined as the following:
 
 $\\ $
 
-$\textbf{Defintion}$. K[[x]], or $K\ll A \gg$ is the set of functions that map a finite sequence, $A*$, to a semiring K of the alphabet, $A$, on the finite sequence, $A*$. Let K[[x]] describes a set of deciders as a polynomial representation. S is an element of K[[x]] meaning S is a polynomial decider.
+$\textbf{Defintion 1.3.2}$. K[[x]], or $K\ll A \gg$ is the set of functions that map a finite sequence, $A*$, to a semiring K of the alphabet, $A$, on the finite sequence, $A*$. Let K[[x]] describes a set of deciders as a polynomial representation. S is an element of K[[x]] meaning S is a polynomial decider.
 
 $\\ $
 
@@ -157,11 +157,11 @@ Unraveling a monomial decider can be reduced down to the layer $\mathcal{E}_1$. 
 
 $\\ $
 
-$\textbf{Theorem 1.1}$. A monomial decider represented as, $A_n$, can be mapped into a set consisting of the union of the base layer or $A_1 = \bigcup E_1$.
+$\textbf{Theorem 1.3.3}$. A monomial decider represented as, $A_n$, can be mapped into a set consisting of the union of the base layer or $A_1 = \bigcup E_1$.
 
 $\\ $
 
-$\textbf{Corollary}$. A cyclic automata is in a monomial decider.
+$\textbf{Corollary 1.3.4}$. A cyclic automata is in a monomial decider.
 
 $\\ $
 
@@ -192,7 +192,7 @@ A set X for which a topology $\tau$ has been specified is called a $\textbf{topo
 
 $\\ $
 
-$\textbf{Definition}$. A topology on a set X is a collection $\tau$ of subsets of $X$ having the following properties:
+$\textbf{Definition 1.3.5}$. A topology on a set X is a collection $\tau$ of subsets of $X$ having the following properties:
 
 1. $\emptyset$ and $X$ are in $\tau$
 
@@ -210,7 +210,7 @@ Furthermore, the types of states forming a decider can be described as a basis g
 
 $\\ $
 
-$\textbf{Definition}$. If $X$ is a set, a basis for topology on X is a collection $\textit{B}$ of subsets of $X$ such that:
+$\textbf{Definition 1.3.6}$. If $X$ is a set, a basis for topology on X is a collection $\textit{B}$ of subsets of $X$ such that:
 
 1. For each $x \in X$, there is at least one basis element $B$ containing $x$
 
@@ -226,23 +226,23 @@ A decider has an interesting property such that the space of each layer containe
 
 $\\ $
 
-$\textbf{Theorem 1.2}$. A monomial decider is a Hausdorff space.
+$\textbf{Theorem 1.3.7}$. A monomial decider is a Hausdorff space.
 
 $\\ $
 
-$\textbf{Definition}$. A topological space X is called a Hausdorff space if for each pair $x_1$ and $x_2$ of distinct points X, there exist neighborhoods $U_1$, and $U_2$ of $x_1$ and $x_2$, respectively, that are disjoint.
+$\textbf{Definition 1.3.8}$. A topological space X is called a Hausdorff space if for each pair $x_1$ and $x_2$ of distinct points X, there exist neighborhoods $U_1$, and $U_2$ of $x_1$ and $x_2$, respectively, that are disjoint.
 
 $\\ $
 
-$\textit{Proof}$. From $\textbf{theorem 1.1}$, a decider can be mapped into a cycle of states. If each state is a point, it is discrete and forms a neighborhood of the topology of the decider. Given two states, $q_i$ and $q_j$ such that $i\neq j$, the states are disjoint. Hence, by definition it is Hausdorff.
+$\textit{Proof}$. From $\textbf{theorem 1.3.3}$, a decider can be mapped into a cycle of states. If each state is a point, it is discrete and forms a neighborhood of the topology of the decider. Given two states, $q_i$ and $q_j$ such that $i\neq j$, the states are disjoint. Hence, by definition it is Hausdorff.
 
 $\\ $
 
-$\textbf{Theorem 1.3}$. A monomial decider has the property of being locally compact.
+$\textbf{Theorem 1.3.9}$. A monomial decider has the property of being locally compact.
 
 $\\ $
 
-$\textbf{Definition}$. A space X is said to be locally compact at x if there is some compact subspace C of X that contains a neighborhood of x. If X is locally compact at each of its points, X is said simply to be locally compact.
+$\textbf{Definition 1.3.10}$. A space X is said to be locally compact at x if there is some compact subspace C of X that contains a neighborhood of x. If X is locally compact at each of its points, X is said simply to be locally compact.
 
 $\\ $
 
@@ -250,11 +250,11 @@ $\textit{Proof}$. To show that a space is locally compact at a state, $q$, suppo
 
 $\\ $
 
-$\textbf{Theorem 1.4}$. A monomial decider is a locally compact Hausdorff space.
+$\textbf{Theorem 1.3.11}$. A monomial decider is a locally compact Hausdorff space.
 
 $\\ $
 
-$\textit{Proof}$. $A_n$ satisfies $\textbf{theorem 1.2}$ and $\textbf{theorem 1.3}$ hence it is locally compact and a Hausdorff space. Thus, it is a locally compact Hausdorff space.
+$\textit{Proof}$. $A_n$ satisfies $\textbf{theorem 1.3.7}$ and $\textbf{theorem 1.3.8}$ hence it is locally compact and a Hausdorff space. Thus, it is a locally compact Hausdorff space.
 
 $\\ $
 
@@ -273,9 +273,9 @@ $\\ $
 
 $\textit{Example}$.
 
-$m_1=Decider<2 x^2> = 2 x^2$
+$m_1$ = $Decider<2 x^2>$ tests if y is in $2 x^2$.
 
-$m_2=Decider<4 x^4> = 4 x^2$
+$m_2$ = $Decider<4 x^4>$ tests if y is in $4 x^4$.
 
 $\\ $
 
@@ -283,11 +283,11 @@ The following corollary of addition will be used to show a general theorem of ad
 
 $\\ $
 
-$\textbf{Corollary}$. Given two monomials of the same degree, $m_1$ and $m_2$, the addition operation can be performed on them to form a decider of the aggregate, $m_3$, such that $m_3 = m_1 + m_2$.
+$\textbf{Corollary 1.4.1}$. Given two monomials of the same degree, $m_1$ and $m_2$, the addition operation can be performed on them to form a decider of the aggregate, $m_3$, such that $m_3 = m_1 + m_2$.
 
 $\\ $
 
-$\textit{Proof}$. Using the unraveling theorem get to $E_1$ for the deciders on $m_1$ and $m_2$. Remove the connection on $q_{finish}$ to $q_start$ for both deciders. Connect $q_finish$ for the decider on $m_1$ on the layer $E_1$ to $q_start$ on the decider on $m_2$ on the layer $E_1$. Connect $q_{finish}$ on the decider on $m_2$ of $E_1$ to $q_{start}$ on the decider on $m_1$ of $E_1$. $q_{start}$ of the decider on $m_1$ is the new start start and $q_{finish}$ of the decider on $m_2$ is the new finish state of this new aggregate decider on $m_3$. Hence, this is the decider on $m_3$ which is the sum of $m_1$ and $m_2$.
+$\textit{Proof}$. Using the unraveling theorem get to $E_1$ for the deciders on $m_1$ and $m_2$. Remove the connection on $q_{finish}$ to $q_{start}$ for both deciders. Connect $q_{finish}$ for the decider on $m_1$ on the layer $E_1$ to $q_{start}$ on the decider on $m_2$ on the layer $E_1$. Connect $q_{finish}$ on the decider on $m_2$ of $E_1$ to $q_{start}$ on the decider on $m_1$ of $E_1$. $q_{start}$ of the decider on $m_1$ is the new start start and $q_{finish}$ of the decider on $m_2$ is the new finish state of this new aggregate decider on $m_3$. Hence, this is the decider on $m_3$ which is the sum of $m_1$ and $m_2$.
 
 $\\ $
 
@@ -295,7 +295,7 @@ The opposite is true which is splitting up the decider on $m_3$ to form $m_1$ an
 
 $\\ $
 
-$\textbf{Corollary}$. Given a monomial of some degree, $m_3$, it can be split up into two $m_1$ and $m_2$ such that $m_3 = m_1 + m_2$.
+$\textbf{Corollary 1.4.2}$. Given a monomial of some degree, $m_3$, it can be split up into two $m_1$ and $m_2$ such that $m_3 = m_1 + m_2$.
 
 $\\ $
 
@@ -307,7 +307,7 @@ These two corollaries can be generalized into algebra to form a theorem of addit
 
 $\\ $
 
-$\textbf{Theorem}$. $Decider<c_1 x^n> + Decider<c_2 x^n> \equiv Decider<c x^n>$ such that $c = c_1 + c_2$.
+$\textbf{Theorem 1.4.3}$. $Decider<c_1 x^n> + Decider<c_2 x^n> \equiv Decider<c x^n>$ such that $c = c_1 + c_2$.
 
 $\textit{Proof}$. Given $m_1 = c_1 x^n$ and $m_2 = c_2 x^n$, there exists deciders on $m_1$ and $m_2$ denoted $Decider<c_1 x^n>$ and $Decider<c_2 x^n>$. Use the corollary of addition to form a decider on the aggregate of $m_1$ and $m_2$ called $m_3$ such that 
 
@@ -368,65 +368,6 @@ $\\ $
 
 If this is true, there is are techniques that exist to reduce $M_1$ and $M_2$ into irreducible elements and have them mapped into visually format in order to understand the operation at a higher level.
 
-\section{Multivariable Monomials}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=1]{0106Multivariables.jpg}
-  \caption{Multivariable monomial deciders can be seen treated as parallel processes running next to each other.}
-  \label{fig:0106Multivariable}
-\end{figure}
-
-A monomial with more than one variable can be treated the same way as handling single variables at different degrees.
-
-$\\ $
-
-Addition gives the following:
-
-$\\ $
-
-$Decider<x^6yz^3> + Decider<x^6yz^3> = Decider<2x^6yz^3>$
-
-$\\ $
-
-Multiplication of the decider of the same degree gives the following:
-
-$\\ $
-
-$Decider<cx^n> \times Decider<cy^n> \times Decider<cz^z>$
-
-$\equiv Decider<cx^n * cy^n * cz^n>$
-
-$\equiv Decider<cxyz^{3n}>>$
-
-where c is some constant
-
-$\\ $
-
-Multiplication of the decider of the different degrees gives the following:
-
-$\\ $
-
-$Decider<cx^n> \times Decider<cy^m> \times Decider<cz^l>$
-
-$\equiv Decider<cx^n * cy^m * cz^l>$
-
-$\equiv Decider<cx^{n+m+l}>$
-
-where c is some constant
-
-$\\ $
-
-Given $Decider<3xy^2>$ and $Decider<7x^7y^{-1}>$
-
-$\\ $
-
-$Decider<3xy^2> \times Decider<7x^7y^{-1}> = Decider<21x^8y>$
-
-$\\ $
-
-Representing a multivariable monomial of different degrees is a similar line of thought. There are many representations of them, however, this article will choose the simplest and have them separate as seen in figure 1.6. In this manner, multivariable monomials are a set of individual one variable monomials running simultaneously.
-
 \section{Generalized Monomial Deciders}
 
 \begin{figure}[H]
@@ -436,53 +377,32 @@ Representing a multivariable monomial of different degrees is a similar line of 
   \label{fig:0107Generalized}
 \end{figure}
 
-A decider can be represented as the top layer only if short hand notation is necessary. In a way, this removes the constant which is a term called being $\textit{proper}$, it isn't necessary true all the time. 
+A decider can be represented as the top layer only if short hand notation is necessary. In a way, this removes the constant which is a term called being $\textit{proper}$. Given a Decider<m(x)> where m(x) is a monomial, keep the top layer $S_n$ in $\mathcal{E_n}$. This is called the generalized monomial decider. This representation will be used in order to keep deciders simple but it doesn't remove the property of \textbf{corollary 1.5.2}.
 
-$\\ $
-
-Given a Decider<m(x)> where m(x) is a monomial, keep the top layer $S_n$ in $\mathcal{E_n}$. This is called the generalized monomial decider.
-
-\section{Concentric Monomial Deciders}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[scale=1]{0108Concentric.jpg}
-  \caption{A concentric monomial decider is a generalized monomial decider with details missing.}
-  \label{fig:0108Concentric}
-\end{figure}
-
-Generalization results in an interesting property if monomial decider is required to get in more depth. The top layer that remains from generalization remains the same and still forms a cycle, however, each state has one state and so forth up to n-1 depth.
- 
 \section{Constants}
 
 \begin{figure}[H]
   \centering
   \includegraphics[scale=1]{0109Constants.png}
-  \caption{A constant represented as monomial decider, $Decider<c x^0>$.}
+  \caption{A constant represented as decider.}
   \label{fig:0109Constants}
 \end{figure}
 
-Given a constant, c, of a polynomial: f(x) = c, Constants are seen as linear directed acyclic graphs.
-
-$\\ $
-
-$Decider<c x^0> \equiv c = y$
+Representing a constant can be seen as a set of acyclic graphs. Given a constant, c, of a polynomial: f(x) = c, there exists a linear directed acyclic graph to represent the constant visually.
 
 $\\ $
 
 Addition gives the following:
 
-$Decider<c_1 x^0> + Decider<c_2 x^0> \equiv Decider<(c_1+c_2) x^0> \equiv Decider<c_1 + c_2>$
+$Decider<c_1 x^0> + Decider<c_2 x^0>$ 
+
+$ = Decider<(c_1+c_2) x^0>$ by $\textbf{corollary 1.4.1}$
+
+$ = Decider<c_1 + c_2>$ since $x^0$ is the identity
 
 $\\ $
 
-Multiplication gives the following: 
-
-$Decider<c_1 x^0> \times Decider<c_2 x^0> \equiv Decider<c_1 c_2 x^0> \equiv Decider<c_1 c_2>$
-
-$\\ $
-
-There is no state in the decider where it loops back to the start. The constant is what separates a decider from a strictly mathematical cyclic object, semi-simple groups. This paper will mainly cover the cyclic part of the language.
+There is no state in the decider where it loops back to the start. The constant is what separates a decider from a strictly mathematical cyclic object, semi-simple groups. In software engineering, most programs are written in way to make it have a logical flow of that being a linear logical chart. In this way, many programmers can understand the program better and it keeps the code organized.
 
 \section{Division}
 
@@ -562,6 +482,65 @@ $\\ $
 
 The topology of the operations on the cyclic structure of a decider forms its own area of study. A topology of a decider used in this paper is constructed below. A basis that can be formed is one that describes the operations on $x^{n+k}/Q(x^k)$ where Q is the divisions (e.g. $x^6/x^3/x^2$ where $Q(x^k)=x^3/x^2$). There are $6*2+6*1=18$ permutations possible in the example given. The basis elements that form $B_{6*2}$ and $B_{6*1}$ can be described. As a programmer, this statement means that even though there are many ways to write a function, there a finite amount of different combinations to write them in terms of having be as re-factored well.
  
+\section{Multivariable Monomials}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=1]{0106Multivariables.jpg}
+  \caption{Multivariable monomial deciders can be seen treated as parallel processes running next to each other.}
+  \label{fig:0106Multivariable}
+\end{figure}
+
+A monomial with more than one variable can be treated the same way as handling single variables at different degrees by separating them out into a series to form an function. This function is called a rational function when division is taken into account.
+
+$\\ $
+
+Addition gives the following:
+
+$\\ $
+
+$Decider<x^6yz^3> + Decider<x^6yz^3> = Decider<2x^6yz^3>$
+
+$\\ $
+
+Multiplication of the decider of the same degree gives the following:
+
+$\\ $
+
+$Decider<cx^n> \times Decider<cy^n> \times Decider<cz^z>$
+
+$\equiv Decider<cx^n * cy^n * cz^n>$
+
+$\equiv Decider<cxyz^{3n}>>$
+
+where c is some constant
+
+$\\ $
+
+Multiplication of the decider of the different degrees gives the following:
+
+$\\ $
+
+$Decider<cx^n> \times Decider<cy^m> \times Decider<cz^l>$
+
+$\equiv Decider<cx^n * cy^m * cz^l>$
+
+$\equiv Decider<cx^{n+m+l}>$
+
+where c is some constant
+
+$\\ $
+
+Given $Decider<3xy^2>$ and $Decider<7x^7y^{-1}>$
+
+$\\ $
+
+$Decider<3xy^2> \times Decider<7x^7y^{-1}> = Decider<21x^8y>$
+
+$\\ $
+
+Representing a multivariable monomial of different degrees is a similar line of thought. There are many representations of them, however, this article will choose the simplest and have them separate as seen in figure 1.6. In this manner, multivariable monomials are a set of individual one variable monomials running simultaneously. 
+
 \section{Equivalence}
 
 \begin{figure}[H]
