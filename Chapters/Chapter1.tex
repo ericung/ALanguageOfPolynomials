@@ -467,7 +467,7 @@ $\\ $
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{0111MultipleDivisions.jpg}
+  \includegraphics[scale=0.5]{0111MultipleDivisions.jpg}
   \caption{$Decider<x^5/x/x/x^2>$}
   \label{fig:0111MultipleDivisions}
 \end{figure}
@@ -504,11 +504,7 @@ Given $d_1 \in D_1$ and $d_1 \in D_2$, then $d_1 \in D_1 \cap D_2 \subseteq \tau
 
 $\\ $
 
-Using the construction above, another layer of topology of a decider is formed to find in order to find general patterns latter in this paper.
-
-$\\ $
-
-The topology of the operations on the cyclic structure of a decider forms its own area of study. A topology of a decider used in this paper is constructed below. A basis that can be formed is one that describes the operations on $x^{n+k}/Q$ where Q is the divisions (e.g. $x^6/q_1/q_2$ where $q_1,q_2\in Q$). There are $6(6-1)(6-2)$ = $120$ permutations possible in the example given. The basis elements that form $B_{q_1 q_2}$ and $B_{q_2 q_1}$ can be described. As a programmer, this statement means that even though there are many ways to write a function, there a finite amount of different combinations to write them in terms of having be as re-factored well.
+Using the construction above, another layer of topology of a decider is formed to find in order to find general patterns latter in this paper. The topology of the operations on the cyclic structure of a decider forms its own area of study. A topology of a decider used in this paper is constructed below. A basis that can be formed is one that describes the operations on $x^{n+k}/Q$ where Q is the divisions (e.g. $x^6/q_1/q_2$ where $q_1,q_2\in Q$). There are $6(6-1)(6-2)$ = $120$ permutations possible in the example given. The basis elements that form $B_{q_1 q_2}$ and $B_{q_2 q_1}$ can be described. As a programmer, this statement means that even though there are many ways to write a function, there a finite amount of different combinations to write them in terms of having be as re-factored well.
 
 $\\ $
 
@@ -526,10 +522,22 @@ $Decider<x^5/x^2/x^2>$.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=1]{0106Multivariables.jpg}
+  \includegraphics[scale=0.5]{0106Multivariables.jpg}
   \caption{Multivariable monomial deciders can be seen treated as parallel processes running next to each other.}
   \label{fig:0106Multivariable}
 \end{figure}
+
+The following theorem is an important result regarding the subject of rational series.
+
+$\\ $
+
+$\textbf{Theorem 1.12.1}$. A formal series is regular if and only if it is rational.
+
+$\\ $
+
+$\textbf{Proof}$. Here, regular and recognizable are equivalent terms and a regular language is a subset of a decider. A monomial decider is a variant of a decider.
+
+$\\ $
 
 A monomial with more than one variable can be treated the same way as handling single variables at different degrees by separating them out into a series to form an function. This function is called a rational function when division is taken into account.
 
@@ -547,7 +555,7 @@ A rational series on K[[x]] is a commutative ring on K consisting of an alphabet
 
 $\\ $
 
-$\textbf{Definition 1.12.1}$ A rational series on K[[x]] denoted as
+$\textbf{Definition 1.12.2}$ A rational series on K[[x]] denoted as
 
 $\\ $
 
@@ -555,57 +563,59 @@ $R(x) = \sum_{n\geq 0}{a_n x^n}$
 
 $\\ $
 
-Each variable in $v_1,\cdots ,v_n$ is can be treated as to $v_i$ = $a_i x^i$. This means the following.
+Each variable in $v_1,\cdots ,v_n$ is can be treated as to $v_i$ = $a_i x^i$. This can be redefined as follows.
 
 $\\ $
 
-$\textbf{Theorem 1.12.2}$. A rational series, $R(x)$ can be decided by a decider on $R(x)$.
+$Decider\ on\ R(x) = \sum_{1\leq i\leq n}{Decider<v_i>}$
 
 $\\ $
 
-$\textit{Proof}$. TODO
+The following theorem can be reached from the generalization above.
+
+$\\ $
+
+$\textbf{Theorem 1.12.3}$. A rational series, $R(x)$ can be decided by a decider on $R(x)$.
+
+$\\ $
+
+$\textit{Proof}$. A rational series is a rational language hence it is recognizable. Hence by $\textbf{theorem 1.12.1}$, it can be decided by a decider on $R(x)$.
+
+$\\ $
+
+$\textit{Example}$. A finite series of deciders on some variables on $x$, $y$, and $z$.
+
+$Decider<\{5x^3,2y^2,6z^9\}>$
+
+$ = Decider<5x^3> + Decider<2y^2> + Decider<6z^9>$
 
 \section{Equivalence}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{0112Equivalence.jpg}
-  \caption{$Decider<x^6/x^2>$}
+  \includegraphics[scale=0.5]{0112Equivalence.jpg}
+  \caption{$Decider<x^6/x^1/x^1> ~ Decider<x^6/x^2>$}
   \label{fig:0112Equivalence}
 \end{figure}
 
-$Decider<x^6/x^1/x^1> ~ Decider<x^6/x^2>$
 
 $\\ $
+
 Determining if y is in f x is easy if we are given any monomial decider in the set of the language of polynomials and their representations has the possibility to give different representations if we consider them as representations of the function f of x.
 
 $\\ $
 
-$Decider<x^6/x^1/x^1> \sim Decider<x^6/x^2>$ in that they decide if y is in m(x) = $x^6/Q$
+$\textit{Example}$.
+
+$Decider<x^6/x^1/x^1>$ and $Decider<x^6/x^2>$ decide if y is in m(x) = $x^4/Q$.
 
 $\\ $
 
-$\textbf{Theorem of Equivalence}$. Something on lines of $Decider<x^6/x^1/x^1> = Decider<x^6/x^2>$ such that there is some x such that the monomial represented by both deciders exists where f of x = y.
+$\textbf{Theorem of Equivalence}$. Given $Decider<m(x)/Q_m> = Decider<n(x)/Q_n>$ such that $m(x)/Q_m$ = $n(x)/Q_n$ and both pairs of $m(x)$ and $n(x)$ and $Q_m$ and $Q_n$ have the sum of the same degree, after evaluating the equations to their irreducible form, y can be tested to be in both the deciders on $m(x)/Q_m$ and $n(x)/Q_n$, respectively.
 
 $\\ $
 
-$\textit{Proof}$. Given $Decider<a(x,y)> = Decider<x^m> Decider<y^n>$ and the definition $Decider<b(x,y)> = Decider<y^n> Decider<x^m>$, show $Decider<a(x,y)> = Decider<b(x,y)>$.
-
-$\\ $
-
-Start with $Decider<a(x,y)> = Decider<x^m> Decider<y^n>$
-
-Commute the variables because each decider decides there own monomial giving, $Decider<y^n> Decider<x^m>$.
-
-This is equivalent to $Decider<b(x,y)>$
-
-$\\ $
-
-Start with $Decider<b(x,y)> = Decider<y^m> Decider<x^n>$
-
-Commute the variables because each decider decides there own monomial giving, $Decider<x^n> Decider<y^m>$.
-
-This is equivalent to $Decider<a(x,y)>$
+$\textit{Proof}$. Given $Decider<a(x)/Q_a>$ and $Decider<b(x)/Q_b>$ such that $a(x)$ and $b(x)$ have the same degree and are both proper and that the sum of the degree of $Q_a$ and $Q_b$ is $k$ so that $k\leq n$, show that y is in both $Decider<a(x)/Q_a>$ and $Decider<b(x)/Q_b$. This implies that $a(x) = b(x)$. Evaluate $Q_a$ to a single variable $x^k$ = $Q_t$. Evaluate $Q_b$ to a single variable $x^k$ which is also $Q_t$. This gives $a(x)/Q_t$ = $b(x)/Q_t$ since $a(x) = b(x)$. Hence y is decidable in both deciders on the monomials.
 
 \section{Reversing}
 
