@@ -495,51 +495,35 @@ A monomial with more than one variable can be treated the same way as handling s
 
 $\\ $
 
-Addition gives the following:
+Given a series of variables, $v_1,\cdots ,v_n$, a series of deciders can be constructed to decide each variable. 
 
 $\\ $
 
-$Decider<x^6yz^3> + Decider<x^6yz^3> = Decider<2x^6yz^3>$
+$S = \sum_{i\geq 1}{v_i}$
 
 $\\ $
 
-Multiplication of the decider of the same degree gives the following:
+A rational series on K[[x]] is a commutative ring on K consisting of an alphabet with a single letter x.
 
 $\\ $
 
-$Decider<cx^n> \times Decider<cy^n> \times Decider<cz^z>$
-
-$\equiv Decider<cx^n * cy^n * cz^n>$
-
-$\equiv Decider<cxyz^{3n}>>$
-
-where c is some constant
+$\textbf{Definition 1.12.1}$ A rational series on K[[x]] denoted as
 
 $\\ $
 
-Multiplication of the decider of the different degrees gives the following:
+$R(x) = \sum_{n\geq 0}{a_n x^n}$
 
 $\\ $
 
-$Decider<cx^n> \times Decider<cy^m> \times Decider<cz^l>$
-
-$\equiv Decider<cx^n * cy^m * cz^l>$
-
-$\equiv Decider<cx^{n+m+l}>$
-
-where c is some constant
+Each variable in $v_1,\cdots ,v_n$ is can be treated as to $v_i$ = $a_i x^i$. This means the following.
 
 $\\ $
 
-Given $Decider<3xy^2>$ and $Decider<7x^7y^{-1}>$
+$\textbf{Theorem 1.12.2}$. A rational series, $R(x)$ can be decided by a decider on $R(x)$.
 
 $\\ $
 
-$Decider<3xy^2> \times Decider<7x^7y^{-1}> = Decider<21x^8y>$
-
-$\\ $
-
-Representing a multivariable monomial of different degrees is a similar line of thought. There are many representations of them, however, this article will choose the simplest and have them separate as seen in figure 1.6. In this manner, multivariable monomials are a set of individual one variable monomials running simultaneously. 
+$\textit{Proof}$. TODO
 
 \section{Equivalence}
 
