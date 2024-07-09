@@ -640,7 +640,7 @@ $\textbf{Corollary 1.13.2}$. Every decision function of $Decider<m(x)/Q>$ has a 
 
 $\\ $
 
-$\textit{Proof}$.Given two decision functions, $f_1$ and $f_2$ with identity paths, $p_1$ and $p_2$, respectively, suppose $p_1$ is equal to $p_2$. Then $p_2\in PATH(f_1)$ and $p_1\in PATH(f_2)$. Thus, $f_1$ is equal to $f_2$, hence by contrapositive, every decision function of $Decider<m(x)>$ has a unique path.
+$\textit{Proof}$. Given two decision functions, $f_1$ and $f_2$ with identity paths, $p_1$ and $p_2$, respectively, suppose $p_1$ is equal to $p_2$. Then $p_2\in PATH(f_1)$ and $p_1\in PATH(f_2)$. Thus, $f_1$ is equal to $f_2$, hence by contrapositive, every decision function of $Decider<m(x)>$ has a unique path.
 
 $\\ $
 
@@ -648,7 +648,7 @@ $\textbf{Theorem of Reversing 1.13.3}$. Given two decision functions, $f_1$ and 
 
 $\\ $
 
-$\textit{Proof}.$ Given $f_1$ and $f_2$, by $\textbf{corollary 1.13.2}$, $f_1$ and $f_2$ have different identity paths implying that the identity path forms a quotient space such that the division operations on their monomial respectively, $Q_1$ on $m_1$ of $f_1$ and $Q_2$ on $m_2$ of $f_2$, are the same only if $f_1$ = $f_2$. For every division operation on $q_i$ of $Q_1$ on $m_1$, it has a value, $a_i$ and for every $q_j$ of $Q_2$ on $m_2$, a value, $b_j$. If there is bijective mapping, $h(q_i)$ to some $q_k$ of $Q_2$ on $m_2$ and reverse, for all $a_i$, then it maps to $b_k$ and for any $b_j$ maps to $a_l$. This implies that $f_1$ and $f_2$ have the same quotient space. By contrapositive, $f_1\neq f_2$ implies that they don't have the same quotient space.
+$\textit{Proof}$. Given $f_1$ and $f_2$, by $\textbf{corollary 1.13.2}$, $f_1$ and $f_2$ have different identity paths implying that the identity path forms a quotient space such that the division operations on their monomial respectively, $Q_1$ on $m_1$ of $f_1$ and $Q_2$ on $m_2$ of $f_2$, are the same only if $f_1$ = $f_2$. For every division operation on $q_i$ of $Q_1$ on $m_1$, it has a value, $a_i$ and for every $q_j$ of $Q_2$ on $m_2$, a value, $b_j$. $f_1$ = $f_2$ implies that there is a bijective mapping, $h(q_i)$ to some $q_k$ of $Q_2$ on $m_2$ and reverse, for all $a_i$, then it maps to $b_k$ and for any $b_j$ maps to $a_l$. This implies that $f_1$ and $f_2$ have the same quotient space. By contrapositive, $f_1\neq f_2$ hence $f_1$ and $f_2$ don't have the same quotient space.
 
 \begin{figure}[H]
   \centering
@@ -659,19 +659,19 @@ $\textit{Proof}.$ Given $f_1$ and $f_2$, by $\textbf{corollary 1.13.2}$, $f_1$ a
 
 \section{Godel's Theorem}
 
-We see that there exists two statements from these theorems
+We see that there exists two statements from these theorems which form Godel's theorem.
 
 $\\ $
 
-1. $x = x$ from a theorem of equivalence
+1. $x = x$ from $\textbf{theorem of equivalence}$
 
-2. $x != x$ from a theorem of reversal
+$\\ $
+
+2. $x != x$ from $\textbf{theorem of reversing}$
 
 $\\ $
 
 $\textbf{Example}$: Given some $d_1$,$d_2$,$d_3$,...,infinity in decision functions in $Decider<m(x)>$
-
-$\\ $
 
 1. $d_1 = d_2 = d_3 = ... = infinity$
 
