@@ -15,11 +15,7 @@ The concept of statistics and blackboxes has been drawn out extensively in theor
 
 \section{Applying The Fibonnaci Decider}
 
-Given the definition of the Fibonacci decider and a Lindenmayer system, insight can be derived from to that there exists the commutative and noncommutative properties of the operations.
-
-$\\ $
-
-Let the Fibonacci decider for $x_1$, $y_1$, $z_1$ have a determinant equivalent to the identity, -1, then the Fibonacci decider for $x_2$, $y_2$, $z_2$ have a determinant inverse to the identity, 1. The decision functions represented on the six variables is shown below.
+Given the definition of the Fibonacci decider and a Lindenmayer system, insight can be derived from to that there exists the commutative and non-commutative properties of the operations. Let the Fibonacci decider for $x_1$, $y_1$, $z_1$ have a determinant equivalent to the identity, -1, then the Fibonacci decider for $x_2$, $y_2$, $z_2$ have a determinant inverse to the identity, 1. The decision functions represented on the six variables is shown below.
 
 $\\ $
 
@@ -63,19 +59,26 @@ $-z_1 = x_1 - y_1 + z_2 - x_2 + y_2$
 
 $\\ $
 
+With the Fibonacci decider constructed, apply this concept with a Lindenmayer system. Lindenmayer systems are structures that were originally developed by Aristid Lindenmayer to describe how plants grow. They are simple systems that can be used to model generative concepts. Mathematically speaking, a Lindenmayer system is a deterministic, context-free grammar (shorthand name is D0L systems) defined below.
+
+$\\ $
+
 $\textbf{Lindenmayer System}$
 
 L is the definition of the D0L System
 
 $L = (V,\omega,P)$
 
-V are the characters in the language called the alphabet
+$V$ are the characters in the language called the alphabet
 
 $\omega$ is the starting string called the start
 
-P are the production rules in the language called the rules
+$P$ are the production rules in the language called the rules
+$\\ $
+
 
 $\\ $
+$\textit{Example 3.2.1}$. As an example the Fibonacci sequence is defined as the sequence below.
 
 $\textit{alphabet}$. $= \{a,b\}$
 
@@ -85,31 +88,39 @@ $\textit{start}$. $= b$
 
 $\\ $
 
+With the Fibonacci sequence defined as a Lindenmayer system, the rest of the chapter explains the relation with deciding if a sequence is a Fibonacci sequence and its decomposition to form a language that decides if it is inferrability.
+
 \section{Fibonacci DOL Decider Left Hand Side}
 
-Representing the left hand side of the Fibonacci sequence as a D0L system alphabet requires an alphabet, rules, and a starting state.
-
-
+Representing the left hand side of the Fibonacci sequence as a D0L system alphabet requires a alphabet, rules, and a starting state. The left hand side are the two deciders that are composed to form the decider on $x_1 y_1 z_1$ and $x_2 y_2 z_2$. The first six sequences of that form Fibonacci sequence is shown below.
 
 $\\ $
 
-The first six sequences in the 
-
-$\\ $
+$\textit{Example 3.3.1}$.
 
 $b\ a\ ab\ aba\ abaab\ abaababa\ abaababaabaab\ abaababaabaababaabaab$
 
 $\\ $
 
-The length are as follows.
+An important function with sequences and, in particular, words is the length function. Algorithms and functions that operate on words either programmatically or mathematically rely on taking their length. The following example takes the $\textit{example 3.3.1}$ and lists their length.
 
 $\\ $
+$\textit{Example 3.3.2}$.
 
 $1\ 1\ 2\ 3\ 5\ 8\ 13\ 21$
 
 $\\ $
 
-Set them as variables in the decider as follows.
+A general relationship is found using the value of the length with the Fibonacci sequence and even more generally, is the concept called dynamic programming. The relationship for the sequence specifically is defined as the equation below.
+
+$\\ $
+$\textit{Example 3.3.3}$.
+
+$T_n = T_{n-1} + T_{n-2}$
+
+$\\ $
+
+Here, $T_n$ is the current index of the sequence and $T_{n-1}$ and $T_{n-2}$. In the previous chapter, generators are constructed with three variables and on a more general term, it is called the recurrence relation. The Fibonacci decider is not operating on the length specifically but the entirety of its detail which means it operates on the characters of the words in the sequences which will be described in more detail later on.
 
 $\\ $
 
