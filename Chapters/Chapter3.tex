@@ -19,7 +19,11 @@ Given the definition of the Fibonacci decider and a Lindenmayer system, insight 
 
 $\\ $
 
-$\textbf{Decider}$ for $x_1, y_1, z_1$
+Let the Fibonacci decider for $x_1$, $y_1$, $z_1$ have a determinant equivalent to the identity, -1, then the Fibonacci decider for $x_2$, $y_2$, $z_2$ have a determinant inverse to the identity, 1. The decision functions represented on the six variables is shown below.
+
+$\\ $
+
+$\textbf{Decider}$ for $x_1$, $y_1$, $z_1$
 
 $-x_1 = y_1 - z_1$
 
@@ -36,6 +40,10 @@ $x_2 = y_2 - z_2$
 $-y_2 = x_2 - z_2$
 
 $z_2 = x_2 - y_2$
+
+$\\ $
+
+The Fibonacci decider is a six variable machine on $x_1$, $y_1$, $z_1$, $x_2$, $y_2$, and $z_2$ that decides if the six words are consecutive to each other so that it can completely infer the morphisms of the variables on the sequence.
 
 $\\ $
 
