@@ -98,7 +98,7 @@ $\\ $
 
 $\textit{Example 3.3.1}$.
 
-$b\ a\ ab\ aba\ abaab\ abaababa\ abaababaabaab\ abaababaabaababaabaab$
+$a\ b\ ab\ bab\ abbab\ bababbab$
 
 $\\ $
 
@@ -130,9 +130,9 @@ $\textbf{Decider}$ for $x_1, y_1, z_1$
 
 $-x_1 = y_1 - z_1$
 
-$y_1 = -x_1 - z_1$
+$-y_1 = -z_1 + x_1$
 
-$-z_1 = x_1 - y_1$
+$z_1 = x_1 + y_1$
 
 $\\ $
 
@@ -140,31 +140,35 @@ $\textit{Example 3.3.5}$. An example of the Fibonacci decider on variables $x_2$
 
 $\textbf{Decider}$ for $x_2, y_2, z_2$
 
-$x_2 = y_2 - z_2$
+$x_2 = y_2 + z_2$
 
-$-y_2 = x_2 - z_2$
+$-y_2 = z_2 - x_2$
 
-$z_2 = x_2 - y_2$
+$-z_2 = - x_2 + y_2$
+
+$\\ $
+
+In this next example the variables with values from the Fibonacci D0L system is the set such that the conjugation is seen. A conjugation is one such that given a cyclic language and u,v such that they are words in the language, uv and vu are in the language. An example of this is seen where moving the relation of the head variable from third sequence, $z_1$, to the six sequence, $x_2$, below.
 
 $\\ $
 
 $\textit{Example 3.3.6}$. Setting the variables with values from the Fibonacci D0L system.
 
-$z_2 = b$
+$x_1 = a$
 
-$y_2 = a$
+$y_1 = b$
 
-$x_2 = ab$
+$z_1 = ab$
 
-$z_1 = aba$
+$y_2 = bab$
 
-$y_1 = abaab$
+$z_2 = abbab$
 
-$x_1 = abaababa$
+$x_2 = bababbab$
 
 $\\ $
 
-$\textit{Example 3.3.7}$. Setting the decider with variables with values in them and their corresponding column vectors.
+$\textit{Example 3.3.7}$. Setting the variables of the decider with values in them and their corresponding column vectors.
 
 $\textbf{Decider}$ for $x_1, y_1, z_1$
 
@@ -178,13 +182,17 @@ $-abaababa - abaab = -aba$
 
 $\\ $
 
+Here, the negative operation is the inverse operation such that given x,y in the alphabet, $-xy = (xy)^{-1} = y^{-1}x^{-1}$. 
+
+$\\ $
+
 $\textbf{y\textsubscript{1} = -x\textsubscript{1} - z\textsubscript{1}}$
 
 $\textbf{abaab = - abaababa - aba}$
 
-abaab + abaababa = - aba
+$abaab + abaababa = - aba$
 
-abaab + aba = - abaababa
+$abaab + aba = - abaababa$
 
 $\\ $
 
