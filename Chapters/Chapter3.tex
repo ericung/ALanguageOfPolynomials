@@ -168,73 +168,83 @@ $x_2 = bababbab$
 
 $\\ $
 
-$\textit{Example 3.3.7}$. Setting the variables of the decider with values in them and their corresponding column vectors.
+$\textit{Example 3.3.7}$. Setting the variables of the decider with values in them and their corresponding column vectors. Here, the negative operation is the inverse operation such that given x,y in the alphabet, $-xy = (xy)^{-1} = y^{-1}x^{-1}$. 
+
+$\\ $
 
 $\textbf{Decider}$ for $x_1, y_1, z_1$
 
+$\\ $
+
 $\textit{\textbf{-x\textsubscript{1} = y\textsubscript{1} - z\textsubscript{1}}}$
 
-$\textit{\textbf{- abaababa = abaab - aba}}$
+$\textit{\textbf{-a = b - ab}}$
 
-$-abaababa + aba = abaab$
+$-a + ab = b$
 
-$-abaababa - abaab = -aba$
-
-$\\ $
-
-Here, the negative operation is the inverse operation such that given x,y in the alphabet, $-xy = (xy)^{-1} = y^{-1}x^{-1}$. 
+$-b - a = -ab$
 
 $\\ $
 
-$\textit{Example 3.3.8}$. 
+$\textbf{-y\textsubscript{1} = -z\textsubscript{1} - x\textsubscript{1}}$
 
-$\textbf{y\textsubscript{1} = -x\textsubscript{1} - z\textsubscript{1}}$
+$\textbf{-b = -ab + a}$
 
-$\textbf{abaab = - abaababa - aba}$
+ab - b = a
 
-$abaab + abaababa = - aba$
-
-$abaab + aba = - abaababa$
+-b -a = -ab
 
 $\\ $
 
-$\textbf{-z\textsubscript{1} = x\textsubscript{1} - y\textsubscript{1}}$
+$\textbf{z\textsubscript{1} = x\textsubscript{1}  + y\textsubscript{1}}$
 
-$\textbf{- aba = abaababa - abaab}$
+$\textbf{ab = a + b}$
 
-- aba + abaab = abaababa 
+-a + ab = b
 
-- aba - abaababa = - abaab
+ab - b = a
 
 $\\ $
 
 $\textbf{Decider}$ for $x_2, y_2, z_2$
 
-$\textbf{x\textsubscript{2} = y\textsubscript{2} - z\textsubscript{2}}$
+$\\ $
 
-$ab - b = a$
+$\textbf{x\textsubscript{2} = y\textsubscript{2} + z\textsubscript{2}}$
 
-$ab - a = b$
+$bababbab = bab + abbab$
+
+$bababbab - abbab = bab$
+
+$-bab + bababbab = abbab$
 
 $\\ $
 
-$\textbf{-y\textsubscript{2} = x\textsubscript{2} - z\textsubscript{2}}$
+$\textbf{-y\textsubscript{2} = z\textsubscript{2} - x\textsubscript{2}}$
 
--a + b = ab
+-bab = abbab - bababbab
 
--a - ab = -b
+-abbab - bab = -bababbab
 
-$\\ $
-
-$\textbf{z\textsubscript{2} = x\textsubscript{2} - y\textsubscript{2}}$
-
-b - ab = -a
-
-b + a = ab
+-bab + bababbab = abbab
 
 $\\ $
 
-Generalized equations for $x_1, y_1, z_1$
+$\textbf{-z\textsubscript{2} = -x\textsubscript{2} + y\textsubscript{2}}$
+
+-abbab = -bababbab + bab
+
+bababbab - abbab = bab
+
+-abbab - bab = -bababbab
+
+$\\ $
+
+In the next example, generalized equations are elaborated to show the relationship between the each semi-group in the Fibonacci sequence.
+
+$\\ $
+
+$\textit{3.3.8}$. Generalized equations for $x_1$, $y_1$, and $z_1$ as it morphs to general variables $a$, $b$, and $c$, respectively.
 
 $\\ $
 
@@ -242,27 +252,43 @@ $\textit{\textbf{-a = b - c}}$
 
 $-a + c = b$
 
-$-a - b = - c$
+$-b - a = -c$
 
 $\\ $
 
-$\textbf{b = -a - c}$
+$\textbf{-b = -c + a}$
 
-b + a = -c
+c - b = a
 
-b + c = a
-
-$\\ $
-
-$\textbf{-c = a - b}$
-
--c + b = a
-
--c - a = -b
+-b - a = -c
 
 $\\ $
 
-Generalized equations for $x_2, y_2, z_2$
+$\textbf{c = a + b}$
+
+-a + c = b
+
+c - b = a
+
+$\\ $
+
+Generalized equations for $x_2$, $y_2$, $z_2$ as it maps to $a$, $b$, and $c$, respectively.
+
+$\\ $
+
+$\textbf{-b = c - a}$
+
+-c - b = -a
+
+-b + a = c
+
+$\\ $
+
+$\textbf{-c = -a + b}$
+
+a - c = b
+
+-c - b = -a
 
 $\\ $
 
@@ -270,25 +296,11 @@ $\textit{\textbf{a = b + c}}$
 
 $a - c = b$
 
-$a - b = c$
+$-b + a = c$
 
 $\\ $
 
-$\textbf{b = a - c}$
-
-b - a = -c
-
-b + c = a
-
-$\\ $
-
-$\textbf{-c = a - b}$
-
--c + b = a
-
--c - a = -b
-
-$\\ $
+It can be noted that each semi-group, $x_1 y_1 z_1$ and $y_2 z_2 x_2$, revolves clockwise independently from each other.
 
 \section{Fibonacci DOL Decider Right Hand Side}
 
