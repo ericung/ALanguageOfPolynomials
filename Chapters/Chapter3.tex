@@ -306,13 +306,13 @@ It can be noted that each semi-group, $x_1 y_1 z_1$ and $y_2 z_2 x_2$, revolves 
 
 $\textbf{Fibonacci Decider}$
 
-$x_1 = -y_1 +z_2 - x_2 + y_2 - z_1$
+$x_1 = -y_1 + z_2 - x_2 + y_2 - z_1$
 
 $-y_1 = z_2 - x_2 + y_2 - z_1 + x_1$
 
 $z_2 = -x_2 + y_2 - z_1 + x_1 - y_1$
 
-$-x_2 = y_2 - z_1 + x_1 - y_1 + z2$
+$-x_2 = y_2 - z_1 + x_1 - y_1 + z_2$
 
 $y_2 = -z_1 + x_1 - y_1 + z_2 - x_2$
 
@@ -322,12 +322,12 @@ $\\ $
 
 $
 \begin{matrix}
- \textbf{abaababa = -abaab + b - ab + a -aba}\\
-abaababa - b + ab - a + aba = -abaab \\
-abaababa + abaab + ab - a + aba = b \\
-abaababa + abaab - b - a + aba = -ab \\
-abaababa + abaab - b + ab + aba = a \\
-abaababa + abaab - b + ab - a = -aba \\
+ \textbf{a = -b + abbab - bababbab + bab - ab}\\
+a + ab - ab - a + bab = -abaab \\
+bababbab + abaab + ab - a + bab = b \\
+bababbab + abaab - b - a + bab = -ab \\
+bababbab + abaab - b + ab + bab = a \\
+bababbab + abaab - b + ab - a = -bab \\
 \end{matrix}
 $
 
@@ -335,12 +335,12 @@ $\\ $
 
 $
 \begin{matrix}
- \textbf{-abaab = b - ab + a -aba + abaababa}\\
--abaab + ab - a + aba - abaababa = b \\
--abaab - b - a + aba - abaababa = -ab \\
--abaab - b + ab + aba - abaababa = a\\
--abaab - b + ab - a - abaababa = -aba\\
--abaab - b + ab - a + aba = abaababa \\
+ \textbf{-abaab = b - ab + a -bab + bababbab}\\
+-abaab + ab - a + bab - bababbab = b \\
+-abaab - b - a + bab - bababbab = -ab \\
+-abaab - b + ab + bab - bababbab = a\\
+-abaab - b + ab - a - bababbab = -bab\\
+-abaab - b + ab - a + bab = bababbab \\
 \end{matrix}
 $
 
