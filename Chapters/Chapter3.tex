@@ -244,7 +244,7 @@ In the next example, generalized equations are elaborated to show the relationsh
 
 $\\ $
 
-$\textit{3.3.8}$. Generalized equations for $x_1$, $y_1$, and $z_1$ as it morphs to general variables $a$, $b$, and $c$, respectively.
+$\textit{Example 3.3.8}$. Generalized equations for $x_1$, $y_1$, and $z_1$ as it morphs to general variables $a$, $b$, and $c$, respectively.
 
 $\\ $
 
@@ -272,7 +272,7 @@ c - b = a
 
 $\\ $
 
-Generalized equations for $x_2$, $y_2$, $z_2$ as it maps to $a$, $b$, and $c$, respectively.
+$\textit{Example 3.3.9}$. Generalized equations for $x_2$, $y_2$, $z_2$ as it maps to $a$, $b$, and $c$, respectively.
 
 $\\ $
 
@@ -304,7 +304,13 @@ It can be noted that each semi-group, $x_1 y_1 z_1$ and $y_2 z_2 x_2$, revolves 
 
 \section{Fibonacci DOL Decider Right Hand Side}
 
-$\textbf{Fibonacci Decider}$
+The Fibonacci decider are six consecutive word equations such that it forms the basis that decides they are able to be reduced to find the rules, or morphisms, of the Fibonacci sequence. The following word equations place one variable on the right hand side and leave the left hand side to form a matrix of strings.
+
+$\\ $
+
+$\textit{Example 3.4.1}$. $\textbf{Fibonacci Decider}$.
+
+$\\ $
 
 $x_1 = -y_1 + z_2 - x_2 + y_2 - z_1$
 
@@ -320,81 +326,115 @@ $-z_1 = x_1 - y_1 + z_2 - x_2 + y_2$
 
 $\\ $
 
-$
-\begin{matrix}
- \textbf{a = -b + abbab - bababbab + bab - ab}\\
-a + ab - bab + bababbab - abbab = -b \\
-b + a + ab - bab + bababbab = -abaab \\
--abbab b + a + ab - bab = - bababbab\\
-bababbab - abbab + b + a + ab = bab \\
-- bab + abbab - b + a = -ab \\
-\end{matrix}
-$
+The following six word equations are taken using the six equations from above and form semi-groups where one variable is accounted on the left hand side as in Matiyasevich.
 
 $\\ $
 
-$
-\begin{matrix}
- \textbf{-b = abbab - bababbab + bab - ab + a}\\
--b - a + ab - bab + bababbab = abbab \\
--abbab -b-a + ab - bab = -bababbab \\
-bababbab -abbab -b - a + ab = bab\\
--bab + bababbab -abbab -b -a = -ab\\
--a + ab -bab + bababbab -abbab -b  = a \\
-\end{matrix}
-$
+$\textit{Example 3.4.2}$. A decision function for $x_1$.
 
 $\\ $
 
-$
-\begin{matrix}
- \textbf{abbab = -bababbab + bab - ab + a -b}\\
-abbab + b - a + ab - bab = -bababbab \\
-bababbab + abbab + b - a + ab = bab \\
--bab + bababbab + abbab +b - a = -ab \\
-ab -bab + bababbab + abbab + b = a\\
--b + a + ab + bab - bababbab + abbab = -b \\
-\end{matrix}
-$
+$\textbf{a = -b + abbab - bababbab + bab - ab}$
+
+$a + ab - bab + bababbab - abbab = -b$
+
+$b + a + ab - bab + bababbab = -abaab$
+
+$-abbab b + a + ab - bab = - bababbab$
+
+$bababbab - abbab + b + a + ab = bab$
+
+$-bab + abbab - b + a = -ab$
 
 $\\ $
 
-$
-\begin{matrix}
- \textbf{-bababbab = bab - ab + a - b + abbab}\\
--bababbab - abbab + b - a + ab = bab \\
--bab -bababbab - abbab + b - a = -ab \\
-ab -bab -bababbab - abbab + b = a\\
--bab + ab -a -bababbab - abbab = -b \\
-- abbab + b -a ab -bab -bababbab = abbab\\
-\end{matrix}
-$
+$\textit{Example 3.4.3}$. A decision function for $-y_1$.
 
 $\\ $
 
-$
-\begin{matrix}
- \textbf{bab = -ab + a -b + abbab - bababbab}\\
-bab + bababbab - abbab + b - a = -ab \\
-ab + bab + bababbab - abbab + b = a\\
--a ab + bab + bababbab - abbab = -b\\
-b -a + ab + bab + bababbab = abbab\\
--abbab + b -a + ab + bab = -bababbab\\
-\end{matrix}
-$
+$\textbf{-b = abbab - bababbab + bab - ab + a}$
+
+$-b - a + ab - bab + bababbab = abbab$
+
+$-abbab -b-a + ab - bab = -bababbab$
+
+$bababbab -abbab -b - a + ab = bab$
+
+$-bab + bababbab -abbab -b -a = -ab$
+
+$-a + ab -bab + bababbab -abbab -b  = a$
 
 $\\ $
 
-$
-\begin{matrix}
- \textbf{-ab = a - b + abbab - bababbab + bab}\\
--ab - bab + bababbab - abbab + b = a \\
--a -ab -bab + bababbab - abbab = -b \\
-b -a -ab -bab + bababbab = abbab \\
--abbab + b -a -ab -bab = -bababbab \\
--bab + bababbab -abbab + b -a -ab = bab\\
-\end{matrix}
-$
+$\textit{Example 3.4.4}$. A decision function for $z_2$.
+
+$\\ $
+
+$\textbf{abbab = -bababbab + bab - ab + a -b}$
+
+$abbab + b - a + ab - bab = -bababbab$
+
+$bababbab + abbab + b - a + ab = bab$
+
+$-bab + bababbab + abbab +b - a = -ab$
+
+$ab -bab + bababbab + abbab + b = a$
+
+$-b + a + ab + bab - bababbab + abbab = -b$
+
+$\\ $
+
+$\textit{Example 3.4.5}$. A decision function for $-x_2$.
+
+$\\ $
+
+$\textbf{-bababbab = bab - ab + a - b + abbab}$
+
+$-bababbab - abbab + b - a + ab = bab$
+
+$-bab -bababbab - abbab + b - a = -ab$
+
+$ab -bab -bababbab - abbab + b = a$
+
+$-bab + ab -a -bababbab - abbab = -b$
+
+$- abbab + b -a ab -bab -bababbab = abbab$
+
+$\\ $
+
+$\textit{Example 3.4.6}$. A decision function for $y_2$.
+
+$\\ $
+
+$\textbf{bab = -ab + a -b + abbab - bababbab}$
+
+$bab + bababbab - abbab + b - a = -ab$
+
+$ab + bab + bababbab - abbab + b = a$
+
+$-a ab + bab + bababbab - abbab = -b$
+
+$b -a + ab + bab + bababbab = abbab$
+
+$-abbab + b -a + ab + bab = -bababbab$
+
+$\\ $
+
+$\textit{Example 3.4.7}$. A decision function for $-z_1$.
+
+$\\ $
+
+$\textbf{-ab = a - b + abbab - bababbab + bab}$
+
+$-ab - bab + bababbab - abbab + b = a$
+
+$-a -ab -bab + bababbab - abbab = -b$
+
+$b -a -ab -bab + bababbab = abbab$
+
+$-abbab + b -a -ab -bab = -bababbab$
+
+$-bab + bababbab -abbab + b -a -ab = bab$
 
 \section{The Law of Commutativity and Noncommutativity}
 
