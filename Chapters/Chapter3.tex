@@ -1181,4 +1181,12 @@ This field is seen in $\textit{Garg, Gurvits, Oliveira, and Wigderson}$.
 
 $\\ $
 
-$\textit{Definition.}$ An inferrable language is a set of at least two sequences each forming a ring.
+$\textit{Definition}$. An inferrable language, $L$, is a set of at least two sequences where each sequence satisfies a linear recurrence relation that forms a ring. Equivalently, given $A_i \in L$ for any $i \leq n$ where $A_i = a_i - \sum{a_k}_{k \leq i}$ implies $a_i = \sum{a_k}_{k < i}$ then $a_i = \sum{a_k}_{k < i}$ thus a decision function is equivalent to $a_i = \sum{A_j}_{j < i} + \sum{a_k}_{k < i}$.
+
+$\\ $
+
+$\textit{Definition}$. An inferrable language consists of at least two ideals containing elements such that for every element in the ideal each element has a morphism that contains elements other than itself in the ideal, $I_1$, and at least one other ideal, $I_2$. Equivalently, given $I_i$ such that $i \leq i \leq n$ where $I_i = (S_i, P)$ and $m_k \in (S_i, P)$ then $m_k = \sum{(S_j, P)}_{j \neq k} + \sum{I_l}_{l \neq i}$ called the decision function.
+
+$\\ $
+
+$\textit{Definition}$. A decider is the set of all functions on each element for at least two ideals such that $m = f(x) \in I = (S,P)$.
