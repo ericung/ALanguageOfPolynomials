@@ -1,0 +1,20 @@
+cff-version: 3.0.0
+message: "If you want to cite this article, please cite it as below."
+authors:
+- family-names: "Eric"
+  given-names: "Ung"
+  orcid: "https://orcid.org/0009-0008-6122-4557"
+title: "A Language of Polynomials"
+version: 3.0.0
+date-released: 2024-02-01
+url: "https://github.com/ericung/ALanguageOfPolynomials"
+preferred-citation:
+  url: "https://github.com/ericung/ALanguageOfPolynomials"
+  type: article
+  authors:
+  - family-names: "Ung"
+    given-names: "Eric"
+    orcid: "https://orcid.org/0009-0008-6122-4557"
+  title: "A Language Of Polynomials"
+  date-released: 2024-09-14
+  year: 2024
