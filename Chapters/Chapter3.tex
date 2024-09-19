@@ -126,6 +126,8 @@ $\\ $
 
 $\textit{Example 3.3.4}$. An example of the Fibonacci decider on variables $x_1$, $y_1$, and $z_1$.
 
+$\\ $
+
 $\textbf{Decider}$ for $x_1, y_1, z_1$
 
 $-x_1 = y_1 - z_1$
@@ -168,7 +170,7 @@ $x_2 = bababbab$
 
 $\\ $
 
-$\textit{Example 3.3.7}$. Setting the variables of the decider with values in them and their corresponding column vectors. Here, the negative operation is the inverse operation such that given x,y in the alphabet, $-xy = (xy)^{-1} = y^{-1}x^{-1}$. 
+$\textit{Example 3.3.7}$. Setting the variables of the decider with values in them and their corresponding column vectors. Here, the negative operation is the inverse operation such that given x,y in the alphabet, $-xy = (xy)^{-1} = y^{-1}x^{-1}$. The following examples are of the Decider of the $x_1$, $y_1$, and $z_1$.
 
 $\\ $
 
@@ -203,6 +205,10 @@ $\textbf{ab = a + b}$
 -a + ab = b
 
 ab - b = a
+
+$\\ $
+
+The next is the decider for $x_2$, $y_2$, and $z_2$.
 
 $\\ $
 
@@ -269,6 +275,10 @@ $\textbf{c = a + b}$
 -a + c = b
 
 c - b = a
+
+$\\ $
+
+In the next example, there exists generalized equations for the second decider.
 
 $\\ $
 
@@ -436,7 +446,7 @@ $-abbab + b -a -ab -bab = -bababbab$
 
 $-bab + bababbab -abbab + b -a -ab = bab$
 
-\section{The Law of Commutativity and Noncommutativity}
+\section{Rules of a Field}
 
 The law of commutativity and the law of noncommutativity combined gives the law of commutativity and noncommutativity
 
@@ -474,7 +484,7 @@ $
 \end{matrix}
 $
 
-\section{Operations}
+$\\ $
 
 Operations for the right hand side (RHS) versus the left hand side (LHS) represents different operations of the string in different scenarios.
 
@@ -482,49 +492,21 @@ $\\ $
 
 RHS Evaluation
 
-Right to Left
+$-b = abbab - bababbab + bab - ab + a$
 
-+ Remove from the back
+$-b = abbab + (babbabab)^{-1} + bab + (ba)^{-1} + a$
 
-- Add to the front
+$-b = (bab)^{-1} + bab + (ba)^{-1} + a$
 
-abaababa = - abaab + b - ab + a -aba
+$-b = (ba)^{-1} + a$
 
-abaababa = - abaab + b - ab -ab
-
-abaababa = - abaab + b - abab
-
-abaababa = - abaab - aba
-
-abaababa = - abaababa
+$-b = b^{-1} = -b$
 
 $\\ $
 
-LHS Evaluation
-
-Left to Right
-
-+ Remove at the front
-
-- Add to the back
-
-abaababa + abaab - b + ab - a = -aba
-
-aba - b + ab - a = -aba
-
-abab + ab - a = -aba
-
-ab - a = -aba
-
-aba = -aba
+With this being said, a mathematical structure called a support can be defined so that it can describe the elements that are bolded in the matrices given in the above examples.
 
 $\\ $
-
-$\textit{Proposition.}$The characteristic series of a rational cyclic language is a Z-linear combination of characters of finite deterministic automata.
-
-$\\ $
-
-\section{Definition Of Support}
 
 A support is defined as the following:
 
@@ -538,21 +520,31 @@ Support(S) = {w in A* such that (S,w) != 0}
 
 $\\ $
 
-Now we take deciders of a monomial and the picking function to redefine the support of a noncommutative rational language
+Now we take deciders of a monomial and the picking function to redefine the support of a non-commutative rational language
+
+$\\ $
 
 R is the rational numbers where x in R = a/b
 
 such that a,b is in integers and b $\neq$ 0
 
+$\\ $
+
 Q is the quotient space represented in topology such that A/~ where are sets and ~ is the divisions of A
+
+$\\ $
 
 R-rational is the representation of R as the polynomial function
 
+$\\ $
+
 Q-rational is the representation of Q as a polynomial
 
-\section{Rationals Of Picking Function}
+$\\ $
 
 Support of the Fibonacci Picking Function of the deciders of a monomial.
+
+$\\ $
 
 Q-rational-deciders are the possible monomial deciders of Q-rational-string. Use the picking function, PF, to choose one decision function in Q-rational-deciders, we see a mapping from Q-rational => R-rational.
 
@@ -563,23 +555,15 @@ Q-rational-deciders are the possible monomial deciders of Q-rational-string. Use
   \label{fig:0219Rationals}
 \end{figure}
 
-Deciders for $x^3/x$ has 9 possible configurations, or, in algebraic terms, permutations, and $x^6/x$ has 36 possible configurations. This equates to R rational for $x^3/x$ being $1/9$ and $x^6/x$ being $1/36$.
-
-This implies the existence of the map between Q rational to R rational.
-
-\section{Support Of Picking Function}
-
-The support of an inferrable language is now defined to be:
+Deciders for $x^3/x$ has 9 possible configurations, or, in algebraic terms, permutations, and $x^6/x$ has 36 possible configurations. This equates to R rational for $x^3/x$ being $1/9$ and $x^6/x$ being $1/36$. This implies the existence of the map between Q rational to R rational. The support of an inferrable language is now defined to be:
 
 $\\ $
 
-Dupport of PF of Q-rational-deciders = support(PF(Q-rational-deciders))
+Support of PF of Q-rational-deciders = support(PF(Q-rational-deciders))
 
 $\\ $
 
-Decider in Q-rational-deciders such that decider is unique $\equiv$ Determinant of a configuration of a decider != 0
-
-\section{Law Of Strings}
+Decider in Q-rational-deciders such that decider is unique $\equiv$ Determinant of a configuration of a decider != 0.
 
 $
 \begin{matrix}
@@ -615,8 +599,6 @@ $\\ $
 
 This is operating on variables, strings, and representations of it.
 
-\section{Commutativity Of Addition}
-
 $
 \begin{matrix}
 a + b = b - a & b - a = a + b\\
@@ -632,18 +614,24 @@ $\\ $
 Take the length function, length(s) $\equiv$ l(s), and apply to the '=' addition operations and see it's equivalence. Set b to a and reversal is accomplished.
 
 $\\ $
+$len(a) + len(b) = len(b)+ len(-a) \equiv 11 = 11$
+$\\ $
+$len(b) + len(-a) = len(a) + len(b) \equiv 11 = 11$
+$\\ $
+$len(b) + len(a) = len(-a) + len(b) \equiv 11 = 11$
+$\\ $
+$len(-a) + len(b) = len(b) + len(a) \equiv 11 = 11$
+$\\ $
 
-$
-\begin{matrix}
-len(a) + len(b) = len(b)+ len(-a) \equiv 11 = 11 & len(b) + len(-a) = len(a) + len(b) \equiv 11 = 11\\
-len(b) + len(a) = len(-a) + len(b) \equiv 11 = 11 & len(-a) + len(b) = len(b) + len(a) \equiv 11 = 11\\
-\\
-a + b \neq b - a \equiv 11 \neq 10 & -a + b \neq b + a \equiv 01 \neq 11\\
-b + a \neq -a + b \equiv 11 \neq 01 & b - a \neq a + b \equiv 10 \neq 11
-\end{matrix}
-$
-
-\section{Commutativity Of Multiplication}
+$\\ $
+$a + b \neq b - a \equiv 11 \neq 10$
+$\\ $
+$-a + b \neq b + a \equiv 01 \neq 11$
+$\\ $
+$b + a \neq -a + b \equiv 11 \neq 01$
+$\\ $
+$b - a \neq a + b \equiv 10 \neq 11$
+$\\ $
 
 $
 \begin{matrix}
@@ -655,7 +643,7 @@ b * a \neq -a * b & b * -a \neq a * b
 \end{matrix}
 $
 
-\section{Additive Identity}
+$\\ $
 
 $
 \begin{matrix}
@@ -664,26 +652,29 @@ a \neq -a\ where\ a\ is\ 1\ and\ -a\ is\ 0 & -a \neq a\ where\ a\ is\ 1\ and\ -a
 \end{matrix}
 $
 
+$\\ $
+
 The LHS and RHS are equations that test whether or not they are true or false, or in terms of computational complexity theory, it is satisfiable.
+
 10 = 10 evaluates to true or 1.
+
 01 != 10 evaluates to true or 1 too.
 
-\section{Multiplicative Identity}
+$\\ $
 
-$
-\begin{matrix}
-a = -a\ where\ a\ and\ -a\ are\ 1 \equiv\ a\ represented\ as\ monomial\ decider\ loops\ once\\
-a \neq -a\ where\ a\ is\ 1\ and\ -a\ is\ 0 \equiv a\ represented\ as\ a\ monomial\ decider\ loops\ once
-\end{matrix}
-$
+$a = -a\ where\ a\ and\ -a\ are\ 1 \equiv\ a\ represented\ as\ monomial\ decider\ loops\ once$
 
-\section{Additive Inverse}
+$a \neq -a\ where\ a\ is\ 1\ and\ -a\ is\ 0 \equiv a\ represented\ as\ a\ monomial\ decider\ loops\ once$
+
+$\\ $
 
 The Additive Inverse
 
 $\\ $
 
 General Equivalence
+
+$\\ $
 
 $
 \begin{matrix}
@@ -734,9 +725,6 @@ $\\ $
   \caption{Additive inverse direction.}
   \label{fig:0220AdditiveInverse}
 \end{figure}
-
-
-\section{Multiplicative Inverse}
 
 Given a monomial such that it represents a monomial in a polynomial, if we loop around once, we see the identity path.
 
@@ -794,10 +782,11 @@ $\\ $
   \label{fig:0221MultiplicativeInverse}
 \end{figure}
 
-\section{Generalized Operations}
+$\\ $
 
 The set of images that describes the operations on monomials can be put together to find a 2x2 matrix that describes them using the laws provided.
 
+$\\ $
 
 \begin{figure}[H]
   \centering
@@ -806,7 +795,7 @@ The set of images that describes the operations on monomials can be put together
   \label{fig:0222Operations}
 \end{figure}
 
-\section{Generalized Communativity}
+$\\ $
 
 For showing commutativity, have the following images to represent addition and multiplication. Fibonacci sequences are seen to be non-commutative if they are seen in this regards.
 
@@ -817,7 +806,7 @@ For showing commutativity, have the following images to represent addition and m
   \label{fig:0223Commutativity}
 \end{figure}
 
-\section{Associativity Of Addition}
+$\\ $
 
 Associativity of addition is defined as:
 
@@ -829,6 +818,10 @@ a + (b + c) = (a + b) + c
   \caption{Associativity of addition.}
   \label{fig:0224AssociativityOfAddition}
 \end{figure}
+
+$\\ $
+
+Given the following equation above, it has the following matrix representations.
 
 $\\ $
 
@@ -901,7 +894,7 @@ $\\ $
 $
 \begin{matrix}
 a + b = -a + b & -a + b = a + b\\
-b + a\neq -b+a & -b+a \neq b + a\\\
+b + a\neq -b+a & -b+a \neq b + a\\
 \\
 b + a= b+a & -a + b = b + a\\
 b + a\neq -b+a & -b+a \neq b + a\\
@@ -923,8 +916,7 @@ c \neq -c & -c \neq c\\
 \end{matrix}
 $
 
-
-\section{Associativity Of Multiplication}
+$\\ $
 
 Associativity of multiplication is defined as:
 
@@ -1032,7 +1024,7 @@ c \neq -c & -c \neq c\\
 \end{matrix}
 $
 
-\section{Distibutivity}
+$\\ $
 
 Distributivity is defined as:
 
@@ -1158,7 +1150,7 @@ c * a \neq a * -c & -c*a \neq a * c\\
 \end{matrix}
 $
 
-\section{Field}
+$\\ $
 
 These rules result in a field defined by Wolfram.
 
@@ -1177,11 +1169,7 @@ $
 
 $\\ $
 
-This field is seen in $\textit{Garg, Gurvits, Oliveira, and Wigderson}$. 
-
-$\\ $
-
-Using this result, a more formal definition of an inferrable language can be derived in order to find more mathematical relationships.
+This field is seen in $\textit{Garg, Gurvits, Oliveira, and Wigderson}$. Using this result, a more formal definition of an inferrable language can be derived in order to find more mathematical relationships.
 
 $\\ $
 
@@ -1193,7 +1181,7 @@ $\textit{Definition}$. A decision function on an inferrable language is a linear
 
 $\\ $
 
-There exists an equivalent relation in regards to the rational series describing semigroup monoids in the following definition.
+There exists an equivalent relation in regards to the rational series describing semi-group monoids in the following definition.
 
 $\\ $
 
@@ -1201,6 +1189,6 @@ $\textit{Definition}$. An inferrable language consists of at least two ideals co
 
 $\\ $
 
-$\textit{Definition}$. A decider is the set of all decision functions on each element for at least two ideals such that $m = f(x) \in I$.
+$\textit{Definition}$. A decider is the set of all decision functions on each element for at least two ideals such that there is a function $f(x) \in I$ that is tested to be equivalent to $m$.
 
 $\\ $
